@@ -1,6 +1,8 @@
 # EzenComputer<br>
 주제 : 컴퓨터 쇼핑몰 <br>
-참고 사이트 :   https://www.foryoucom.co.kr/ http://www.danawa.com/
+참고 사이트
+https://www.foryoucom.co.kr/ <br>
+http://www.danawa.com/
 
 # 1. 개요
 
@@ -18,7 +20,6 @@
 # 4. 개발 일정
 + 기간 : 2022.02.28 ~ 2022.03.31
 + History
-
 |날짜|내용|
 |---|---|
 |2022.02.28|DB설계|
@@ -48,7 +49,7 @@ Q&A 질문
 (시간이 난다면 특정 게임을 누르면 설정된 사양으로 자동 셋팅)
 ```
 
-# 6. DB명 / 컬럼명
+# 6. DB 구조도
 ![image]()
 
 # 7. Controller 구조도
