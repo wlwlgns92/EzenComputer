@@ -8,28 +8,23 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.2'
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.2'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.2'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools:2.6.2'
-    runtimeOnly 'mysql:mysql-connector-java:8.0.25'
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
-    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.2'
-    implementation 'org.springframework.boot:spring-boot-starter-security' // 스프링 시큐리티 제공
-    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5' // 타임리프 시큐리티 제공[sec:auth~]
+    implementation 'org.springframework.boot:spring-boot-starter-web'       // 3. 스프링부트 제공
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // 3. 스프링부트 테스트모드 제공
+    compileOnly 'org.projectlombok:lombok'  // 4. 롬복 라이브러리 제공
+    annotationProcessor 'org.projectlombok:lombok' // 4. 롬복 연결 라이브러리 제공
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // 5.타임리프 라이브러리 제공
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'  // 6. JPA 라이브러리 제공
+    runtimeOnly 'mysql:mysql-connector-java' // 7.MYSQL 라이브러리 제공
+    developmentOnly 'org.springframework.boot:spring-boot-devtools' // 8. 자동 빌드[재시작] 라이브러리 제공
+    implementation 'org.springframework.boot:spring-boot-starter-mail' // 9. 자바메일 라이브러리
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1' //10. json 라이브러리 제공
+
+
 }
 
 test {
