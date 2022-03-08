@@ -1,6 +1,6 @@
 # EzenComputer<br>
 주제 : 컴퓨터 쇼핑몰
-참고 사이트 :   https://www.foryoucom.co.kr/ <br> http://www.danawa.com/
+참고 사이트 :   https://www.foryoucom.co.kr/ http://www.danawa.com/
 
 # contents
 1. 개요
@@ -23,7 +23,7 @@
 + Version Control : Git
 
 # 3. 역할
-> 조자훈 : 
+> 조지훈 : 
 > 이예지 : 
 
 # 4. 개발 일정
