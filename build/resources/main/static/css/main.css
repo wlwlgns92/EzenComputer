@@ -1,0 +1,19 @@
+.maincard {
+	width:1084px;
+	height:192px;
+	margin:0 auto;
+}
+
+.maincard ul {
+	padding:0;
+	margin:30px 0 30px 0;
+	float:left;
+}
+
+.maincard li{
+	float:left;
+	padding-right:5px;
+	list-style:none;
+	width:212px;
+	height:192px;
+}
