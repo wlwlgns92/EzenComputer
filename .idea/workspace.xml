@@ -5,6 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9114dab-61e0-459e-848f-980ef2801f24" name="Changes" comment="gg">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/CPCategoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ComentEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/CompleteProductEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ComponentCategoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ComponentEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/LinkEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/MemberEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/QnaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ReviewEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ReviewImgEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/CPCategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ComentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/CompleteProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ComponentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/LinkRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/QnaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ReviewImgRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ReviewRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -12,13 +33,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/AppStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/AppStart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +59,15 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -68,9 +94,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Ezen.domain.entity.repository" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="AppStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -119,7 +152,14 @@
       <option name="presentableId" value="Default" />
       <updated>1646809504883</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="틀잡기">
+      <created>1646814113772</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646814113772</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +175,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gg" />
-    <option name="LAST_COMMIT_MESSAGE" value="gg" />
+    <MESSAGE value="틀잡기" />
+    <option name="LAST_COMMIT_MESSAGE" value="틀잡기" />
   </component>
 </project>
