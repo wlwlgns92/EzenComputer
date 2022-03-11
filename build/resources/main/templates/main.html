@@ -8,7 +8,7 @@
 <body>
     <div th:replace="header.html :: header"></div>
 
-<!-- 캐러셀 부분 -->
+<!-- 캐러셀 Start -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -34,8 +34,8 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
-    <!-- 인기게임 Card 부분 -->
+    </div> <!-- 캐러셀 End -->
+    <!-- 인기게임 Card Start -->
 <div class="maincard">
     <ul>
         <li class="card1">
@@ -54,9 +54,9 @@
             <img th:src="@{/img/chuchyn_1076_2.gif}">
         </li>
     </ul>
-</div>
+</div><!-- 인기게임 Card Start -->
 
-    <!-- 추천 조립? 부분 -->
+    <!-- 추천 조립? Start -->
     <div style="margin:0 auto; width:1080px; height:550px;">
         <div style="float:left; width:665px;">
             <img th:src="@{/img/chuchyn_1000_1.jpg}">
@@ -64,7 +64,7 @@
     <div style="float:left; width:100px;">
         <img th:src="@{/img/chuchyn_1001_1.jpg}" style="padding:0 0 10px 0;">
         <img th:src="@{/img/chuchyn_1002_1.jpg}">
-    </div>
+    </div> <!-- 추천 조립? Start -->
 
         <div th:replace="footer.html :: footer"></div>
 </body>
