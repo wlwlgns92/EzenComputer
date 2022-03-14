@@ -10,6 +10,6 @@ public class ComponentController {
 
     @GetMapping("/amd")
     public String amd(){
-        return "cpu/amd";
+        return "complete/intelview.html";
     }
 }
