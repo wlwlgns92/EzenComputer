@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:replace="header.html :: header"></div>
+<br><br><br><br><br>
+
+<div class="container">
+  <table class="table">
+    <tr class="text-center"> <th>카테고리</th><th>상품명</th><th>수량</th><th>가격</th> </tr>
+    <tr>
+      <td> <!-- 장바구니에 담은 카테고리 보이게 하기 -->
+        <div class="align-middle text-center">
+         CPU
+        </div>
+      </td>
+      <td class="px-1" style="font-size: 12px;"> <!-- 상품명 보이게 하기 -->
+        [인텔] 인텔 코어i5-12세대 12400F (엘더레이크)
+      </td>
+      <td class="align-middle text-center"> <!-- 수량 보이게 하기 -->
+        10 개
+      </td>
+      <td class="align-middle text-center"> <!-- 가격 보이게 하기 -->
+        123,456 원
+      </td>
+    </tr>
+  </table>
+  <br><br>
+  <div class="row">
+    <div class="col-md-6">
+      <h3> 배송 정보 </h3>
+      <span class="pview"> 받는 사람 정보 </span>
+      <div class="row">
+        <div class="col-md-3 m-2"> <label>이름</label> </div>
+        <div class="col-md-8"> <input id="name" onchange="signupcheck();" type="text" name="name" class="form-control" maxlength="15"> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 m-2"> <label>이메일</label> </div>
+        <div class="col-md-8"> <input id="email" onchange="signupcheck();" type="text" name="email" class="form-control" maxlength="15"> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 m-2"> <label>연락처</label> </div>
+        <div class="col-md-8">
+          <input type="text" id ="phone" onchange="signupcheck();" name="phone" class="form-control" placeholder="010-1234-5678">
+        </div>
+        <div>
+          <span id="phoneresult"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 m-2"> <label>요청사항</label> </div>
+        <div class="col-md-8"> <input id="prequest" type="text" name="productrequest" class="form-control" placeholder="배송시 요청사항을 입력해주세요"> </div>
+      </div>
+      <br> <hr> <br>
+      <span class="pview"> 받는 사람 주소 </span>
+      <div class="row">
+        <div class="col-md-6"> <input type="text" name="address1" id="sample4_postcode" placeholder="우편번호" class="form-control"> </div>
+        <div class="col-md-6"> <input type="button"  onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="form-control"><br> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"> <input type="text" name="address2" id="sample4_roadAddress" placeholder="도로명주소" class="form-control"> </div>
+        <div class="col-md-6"> <input type="text" name="address3" id="sample4_jibunAddress" placeholder="지번주소" class="form-control"> </div>
+      </div>
+      <input type="text" id="sample4_detailAddress" name="address4" placeholder="상세주소" class="form-control">
+    </div>
+    <div class="col-md-6 border p-3">
+      <h3> 결제 정보 </h3>
+      <h6> 결제 금액 </h6>
+      <div class="row">
+        <div class="col-md-3">총 주문금액</div>
+        <div class="col-md-9 text-right payment">
+          <span id="totalprice" class="payment">합계 가격</span>
+          ( 총 주문상품수 : )
+        </div>
+
+        <div class="col-md-3">총 배송비</div>
+        <div class="col-md-9 text-right"> <span id="totaldeliverypay" class="payment">3000</span></div>
+
+        <div class="col-md-3">최종 결제금액</div>
+        <div class="col-md-9 text-right "> <span id="totalpay" class="payment">총합 가격 + 배송비(3,000원)</span></div>
+
+      </div>
+      <hr>
+      <h6> 결제 방식 </h6>
+      <div class="row d-flex justify-content-around">
+        <button onclick="paymentselect('samsung');" class="btn btn-outline-danger col-md-2">삼성페이</button>
+        <button onclick="paymentselect('card');" class="btn btn-outline-danger col-md-2">신용카드</button>
+        <button onclick="paymentselect('trans');" class="btn btn-outline-danger col-md-2">계좌이체</button>
+        <button onclick="paymentselect('vbank');" class="btn btn-outline-danger col-md-2">가상계좌</button>
+        <button onclick="paymentselect('phone');" class="btn btn-outline-danger col-md-2">휴대폰</button>
+      </div>
+      <div id="payselect"></div>
+      <div class="row d-flex justify-content-around my-5">
+        <button class="col-md-5 form-control p-3 bg-success text-white" onclick="payment();"> 결제하기 </button>
+        <button class="col-md-5 form-control p-3"> 취소하기 </button>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br>
+
+<div th:replace="footer.html :: footer"></div>
+</body>
+</html>
