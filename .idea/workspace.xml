@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b994d48-26fe-4032-b77e-380cf0c4dc43" name="Changes" comment="2022.03.14. 제품, 완제품 레이아웃(이미지 출력 미완) 완성">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
+    <list default="true" id="0b994d48-26fe-4032-b77e-380cf0c4dc43" name="Changes" comment="2022.03.14. (임시작성)Error Page">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/product/productcart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/ComponentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/ComponentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/complete/Intelview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/complete/amdview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/controller/ComponentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/ComponentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/complete/Intelview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product/Intellist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/complete/amdview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product/amdlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/completeproduct/gamingpcview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product/gamingpclist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/completeproduct/officepcview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product/officepclist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +81,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\EzenComputer\src\main\resources\templates\product" />
       <recent name="C:\EzenComputer\src\main\resources\static\img" />
     </key>
   </component>
@@ -116,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647231298654</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2022.03.14. (임시작성)Error Page">
+      <created>1647232947109</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647232947109</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +161,7 @@
     <MESSAGE value="2022.03.11. Footer" />
     <MESSAGE value="2022.03.11. 제품 레이아웃" />
     <MESSAGE value="2022.03.14. 제품, 완제품 레이아웃(이미지 출력 미완) 완성" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.03.14. 제품, 완제품 레이아웃(이미지 출력 미완) 완성" />
+    <MESSAGE value="2022.03.14. (임시작성)Error Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.03.14. (임시작성)Error Page" />
   </component>
 </project>
