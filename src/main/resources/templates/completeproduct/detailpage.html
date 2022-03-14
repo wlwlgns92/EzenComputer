@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div th:replace="header.html :: header"></div>
+
+    <div class="container">
+        <div class="row">
+            <h3 style="text-align: center;"></h3>
+            <div class="col-md-5" id="detailimg">
+                <img src="" alt="">
+            </div>
+            <!-- 사용된 부품 정보 div -->
+            <div class="col-md-5 offset-1" id="componentlist">
+                <div>
+                    <h4>제품명</h4>
+                    <table>
+                        <tr>
+                            <td>CPU</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Mainboard</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ram</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>VGA</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SSD</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>CASE</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Power</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div>
+                        <span>가격</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 사용된 부품 정보 div end -->
+            <!-- 부품 변경 div -->
+            <div class="col-md-5">
+                <table>
+                    <tr>
+                        <td>카테고리</td>
+                        <td>제품명</td>
+                    </tr>
+                    <tr>
+                        <td>CPU</td>
+                        <td>i5-12400</td>
+                        <td><button type="button">사양변경하기</button></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 부품 변경 div end -->
+            <!-- 변경할 부품의 list div -->
+            <div class="col-md-5 offset-1">
+                <table>
+                    <tr>
+                        <td><img src="" alt=""></td>
+                        <td>제품명</td>
+                        <td>가격</td>
+                        <td><button>변경</button></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 변경할 부품의 list div end -->
+        </div>
+    </div>
+    <div th:replace="footer.html :: footer"></div>
+</body>
+
+</html>
