@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="header.html :: header"></div>
+
+<div class="container">
+    <div class="row"> <!-- row 반복문 쓸 예정 -->
+        <div class="col-md-2"> <!-- 이미지 들어가는 부분 -->
+            <img th:src="@{/img/logo.jpg}" alt="" width="200px">
+        </div>
+        <div class="col-md-8"> <!-- 내용이 들어가는 부분 -->
+            내용이 들어가는 부분 입니다.
+        </div>
+        <div class="col-md-2"> <!-- 버튼 들어가는 부분 -->
+            <div>
+                123,456 원
+            </div>
+            <button>장바구니</button> <br>
+            <button>구매하기</button>
+        </div>
+    </div>
+</div>
+
+<div th:replace="footer.html :: footer"></div>
+</body>
+</html>

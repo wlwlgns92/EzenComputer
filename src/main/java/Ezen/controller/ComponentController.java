@@ -10,6 +10,6 @@ public class ComponentController {
 
     @GetMapping("/amd")
     public String amd(){
-        return "product/productcart.html";
+        return "product/productpay.html";
     }
 }
