@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="header.html :: header" ></div>
+
+<div class="container my-3">
+    <h3 class="text-center my-3"> 내 방 등록하기 </h3>
+    <form method="post" action="" enctype="multipart/form-data" class="row">
+        <div class="col-md-5 offset-1 border p-3 rounded-3 shadow p-3 mb-5 bg-body rounded">
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control rounded-4" id="componentCategory" name="componentCategory" placeholder="이름">
+                <label for="floatingInput">방이름</label>
+            </div>
+</body>
+</html>

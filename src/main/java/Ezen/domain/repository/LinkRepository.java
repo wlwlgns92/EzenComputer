@@ -1,4 +1,4 @@
-package Ezen.domain.entity.repository;
+package Ezen.domain.repository;
 
 import Ezen.domain.entity.LinkEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
