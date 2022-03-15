@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9114dab-61e0-459e-848f-980ef2801f24" name="Changes" comment="합치고 맵핑" />
+    <list default="true" id="c9114dab-61e0-459e-848f-980ef2801f24" name="Changes" comment="노트북 커밋">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/categoryregistration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu/AMDcompleteproduct.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +40,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/jh" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -113,11 +121,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="애플리케이션.AppStart" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -156,14 +159,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647266883135</updated>
     </task>
-    <task id="LOCAL-00005" summary="합치고 맵핑">
-      <created>1647277833412</created>
+    <task id="LOCAL-00005" summary="노트북 커밋">
+      <created>1647313477576</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1647277833413</updated>
+      <updated>1647313477576</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="노트북 커밋">
+      <created>1647320375942</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647320375942</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +192,7 @@
     <MESSAGE value="틀잡기" />
     <MESSAGE value="Entity Repository 작업" />
     <MESSAGE value="합치고 맵핑" />
-    <option name="LAST_COMMIT_MESSAGE" value="합치고 맵핑" />
+    <MESSAGE value="노트북 커밋" />
+    <option name="LAST_COMMIT_MESSAGE" value="노트북 커밋" />
   </component>
 </project>

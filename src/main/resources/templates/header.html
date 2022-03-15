@@ -5,18 +5,9 @@
     <!--부트스트랩 css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- 개발자 css 가져오기 -->
-
+    <link th:href="@{/css/header.css}" rel="stylesheet">
 
     <style>
-        #headermenu {
-            text-align: center;
-            border: 1px solid black;
-        }
-        
-        #headermenu li {
-            display: inline-block;
-            border: 1px solid black;
-        }
     </style>
 
 </head>
@@ -60,25 +51,47 @@
                 <ul id="headermenu">
                     <li>
                         <a href="">완제품</a>
-                        <div style="hidden"></div>
-                        <!-- 완제품 카테고리 div -->
+                        <ul>
+                            <li>
+                                <a href="">AMD</a>
+                            </li>
+                            <li>
+                                <a href="">Intel</a>
+                            </li>
+                            <li>
+                                <a href="">게이밍</a>
+                            </li>
+                            <li>
+                                <a href="">사무용</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>전체 컴퓨터</li>
+                    <li><a th:href="@{/menu/allcomputer}">전체 컴퓨터</a></li>
                     <li>
                         <a href="">컴퓨터 부품</a>
-                        <div></div>
-                        <!-- 컴퓨터 부품 div -->
+                        <ul>
+                            <li><a href="">CPU</a></li>
+                            <li><a href="">Mainboard</a></li>
+                            <li><a href="">Ram</a></li>
+                            <li><a href="">VGA</a></li>
+                            <li><a href="">SSD</a></li>
+                            <li><a href="">CASE</a></li>
+                            <li><a href="">Power</a></li>
+                        </ul>
+
                     </li>
-                    <a th:href="@{/menu/assembly}">
-                        <li>견적내기</li>
-                    </a>
-                    <li>Q&A</li>
-                    <li>장바구니</li>
-                    <li>제품리스트</li>
+                    <li>
+                        <a th:href="@{/menu/assembly}">
+                            견적내기
+                        </a>
+                    </li>
+                    <li><a href=""> Q&A </a></li>
+                    <li><a href=""> 장바구니 </a></li>
+                    <li><a href=""> 제품리스트 </a></li>
                     <!-- 관리자 -->
-                    <li>제품등록</li>
+                    <li><a th:href="@{/admin/productregistration}"> 제품등록 </a></li>
                     <!-- 관리자 -->
-                    <li>카테고리 등록</li>
+                    <li><a th:href="@{/admin/categoryregistration}"> 카테고리 등록 </a></li>
                     <!-- 관리자 -->
                 </ul>
             </div>
