@@ -12,7 +12,7 @@
 + Front-end : html, CSS, Bootstrap
 + Back-end : JDK 1.8.0, IntelliJ IDEA Ultimate Edition 2021.3.1
 + Database : MySQL
-+ Version Control : Git
++ Version Control : GitHub
 
 # 3. 역할
 - 조지훈 : 
@@ -29,7 +29,7 @@
 |2022.03.04|프로젝트 기본틀 PPT|
 |2022.03.08||
 |2022.03.11~2022.03.|레이아웃 작성|
-|2022.03.1||
+|2022.03.14|Git 합침|
 |2022.03.23|완성|
 
 # 5. 주요기능
@@ -62,6 +62,6 @@ Q&A 질문
 ![image]()
 
 # 8. 참고하면 좋은 스킬
-html, css만으로 메뉴바 만들기 : https://pridiot.tistory.com/15
+html, css만으로 메뉴바 만들기 : https://pridiot.tistory.com/15 <br>
 카드 : https://codepen.io/candroo/pen/wKEwRL
 
