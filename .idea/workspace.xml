@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b994d48-26fe-4032-b77e-380cf0c4dc43" name="Changes" comment="2022.03.14. [레이아웃] 장바구니, 결제페이지 완성(id, name, js 이름 수정해야함)">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/qnaview.html" afterDir="false" />
+    <list default="true" id="0b994d48-26fe-4032-b77e-380cf0c4dc43" name="Changes" comment="2022.03.15. qna view 댓글 미완">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/Dto/MemberDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/productwrite.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/qnaupdate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/MemberController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CPCategoryEntity$CPCategoryEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CPCategoryEntity$CPCategoryEntityBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CPCategoryEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CPCategoryEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComentEntity$ComentEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComentEntity$ComentEntityBuilder.class" afterDir="false" />
@@ -27,7 +40,32 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewImgEntity$ReviewImgEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewImgEntity$ReviewImgEntityBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewImgEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewImgEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/qnalist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/qnalist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/CPCategoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/ComentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/CompleteProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/ComponentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/LinkRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/MemberRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/QnaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/ReviewImgRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/ReviewRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/service/QnaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/member/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/member/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ReviewEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ReviewEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/CPCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/CPCategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ComentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ComentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/CompleteProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/CompleteProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ComponentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ComponentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/LinkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/LinkRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/QnaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/QnaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ReviewImgRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ReviewImgRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ReviewRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/service/QnaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/signup.html" afterDir="false" />
     </list>
     <list default="true" id="c9114dab-61e0-459e-848f-980ef2801f24" name="Changes" comment="합치고 맵핑" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,8 +96,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,6 +111,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -88,7 +134,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -184,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647248390988</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2022.03.15. qna view 댓글 미완">
+      <created>1647326776434</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647326776434</updated>
+    </task>
+    <task id="LOCAL-00007" summary="2022.03.15. qna view 댓글 미완">
+      <created>1647326784739</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647326784739</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,7 +270,8 @@
     <MESSAGE value="2022.03.14. 제품, 완제품 레이아웃(이미지 출력 미완) 완성" />
     <MESSAGE value="2022.03.14. (임시작성)Error Page" />
     <MESSAGE value="2022.03.14. [레이아웃] 장바구니, 결제페이지 완성(id, name, js 이름 수정해야함)" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.03.14. [레이아웃] 장바구니, 결제페이지 완성(id, name, js 이름 수정해야함)" />
+    <MESSAGE value="2022.03.15. qna view 댓글 미완" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022.03.15. qna view 댓글 미완" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gg" />

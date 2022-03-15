@@ -15,7 +15,7 @@ import javax.persistence.*;
 @ToString
 public class ReviewEntity {
 
-    // 리뷰 Entity
+    // review Entity
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
