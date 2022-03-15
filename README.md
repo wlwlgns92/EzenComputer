@@ -61,6 +61,7 @@ Q&A 질문
 # 7. Controller 구조도
 ![image]()
 
-
+# 8. 참고하면 좋은 스킬
+https://pridiot.tistory.com/15
 
 
