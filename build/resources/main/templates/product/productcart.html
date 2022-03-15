@@ -5,15 +5,57 @@
     <title>Title</title>
 </head>
 <body>
+<div th:replace="header.html :: header"></div>
+<br><br><br>
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <img th:src="@{/img/chuchyn_1078_2.gif}" alt="" width="200px">
-        </div>
-        <div class="col-md-6">
+    <h3 style="border-bottom: solid 1px #eeeee;"> 장바구니 </h3> <br><br>
+    <table class="table">
+        <tr>
+            <th> 이미지 </th> <th> 카테고리 </th> <th> 상품명 </th> <th> 수량 </th> <th> 가격 </th> <th> 삭제 </th>
+        </tr>
 
-        </div>
+        <tr>
+            <td width="10%" class="align-middle"> <!-- 이미지 넣는곳 -->
+                <img th:src="@{/img/logo.jpg}" style="max-width: 100%;">
+            </td><!-- 이미지 넣는곳 끝 -->
+            <td width="10%" class="align-middle"> <!-- 카테고리 -->
+                CPU
+            </td><!-- 카테고리 끝 -->
+            <td width="50%"> <!-- 상품명 -->
+                <div class="px-1">
+                    [인텔] 인텔 코어i5-12세대 12400F (엘더레이크)
+                </div>
+            </td><!-- 상품명 끝 -->
+            <td class="row no-gutters"> <!-- 수량 증가 -->
+                <button class="btn btn-outline-secondary"> + </button>
+
+                <div class="col-md-3"> <!-- 수량 개수 -->
+                    <input class="form-control" type="text" id="productcartinput">
+                </div>
+                <!-- 수량 감소 -->
+                <button class="btn btn-outline-secondary"> - </button>
+            </td>
+            <td width="15%" class="align-middle" id="productcarttd"> <!-- 가격 -->
+
+            </td>
+            <td width="5%"> <!-- X버튼을 누르면 삭제 -->
+                <button class="form-control"> X </button></td>
+        </tr>
+    </table>
+
+    <div class="row">
+        <div class="col-md-3 offset-3"> <!-- 결제 페이지로 이동 -->
+            <a href="">
+                <button class="form-control bg-success text-white p-3"> 주문하기 </button>
+            </a>
+        </div><!-- 결제 페이지로 이동 끝 -->
+        <div class="col-md-3"> <!-- 견적내기 페이지로 이동 -->
+            <button class="form-control p-3"> 쇼핑하기 </button>
+        </div> <!-- 견적내기 페이지로 이동 끝 -->
     </div>
+    <br><br><br><br><br>
 </div>
+
+<div th:replace="footer.html :: footer"></div>
 </body>
 </html>
