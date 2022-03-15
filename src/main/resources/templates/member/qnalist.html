@@ -37,6 +37,27 @@
         </tr>
     </table>
 
+    <!-- 페이지네이션(Pagination) -->
+        <ul class="pagination justify-content-center">
+            <li class="page-item"> <!-- 첫 페이지로 이동 -->
+                <a class="page-link" th:href="@{/}"> << </a>
+            </li>
+            <!-- 이전 페이지 이동 [만약 현 페이지가 첫 페이지면 이전 페이지 표시 X] -->
+            <li class="page-item">
+                <a class="page-link" href="#"> < </a>
+            </li>
+            <li class="page-item"> <!-- 페이지 번호 -->
+                <a class="page-link" href="#">  </a>
+            </li>
+            <!-- 다음 페이지 이동 [만약에 현 페이지가 마지막 페이지 이면 다음 페이지로 표시 X -->
+            <li class="page-item">
+                <a class="page-link" href="#"> > </a>
+            </li>
+            <li class="page-item"> <!-- 마지막 페이지 이동 -->
+                <a class="page-link" href="#"> >> </a>
+            </li>
+        </ul>
+
     <!-- 검색창 -->
     <form action="/board/boardlist" method="get"  class="col-md-5 offset-4 input-group my-3 g-0" >
         <div class="col-md-1">
