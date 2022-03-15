@@ -63,5 +63,5 @@ Q&A 질문
 
 # 8. 참고하면 좋은 스킬
 html, css만으로 메뉴바 만들기 : https://pridiot.tistory.com/15
-
+카드 : https://codepen.io/candroo/pen/wKEwRL
 
