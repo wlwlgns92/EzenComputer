@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b994d48-26fe-4032-b77e-380cf0c4dc43" name="Changes" comment="2022.03.15. qna view 댓글 미완">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/Dto/MemberDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
-    <list default="true" id="0b994d48-26fe-4032-b77e-380cf0c4dc43" name="Changes" comment="2022.03.15. qna view 댓글 미완">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/Dto/MemberDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/service/MemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/productwrite.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/qnaupdate.html" afterDir="false" />
+    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -21,74 +14,30 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/CompleteProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/CompleteProductController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/MemberEntity$MemberEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/MemberEntity$MemberEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/MemberEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/MemberEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/js/signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/completeproduct/amdlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/completeproduct/amdlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/MemberController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CPCategoryEntity$CPCategoryEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CPCategoryEntity$CPCategoryEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CPCategoryEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CPCategoryEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComentEntity$ComentEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComentEntity$ComentEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComentEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComentEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CompleteProductEntity$CompleteProductEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CompleteProductEntity$CompleteProductEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CompleteProductEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/CompleteProductEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComponentCategoryEntity$ComponentCategoryEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComponentCategoryEntity$ComponentCategoryEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComponentCategoryEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComponentCategoryEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComponentEntity$ComponentEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComponentEntity$ComponentEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComponentEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ComponentEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/LinkEntity$LinkEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/LinkEntity$LinkEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/LinkEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/LinkEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/MemberEntity$MemberEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/MemberEntity$MemberEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/MemberEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/MemberEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/QnaEntity$QnaEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/QnaEntity$QnaEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/QnaEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/QnaEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewEntity$ReviewEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewEntity$ReviewEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewImgEntity$ReviewImgEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewImgEntity$ReviewImgEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewImgEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/ReviewImgEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/CPCategoryRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/ComentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/CompleteProductRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/ComponentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/LinkRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/MemberRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/QnaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/ReviewImgRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/domain/entity/repository/ReviewRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/service/QnaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/member/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/member/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/menu/AMDcompleteproduct.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/MemberEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/MemberEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/js/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ReviewEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ReviewEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/CPCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/CPCategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ComentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ComentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/CompleteProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/CompleteProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ComponentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ComponentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/LinkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/LinkRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/QnaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/QnaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ReviewImgRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ReviewImgRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/service/QnaService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/signup.html" afterDir="false" />
     </list>
-    <list default="true" id="c9114dab-61e0-459e-848f-980ef2801f24" name="Changes" comment="합치고 맵핑" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -107,33 +56,10 @@
       </state>
     </system>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/jh" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="YJ" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -149,29 +75,19 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="26E4vCU0mVN3faIqqiht0AAHVma" />
+  <component name="ProjectId" id="26T4wqhmOzleFx9Xp2YmRKJACcI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="프로젝트" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\EzenComputer\src\main\resources\templates\product" />
-      <recent name="C:\EzenComputer\src\main\resources\static\img" />
-      <recent name="C:\EzenComputer\src\main\resources\static\" />
-      <recent name="C:\EzenComputer\src\main\resources\static\js" />
-      <recent name="C:\EzenComputer\src\main\resources\static\css" />
-      <recent name="C:\EzenComputer\src\main\resources\static" />
-      <recent name="C:\EzenComputer\src\main\resources" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="AppStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -187,146 +103,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="애플리케이션.AppStart" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="0b994d48-26fe-4032-b77e-380cf0c4dc43" name="Changes" comment="" />
-      <created>1646975640199</created>
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="" />
+      <created>1647434485094</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1646975640199</updated>
-      <updated>1646975640199</updated>
+      <updated>1647434485094</updated>
     </task>
-    <task id="LOCAL-00001" summary="2022.03.11. Footer">
-      <created>1646977360679</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1646977360679</updated>
-    </task>
-    <task id="LOCAL-00002" summary="2022.03.11. 제품 레이아웃">
-      <created>1646987145060</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1646987145060</updated>
-    </task>
-    <task id="LOCAL-00003" summary="2022.03.14. 제품, 완제품 레이아웃(이미지 출력 미완) 완성">
-      <created>1647231298654</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1647231298654</updated>
-    </task>
-    <task id="LOCAL-00004" summary="합치고 맵핑">
-      <created>1647266883135</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1647266883135</updated>
-    </task>
-    <task id="LOCAL-00005" summary="노트북 커밋">
-      <created>1647313477576</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1647313477576</updated>
-    </task>
-    <task id="LOCAL-00006" summary="노트북 커밋">
-      <created>1647320375942</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1647320375942</updated>
-    </task>
-    <task id="LOCAL-00007" summary="합치고 맵핑">
-      <created>1647366028787</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1647366028787</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
-    <task id="LOCAL-00001" summary="2022.03.11. Footer">
-      <created>1646977360679</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1646977360679</updated>
-    </task>
-    <task id="LOCAL-00002" summary="2022.03.11. 제품 레이아웃">
-      <created>1646987145060</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1646987145060</updated>
-    </task>
-    <task id="LOCAL-00003" summary="2022.03.14. 제품, 완제품 레이아웃(이미지 출력 미완) 완성">
-      <created>1647231298654</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1647231298654</updated>
-    </task>
-    <task id="LOCAL-00004" summary="2022.03.14. (임시작성)Error Page">
-      <created>1647232947109</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1647232947109</updated>
-    </task>
-    <task id="LOCAL-00005" summary="2022.03.14. [레이아웃] 장바구니, 결제페이지 완성(id, name, js 이름 수정해야함)">
-      <created>1647248390988</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1647248390988</updated>
-    </task>
-    <task id="LOCAL-00006" summary="2022.03.15. qna view 댓글 미완">
-      <created>1647326776434</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1647326776434</updated>
-    </task>
-    <task id="LOCAL-00007" summary="2022.03.15. qna view 댓글 미완">
-      <created>1647326784739</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1647326784739</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
-    <task id="LOCAL-00004" summary="2022.03.14. (임시작성)Error Page">
-      <created>1647232947109</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1647232947109</updated>
-    </task>
-    <task id="LOCAL-00005" summary="2022.03.14. [레이아웃] 장바구니, 결제페이지 완성(id, name, js 이름 수정해야함)">
-      <created>1647248390988</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1647248390988</updated>
-    </task>
-    <task id="LOCAL-00006" summary="2022.03.15. qna view 댓글 미완">
-      <created>1647326776434</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1647326776434</updated>
-    </task>
-    <task id="LOCAL-00007" summary="2022.03.15. qna view 댓글 미완">
-      <created>1647326784739</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1647326784739</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,42 +125,14 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="false" />
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022.03.11. Footer" />
-    <MESSAGE value="2022.03.11. 제품 레이아웃" />
-    <MESSAGE value="2022.03.14. 제품, 완제품 레이아웃(이미지 출력 미완) 완성" />
-    <MESSAGE value="2022.03.14. (임시작성)Error Page" />
-    <MESSAGE value="2022.03.14. [레이아웃] 장바구니, 결제페이지 완성(id, name, js 이름 수정해야함)" />
-    <MESSAGE value="2022.03.15. qna view 댓글 미완" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.03.15. qna view 댓글 미완" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022.03.11. Footer" />
-    <MESSAGE value="2022.03.11. 제품 레이아웃" />
-    <MESSAGE value="2022.03.14. 제품, 완제품 레이아웃(이미지 출력 미완) 완성" />
-    <MESSAGE value="2022.03.14. (임시작성)Error Page" />
-    <MESSAGE value="2022.03.14. [레이아웃] 장바구니, 결제페이지 완성(id, name, js 이름 수정해야함)" />
-    <MESSAGE value="2022.03.15. qna view 댓글 미완" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022.03.15. qna view 댓글 미완" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="gg" />
-    <MESSAGE value="틀잡기" />
-    <MESSAGE value="Entity Repository 작업" />
-    <MESSAGE value="노트북 커밋" />
-    <MESSAGE value="합치고 맵핑" />
-    <option name="LAST_COMMIT_MESSAGE" value="합치고 맵핑" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

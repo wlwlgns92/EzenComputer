@@ -8,6 +8,7 @@
     <link th:href="@{/css/header.css}" rel="stylesheet">
 
     <style>
+
     </style>
 
 </head>
@@ -19,43 +20,11 @@
     <!-- jquery [ ajax용 ] -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <!-- 개발자 js 가져오기 -->
-    <script th:src = "@{/js/main.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
     <!-- 다음 주소 api js -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-    <!-- 헤더 메뉴 -->
-    <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a th:href="@{/}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                이젠 컴퓨터
-            </a>
-            <!-- 메뉴 분류 -->
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 link-dark">완제품</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">전체컴퓨터</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">컴퓨터부품</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Q&A</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">장바구니</a></li>
-                <!-- 관리자 -->
-                <li><a href="#" class="nav-link px-2 link-dark">제품등록</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">카테고리등록</a></li>
-            </ul>
-
-            <!-- 로그인, 회원가입, 로그아웃-->
-            <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-            <form>
-                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-            </form>
-
-                <a th:href="@{/member/login}"><button type="button" class="btn btn-link me-2">로그인</button></a>
-                <a th:href="@{/member/signup}"><button type="button" class="btn btn-link">회원가입</button></a>
-                <a><button type="button" class="btn btn-link me-2">로그아웃</button></a>
-            </div>
-        </header>
-    </div> <!-- 헤더 메뉴 End -->
-
     <!-- 초기 레이아웃 상태 -->
-    <!--<div class="container">
+    <div class="container">
         <div class="row" style="height: 100px; border: 1px solid black;">
             <div class="col-md-1">
                 <!-- 로고 div -->

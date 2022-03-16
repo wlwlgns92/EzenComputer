@@ -26,7 +26,7 @@ public class MemberController { // member와 관련된 컨트롤러
     public String login() { return "member/login"; }
 
     // 회원가입 처리 연결
-    @PostMapping("/member/signupcontroller")
+    @PostMapping("/signupcontroller")
     public String signupcontroller(MemberEntity memberEntity,
                                    @RequestParam("address1") String address1,
                                    @RequestParam("address2") String address2,
