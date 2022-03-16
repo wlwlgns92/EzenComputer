@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping(value = "/member")
@@ -14,11 +15,11 @@ public class MemberController { // member와 관련된 컨트롤러
     @Autowired
     MemberService memberService;
     @Autowired
-    HttpServletRequest httpServletRequest;
+    HttpServletRequest request;
 
     // 회원가입 페이지 이동 03-11 조지훈
     @GetMapping("/signup")
-    public String sginup() { return "member/signup"; }
+    public String signup() { return "member/signup"; }
 
     // 로그인 페이지 이동 03-11 조지훈
     @GetMapping("login")
@@ -34,6 +35,28 @@ public class MemberController { // member와 관련된 컨트롤러
         memberEntity.setMemberAddress(address1+"/"+address2+"/"+address3+"/"+address4);
         memberService.membersignup(memberEntity);
         return "redirect:/";
+    }
+
+    // 로그인 처리
+    @PostMapping("/logincontroller")
+    @ResponseBody
+    public String logincontroller(@RequestBody MemberEntity memberEntity) {
+        MemberEntity loginEntity = memberService.login(memberEntity);
+          if(loginEntity != null){
+              HttpSession session = request.getSession(); // 서버내 세션 가져오기
+              session.setAttribute("loginEntity", loginEntity); // 세션 설정
+              // session.getAttribute("loginEntity"); // 세션 호출
+              return "1";
+          }else{
+              return "2";
+          }
+    }
+    // 로그아웃 처리
+    @GetMapping("/logout")
+    public String logout() {
+        HttpSession session = request.getSession();
+        session.setAttribute("loginEntity", null); // 기존 세션을 null로 변경
+        return "loginEntity"; // 로그아웃 성공시 메인 페이지로 이동
     }
 
     // 아이디 중복 체크
