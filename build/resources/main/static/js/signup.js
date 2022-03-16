@@ -1,8 +1,9 @@
 $(function(){
     // 아이디 유효성 검사
-    $("memberId").keyup(function(){ // 해당 태그에 키보드가 눌렀을때 이벤트
-        var memberId=$("#memberId").val();
-        var memberidj=/^[a-z0-9]{5,15}$/ // 정규표현식(영소문자 5~15 글자만 허용)
+    $("#memberId").keyup(function(){ // 해당 태그에 키보드가 눌렀을때 이벤트
+    alert("adsfasdf");
+        /*var memberId=$("#memberId").val();
+        var memberidj=/^[a-z0-9]{5,15}$/;
 
         if(!memberidj.test(memberId)) { // 정규 표현식이 다를 경우
             $("#memberIdcheck").html("영소문자 5~15 글자만 가능합니다.");
@@ -17,12 +18,12 @@ $(function(){
                         $("memberidcheck").html("사용가능한 아이디 입니다.");
                     }
                 }
-            });
+            });*/
         }
     });
 
     // 비밀번호 유효성 검사
-    $("#memberPassword").keyup(function(){
+    /*$("#memberPassword").keyup(function(){
         var memberPasswordj = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~!@#$%^&*()+|=])[A-Za-z\d~!@#$%^&*()+|=]{8,15}$/;
         var memberPassword = $("memberPassword").val();
         if(!memberPasswordj.test(memberPassword)) {
@@ -148,6 +149,6 @@ $(function(){
              } else {
                 $("form").submit(); // 모든 유효성검사 통과시 폼 전송
              }
-    });
+    });*/
 
 }); // 함수 End

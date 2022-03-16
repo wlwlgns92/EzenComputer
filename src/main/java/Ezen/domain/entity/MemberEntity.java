@@ -4,17 +4,11 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="member")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@Builder
-@ToString
+@Entity @Table(name="member")
+@NoArgsConstructor @AllArgsConstructor
+@Getter @Setter @Builder @ToString
 public class MemberEntity {
     // 회원 Entity
-
 
     @Id 
     @GeneratedValue(strategy= GenerationType.IDENTITY)

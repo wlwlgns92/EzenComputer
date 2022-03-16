@@ -18,6 +18,23 @@ public class MemberService {
         return true;
     }
 
+    // 회원 로그인 메소드
+    public MemberEntity login(MemberEntity memberEntity) {
+        List<MemberEntity> memberEntityList = memberRepository.findAll();
+        for(MemberEntity memberEntitylogin : memberEntityList) {
+            if(memberEntity.getMemberId().equals(memberEntity.getMemberId())&&
+            memberEntity.getMemberPassword().equals(memberEntity.getMemberPassword())) {
+                return MemberEntity.builder()
+                        .memberId(memberEntity.getMemberId())
+                        .memberNo(memberEntity.getMemberNo()) .build();
+            }
+        } return null;
+    }
+
+    // 회원 아이디 찾기
+
+    // 회원 비밀번호 찾기
+
     // 아이디 중복 체크
     public boolean memberidcheck(String memberId) {
         // 1. 모든 엔티티 가져오기
