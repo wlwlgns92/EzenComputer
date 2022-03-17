@@ -28,7 +28,11 @@ public class AdminController {
     public String categorywrite (@RequestParam("categoryNo") int categoryNo,
                                  @RequestParam("categoryName") String categoryName) {
 
+        System.out.println("##################"+categoryNo);
+        System.out.println("##################"+categoryName);
+
       boolean result = adminService.categorywrite(categoryNo,categoryName);
+
         if(result) {
             System.out.println("등록실패");
             return "2";
