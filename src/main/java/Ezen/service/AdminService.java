@@ -6,7 +6,7 @@ import Ezen.domain.repository.CPCategoryRepository;
 import Ezen.domain.repository.ComponentCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 
@@ -18,47 +18,8 @@ public class AdminService {
 
     @Autowired
     ComponentCategoryRepository componentCategoryRepository;
-
-    // public boolean categorywrite(String categoryNo, String categoryName){
-    //
-    // CPCategoryEntity cpCategoryEntity = null;
-    // ComponentCategoryEntity componentCategoryEntity = null;
-    //
-    // System.out.println(categoryNo);
-    // System.out.println(categoryName);
-    //
-    // if(categoryNo.equals("1")) {
-    // List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
-    // for(CPCategoryEntity entity : CPlist) {
-    // if(!entity.getCpcategoryName().equals(categoryName) &&
-    // entity.getCpcategoryName() == null) {
-    // cpCategoryEntity.setCpcategoryName(categoryName);
-    // cpCategoryRepository.save(cpCategoryEntity);
-    // return true;
-    // }
-    // else {
-    // return false;
-    // }
-    // }
-    // }else {
-    // List<ComponentCategoryEntity> componentlist =
-    // componentCategoryRepository.findAll();
-    // for(ComponentCategoryEntity entity : componentlist) {
-    // if(!entity.getComponentcategoryName().equals(categoryName) &&
-    // entity.getComponentcategoryName() == null) {
-    // System.out.println("2테스트");
-    // componentCategoryEntity.setComponentcategoryName(categoryName);
-    // componentCategoryRepository.save(componentCategoryEntity);
-    // return true;
-    // } else {
-    // return false;
-    // }
-    // }
-    // }
-    // return false;
-    // }
-
-
+    
+    // 카테고리 등록
     public boolean categorywrite(int categoryNo, String categoryName) {
         List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
         
@@ -99,5 +60,17 @@ public class AdminService {
             }
         }
         return true;
+    } // 카테고리 등록 end
+
+    // 완제품 전체 카테고리 
+    public List<CPCategoryEntity> CPcategorylist() {
+        List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
+        return CPlist;
+    }
+
+    // 부품 전체 카테고리
+    public List<ComponentCategoryEntity> CTlist() {
+        List<ComponentCategoryEntity> CTlist = componentCategoryRepository.findAll();
+        return CTlist;
     }
 }
