@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="header.html :: header" ></div>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-3">
+            <a th:href="@{/}" class="nav-link link-dark"></a>
+        </div>
+        <div class="col-md-2 offset-7">
+            <div> "로그인 시 글쓰기 가능합니다." </div> <!-- 로그인이 되어 있지 않은 경우 출력 -->
+            <a class="nav-link link-dark"><button class="form-control">글쓰기</button></a> <!-- 로그인이 되어있지 않으면 숨김처리 -->
+        </div>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <th width="5%"> 번호 </th>
+            <th width="50%"> 제목 </th>
+            <th width="20%"> 작성자 </th>
+            <th width="20%"> 작성일 </th>
+        </tr>
+        <tr>
+            <td>게시판 번호</td>
+            <td>
+                <a class="nav-link link-dark"> <!-- 게시판 번호 클릭하면 상세보기 페이지로 이동-->
+                    <span> 게시판 제목 </span>
+                </a>
+            </td>
+
+            <td> 작성자 </td>
+            <td> 작성일 </td>
+        </tr>
+    </table>
+
+    <!-- 페이지네이션(Pagination) -->
+        <ul class="pagination justify-content-center">
+            <li class="page-item"> <!-- 첫 페이지로 이동 -->
+                <a class="page-link" th:href="@{/}"> << </a>
+            </li>
+            <!-- 이전 페이지 이동 [만약 현 페이지가 첫 페이지면 이전 페이지 표시 X] -->
+            <li class="page-item">
+                <a class="page-link" href="#"> < </a>
+            </li>
+            <li class="page-item"> <!-- 페이지 번호 -->
+                <a class="page-link" href="#">  </a>
+            </li>
+            <!-- 다음 페이지 이동 [만약에 현 페이지가 마지막 페이지 이면 다음 페이지로 표시 X -->
+            <li class="page-item">
+                <a class="page-link" href="#"> > </a>
+            </li>
+            <li class="page-item"> <!-- 마지막 페이지 이동 -->
+                <a class="page-link" href="#"> >> </a>
+            </li>
+        </ul>
+
+    <!-- 검색창 -->
+    <form action="/board/boardlist" method="get"  class="col-md-5 offset-4 input-group my-3 g-0" >
+        <div class="col-md-1">
+            <select name="keyword" class="form-select " >
+                <option value="b_title"> 제목 </option>
+                <option value="b_contents"> 내용 </option>
+                <option value="b_write"> 작성자 </option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="type" name="search" class="form-control">
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="검색" class="form-control">
+        </div>
+    </form>
+</div>
+
+</div>
+</body>
+</html>

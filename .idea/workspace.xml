@@ -4,35 +4,91 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/AppStart.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/controller/AdminController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/controller/CartController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/controller/CompleteProductController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/controller/IndexController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/controller/MemberController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/controller/QnaController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/Dto/MemberDto$MemberDtoBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/Dto/MemberDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/CPCategoryEntity$CPCategoryEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/CPCategoryEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComentEntity$ComentEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComentEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/CompleteProductEntity$CompleteProductEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/CompleteProductEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComponentCategoryEntity$ComponentCategoryEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComponentCategoryEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComponentEntity$ComponentEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComponentEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/LinkEntity$LinkEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/LinkEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/MemberEntity$MemberEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/MemberEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/QnaEntity$QnaEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/QnaEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ReviewEntity$ReviewEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ReviewEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ReviewImgEntity$ReviewImgEntityBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ReviewImgEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/CPCategoryRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/ComentRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/CompleteProductRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/ComponentRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/LinkRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/MemberRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/QnaRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/ReviewImgRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/ReviewRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/service/MemberService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/static/css/allcomputer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/static/css/assembly.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/static/css/categoryregistration.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/static/css/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/static/js/signup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/admin/categoryregistration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/admin/productregistration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/admin/productwrite.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/cart/productcart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/cart/productpay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/completeproduct/allcomputer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/completeproduct/amdlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/completeproduct/detailpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/completeproduct/gamingpclist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/completeproduct/intellist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/completeproduct/officepclist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/member/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/member/qnalist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/member/qnaupdate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/member/qnaview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/member/qnawrite.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/member/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/main/templates/menu/assembly.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/repository/ComponentCategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ezen/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/allcomputer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/categoryregistration.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/categoryregistration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/EzenComputer.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/CompleteProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/CompleteProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Ezen/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/completeproduct/amdlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/completeproduct/amdlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/member/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/member/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/menu/AMDcompleteproduct.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/categoryregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/categoryregistration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +105,25 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="EzenComputer" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -72,22 +141,42 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="26T4wqhmOzleFx9Xp2YmRKJACcI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="프로젝트" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager">
     <configuration name="AppStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -130,6 +219,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
