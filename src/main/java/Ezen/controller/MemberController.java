@@ -17,11 +17,11 @@ public class MemberController { // member와 관련된 컨트롤러
     @Autowired
     HttpServletRequest request;
 
-    // 회원가입 페이지 이동 03-11 조지훈
+    // 회원가입 페이지 이동
     @GetMapping("/signup")
     public String signup() { return "member/signup"; }
 
-    // 로그인 페이지 이동 03-11 조지훈
+    // 로그인 페이지 이동
     @GetMapping("login")
     public String login() { return "member/login"; }
 
@@ -38,7 +38,10 @@ public class MemberController { // member와 관련된 컨트롤러
     }
 
     // 회원정보 찾기 페이지로 연결
-
+    @GetMapping("/findid")
+    public String findid() {
+        return "member/findid";
+    }
 
     // 아이디 중복 체크
     @GetMapping("/memberidcheck")

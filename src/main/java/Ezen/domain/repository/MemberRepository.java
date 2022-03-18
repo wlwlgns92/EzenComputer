@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface MemberRepository extends JpaRepository<MemberEntity, Integer> {
     // 엔티티 검색 findby 필드명
-//    Optional<MemberEntity> findBymemberid(String memberId);
-//    Optional<MemberEntity> findBymemberemail(String memberEmail);
+    /*Optional<MemberEntity> findBymemberid(String memberId);
+    Optional<MemberEntity> findBymemberemail(String memberEmail);*/
 }

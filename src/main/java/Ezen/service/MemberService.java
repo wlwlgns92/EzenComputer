@@ -5,7 +5,10 @@ import Ezen.domain.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.mail.internet.MimeMessage;
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class MemberService {
@@ -32,8 +35,21 @@ public class MemberService {
     }
 
     // 회원 아이디 찾기
+    public String findid(MemberEntity memberEntity) {
+        // 1. 모든 엔티티 호출
+        List<MemberEntity> memberEntities = memberRepository.findAll();
+        // 2. 반복문 이용한 모든 엔티티를 하나씩 꺼내보기
+        for(MemberEntity memberEntityfindid  :  memberEntities) {
+            // 3. 만약에 해당 엔티티가 이름과 이메일이 동일하면
+            if( memberEntity.getMemberName().equals(memberEntity.getMemberName()) &&
+                    memberEntity.getMemberEmail().equals(memberEntity.getMemberEmail())) {
+                return memberEntity.getMemberId(); // 4. 아이디를 반환한다
+            }
+        }  return null; // 5. 만약에 동일한 정보가 없으면
+    }
 
     // 회원 비밀번호 찾기
+
 
     // 아이디 중복 체크
     public boolean memberidcheck(String memberId) {
