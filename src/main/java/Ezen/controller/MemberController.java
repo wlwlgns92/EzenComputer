@@ -26,7 +26,7 @@ public class MemberController { // member와 관련된 컨트롤러
     public String login() { return "member/login"; }
 
     // 회원가입 처리 연결
-    @PostMapping("/member/signupcontroller")
+    @PostMapping("/signupcontroller")
     public String signupcontroller(MemberEntity memberEntity,
                                    @RequestParam("address1") String address1,
                                    @RequestParam("address2") String address2,
@@ -37,27 +37,8 @@ public class MemberController { // member와 관련된 컨트롤러
         return "redirect:/";
     }
 
-    // 로그인 처리
-    @PostMapping("/logincontroller")
-    @ResponseBody
-    public String logincontroller(@RequestBody MemberEntity memberEntity) {
-        MemberEntity loginEntity = memberService.login(memberEntity);
-          if(loginEntity != null){
-              HttpSession session = request.getSession(); // 서버내 세션 가져오기
-              session.setAttribute("loginEntity", loginEntity); // 세션 설정
-              // session.getAttribute("loginEntity"); // 세션 호출
-              return "1";
-          }else{
-              return "2";
-          }
-    }
-    // 로그아웃 처리
-    @GetMapping("/logout")
-    public String logout() {
-        HttpSession session = request.getSession();
-        session.setAttribute("loginEntity", null); // 기존 세션을 null로 변경
-        return "loginEntity"; // 로그아웃 성공시 메인 페이지로 이동
-    }
+    // 회원정보 찾기 페이지로 연결
+
 
     // 아이디 중복 체크
     @GetMapping("/memberidcheck")

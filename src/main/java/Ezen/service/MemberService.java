@@ -22,8 +22,8 @@ public class MemberService {
     public MemberEntity login(MemberEntity memberEntity) {
         List<MemberEntity> memberEntityList = memberRepository.findAll();
         for(MemberEntity memberEntitylogin : memberEntityList) {
-            if(memberEntity.getMemberId().equals(memberEntity.getMemberId())&&
-            memberEntity.getMemberPassword().equals(memberEntity.getMemberPassword())) {
+            if(memberEntity.getMemberId().equals(memberEntity.getMemberId()) &&
+                memberEntity.getMemberPassword().equals(memberEntity.getMemberPassword())) {
                 return MemberEntity.builder()
                         .memberId(memberEntity.getMemberId())
                         .memberNo(memberEntity.getMemberNo()) .build();
