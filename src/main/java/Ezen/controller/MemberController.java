@@ -4,6 +4,7 @@ import Ezen.domain.entity.MemberEntity;
 import Ezen.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -63,6 +64,27 @@ public class MemberController { // member와 관련된 컨트롤러
     @GetMapping("/findid")
     public String findid() {
         return "member/findid";
+    }
+
+    @PostMapping("/findidcontroller")
+    public String findid(MemberEntity memberEntity, Model model) {
+        String result = memberService.findid(memberEntity);
+        if(result != null) {
+            String findidmsg = "회원님의 아이디 : " + result;
+            model.addAttribute("findidmsg", findidmsg);
+        } else {
+            String findidmsg = "동일한 회원정보가 없습니다.";
+            model.addAttribute("findidmsg", findidmsg);
+        } return "/member/findid";
+    }
+
+    @PostMapping("/findpasswordcontroller")
+    public String findpassword(MemberEntity memberEntity, Model model) {
+        boolean result = memberService.findpassword(memberEntity);
+        if(result){
+            String findpasswordmsg = "해당 이메일로 임시 비밀번호를 발송 했습니다.";
+            model.addAttribute("findpasswordmsg", findpasswordmsg);
+        } return "/member/findid";
     }
 
     // 아이디 중복 체크
