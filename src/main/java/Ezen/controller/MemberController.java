@@ -37,6 +37,28 @@ public class MemberController { // member와 관련된 컨트롤러
         return "redirect:/";
     }
 
+    // 로그인처리 [스프링 시큐리티 사용시 로그인처리 메소드 제공 받기 때문에 사용X]
+    @PostMapping("/logincontroller")
+    @ResponseBody
+    public String logincontroller(@RequestBody MemberEntity memberEntity) {
+          MemberEntity loginEntity = memberService.login(memberEntity);
+          if(loginEntity != null) {
+             HttpSession session = request.getSession(); // 서버내 세션 가져오기
+              session.setAttribute( "loginEntity", loginEntity); // 세션 설정
+              return "1";
+          } else {
+              return "2";
+          }
+    }
+
+    // 로그아웃 처리
+    @GetMapping("/logout")
+    public String logout() {
+        HttpSession session = request.getSession();
+        session.setAttribute( "loginEntity", null); // 기존 세션을 null 로 변경
+        return "redirect:/"; // 로그아웃 성공시 메인페이지로 이동
+    }
+
     // 회원정보 찾기 페이지로 연결
     @GetMapping("/findid")
     public String findid() {
