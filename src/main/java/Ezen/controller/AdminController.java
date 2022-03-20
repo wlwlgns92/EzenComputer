@@ -51,4 +51,10 @@ public class AdminController {
             return "1";
         }
     }
+
+    @GetMapping("/productregistration")
+    public String productregistration() {
+        return "admin/productregistration";
+    }
+
 }
