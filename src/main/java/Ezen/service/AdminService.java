@@ -2,8 +2,10 @@ package Ezen.service;
 
 import Ezen.domain.entity.CPCategoryEntity;
 import Ezen.domain.entity.ComponentCategoryEntity;
+import Ezen.domain.entity.ComponentEntity;
 import Ezen.domain.repository.CPCategoryRepository;
 import Ezen.domain.repository.ComponentCategoryRepository;
+import Ezen.domain.repository.ComponentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +20,16 @@ public class AdminService {
 
     @Autowired
     ComponentCategoryRepository componentCategoryRepository;
-    
+
+    @Autowired
+    ComponentRepository componentRepository;
+
+
     // 카테고리 등록
     public boolean categorywrite(int categoryNo, String categoryName) {
         List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
-        
-        if (categoryNo == 1 ) { 
+
+        if (categoryNo == 1 ) {
             if(CPlist.size() == 0) {
                 CPCategoryEntity categoryEntity = new CPCategoryEntity();
                 categoryEntity.setCpcategoryName(categoryName);
@@ -31,7 +37,7 @@ public class AdminService {
                 return false;
             }
             for( CPCategoryEntity CPEntity : CPlist ) {
-                if(CPEntity.getCpcategoryName().equals(categoryName) ) {
+                if(CPEntity.getCpcategoryName() != null && CPEntity.getCpcategoryName().equals(categoryName) ) {
                     return true;
                 } else {
                     CPCategoryEntity categoryEntity = new CPCategoryEntity();
@@ -72,5 +78,16 @@ public class AdminService {
     public List<ComponentCategoryEntity> CTlist() {
         List<ComponentCategoryEntity> CTlist = componentCategoryRepository.findAll();
         return CTlist;
+    }
+
+    // 부품 등록 03.21
+    public boolean CTwrite (ComponentEntity componentEntity) {
+        try {
+            componentRepository.save(componentEntity);
+            return true;
+        }catch (Exception e) {
+            System.out.println("부품 등록 실패" + e);
+            return false;
+        }
     }
 }

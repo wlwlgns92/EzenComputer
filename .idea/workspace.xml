@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="카테고리 출력까지 완료">
+    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="카테고리 등록 작업중">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Ezen/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Ezen/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComponentCategoryEntity$ComponentCategoryEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComponentCategoryEntity$ComponentCategoryEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComponentCategoryEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/entity/ComponentCategoryEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Ezen/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Ezen/service/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/templates/admin/productregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/templates/admin/productregistration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/templates/admin/productwrite.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ComponentCategoryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ComponentCategoryEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ComponentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/domain/entity/ComponentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/productwrite.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

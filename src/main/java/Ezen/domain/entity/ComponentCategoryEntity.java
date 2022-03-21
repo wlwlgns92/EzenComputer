@@ -3,6 +3,8 @@ package Ezen.domain.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="componentcategory")
@@ -23,6 +25,7 @@ public class ComponentCategoryEntity {
     @Column(name="componentcategoryName")
     private String componentcategoryName;
     
-    // ComponentCategoryEntity 와 맵핑 예정
-    
+    // ComponentEntity 와 맵핑 예정
+    @OneToMany(mappedBy = "componentcategoryEntity", cascade = CascadeType.ALL)
+    private final List<ComponentEntity> componentEntities = new ArrayList<>();
 }

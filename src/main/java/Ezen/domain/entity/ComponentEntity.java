@@ -35,4 +35,7 @@ public class ComponentEntity {
     private String componentImg;
 
 
+    @ManyToOne
+    @JoinColumn(name="componentcategoryNo")
+    private ComponentCategoryEntity componentCategoryEntity;
 }

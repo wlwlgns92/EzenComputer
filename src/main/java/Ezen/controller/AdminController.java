@@ -2,17 +2,22 @@ package Ezen.controller;
 
 import Ezen.domain.entity.CPCategoryEntity;
 import Ezen.domain.entity.ComponentCategoryEntity;
+import Ezen.domain.entity.ComponentEntity;
 import Ezen.service.AdminService;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping(value = "/admin")
@@ -52,9 +57,41 @@ public class AdminController {
         }
     }
 
+    // 제품 등록 페이지 맵핑
     @GetMapping("/productregistration")
-    public String productregistration() {
+    public String productregistration(Model model) {
+        List<CPCategoryEntity> cplist = adminService.CPcategorylist();
+        List<ComponentCategoryEntity> ctlist = adminService.CTlist();
+        model.addAttribute("cplist", cplist);
+        model.addAttribute("ctlist", ctlist);
         return "admin/productregistration";
     }
 
+    // 부품 제품등록
+    @PostMapping("CTwrite")
+    public String CTwrite(
+        @RequestParam("CTcategoryNo") String CTcategoryNo,
+        @RequestParam("componentTitle") String componentTitle,
+        @RequestParam("componentPrice") String componentPrice,
+        @RequestParam("componentStock") String componentStock,
+        @RequestParam("componentImg") MultipartFile file
+    ) {
+        try{
+            String uuidfile = null;
+
+            if(!file.getOriginalFilename().equals("")) {
+                UUID uuid = UUID.randomUUID();
+                uuidfile = uuid.toString() + "_" + file.getOriginalFilename().replaceAll("_", "-");
+                String dir = ""; // 경로
+                String filepath = dir + "/" + uuidfile;
+                file.transferTo(new File(filepath));
+            }
+            adminService.CTwrite(ComponentEntity.builder()
+
+                    .build());
+        }catch(Exception e){
+
+        }
+        return "";
+    }
 }
