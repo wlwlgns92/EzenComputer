@@ -49,14 +49,14 @@
             </ul>
 
             <!-- 로그인, 회원가입, 로그아웃-->
-            <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <div class="col-md-3 text-end">
             <form>
                 <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
             </form>
-
-                <a th:href="@{/member/login}"><button type="button" class="btn btn-link me-2">로그인</button></a>
+                <button th:if="${session.loginEntity == null}" type="button" class="btn btn-outline-info" data-bs-target="#modallogin" data-bs-toggle="modal">로그인모달</button>
+                <a th:if="${session.loginEntity == null}" th:href="@{/member/login}"><button type="button" class="btn btn-outline-info">로그인</button></a>
                 <a th:href="@{/member/signup}"><button type="button" class="btn btn-link">회원가입</button></a>
-                <a><button type="button" class="btn btn-link me-2">로그아웃</button></a>
+                <a th:if="${session.loginEntity != null}" th:href="@{/member/logout}"><button type="button" class="btn btn-outline-info">로그아웃</button></a>
             </div>
         </header>
     </div> <!-- 헤더 메뉴 End -->
@@ -67,7 +67,7 @@
             <div class="modal-content rounded-5 shadow">
                 <div class="modal-header p-5 pb-4 border-bottom-0">
                     <h2 class="fw-bold mb-0">Ezen Computer</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>    <!-- 닫기 버튼 -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- 닫기 버튼 -->
                 </div>
 
                 <div class="modal-body p-5 pt-0">
@@ -80,7 +80,8 @@
                         <label for="memberLoginpassword">비밀번호</label>
                     </div>
                     <div id="loginfailmsg" class="text-danger text-center m-2"></div> <!-- 로그인 실패시 메시지 -->
-                    <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" onclick="login()">로그인</button> <!-- 로그인 버튼 -->
+
+                    <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" onclick="login();">로그인</button> <!-- 로그인 버튼 -->
 
                     <a th:href="@{/member/findid}"><small class="text-muted px-2">회원정보찾기</small></a>
                 </div>

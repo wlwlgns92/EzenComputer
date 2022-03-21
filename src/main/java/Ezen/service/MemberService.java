@@ -48,8 +48,16 @@ public class MemberService {
         }  return null; // 5. 만약에 동일한 정보가 없으면
     }
 
-    // 회원 비밀번호 찾기
-
+    // 회원 비밀번호 찾기 → 임시 비밀번호 메일 전송
+    public boolean findpassword(MemberEntity memberEntity) {
+        List<MemberEntity> memberEntities = memberRepository.findAll();
+        for(MemberEntity memberEntityfindpassword : memberEntities) {
+            if(memberEntity.getMemberId().equals(memberEntity.getMemberId()) &&
+                memberEntity.getMemberEmail().equals(memberEntity.getMemberEmail())) {
+                return true;
+            }
+        } return false;
+    }
 
     // 아이디 중복 체크
     public boolean memberidcheck(String memberId) {
