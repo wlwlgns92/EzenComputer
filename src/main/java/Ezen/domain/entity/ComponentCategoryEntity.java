@@ -26,6 +26,6 @@ public class ComponentCategoryEntity {
     private String componentcategoryName;
     
     // ComponentEntity 와 맵핑 예정
-    @OneToMany(mappedBy = "componentcategoryEntity", cascade = CascadeType.ALL)
-    private final List<ComponentEntity> componentEntities = new ArrayList<>();
+    @OneToMany(mappedBy = "componentCategoryEntity", cascade = CascadeType.ALL)
+    private List<ComponentEntity> componentEntities = new ArrayList<>();
 }

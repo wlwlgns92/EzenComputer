@@ -68,30 +68,50 @@ public class AdminController {
     }
 
     // 부품 제품등록
-    @PostMapping("CTwrite")
+    @PostMapping("/CTwrite")
     public String CTwrite(
-        @RequestParam("CTcategoryNo") String CTcategoryNo,
+        @RequestParam("componentcategoryNo") int componentCategoryNo,
         @RequestParam("componentTitle") String componentTitle,
-        @RequestParam("componentPrice") String componentPrice,
-        @RequestParam("componentStock") String componentStock,
+        @RequestParam("componentMaker") String componentMaker,
+        @RequestParam("componentPrice") int componentPrice,
+        @RequestParam("componentStock") int componentStock,
         @RequestParam("componentImg") MultipartFile file
     ) {
+      /*  System.out.println("###########" + componentCategoryNo);
+        System.out.println("###########" + componentTitle);
+        System.out.println("###########" + componentPrice);
+        System.out.println("###########" + componentStock);
+        System.out.println("###########" + file.toString()); */
+
         try{
             String uuidfile = null;
-
             if(!file.getOriginalFilename().equals("")) {
                 UUID uuid = UUID.randomUUID();
                 uuidfile = uuid.toString() + "_" + file.getOriginalFilename().replaceAll("_", "-");
-                String dir = ""; // 경로
+                String dir = "C:\\EzenComputer\\build\\resources\\main\\static\\componentimg"; // 경로
                 String filepath = dir + "/" + uuidfile;
-                file.transferTo(new File(filepath));
-            }
-            adminService.CTwrite(ComponentEntity.builder()
 
-                    .build());
+                file.transferTo(new File(filepath));
+                System.out.println("########### transfer");
+            }
+            // CTcategoryNo,componentTitle,componentPrice,componentStock,uuidfile
+            ComponentCategoryEntity CTno = adminService.ctcategory(componentCategoryNo);
+            adminService.CTwrite(
+                    ComponentEntity.builder()
+                            .componentTitle(componentTitle)
+                            .componentMaker(componentMaker)
+                            .componentPrice(componentPrice)
+                            .componentStock(componentStock)
+                            .componentImg(uuidfile)
+                            .componentCategoryEntity(CTno)
+                            .build()
+            );
+            return "main";
         }catch(Exception e){
 
         }
         return "";
     }
+
+
 }

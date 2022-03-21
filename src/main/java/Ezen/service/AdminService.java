@@ -80,14 +80,28 @@ public class AdminService {
         return CTlist;
     }
 
-    // 부품 등록 03.21
+    // 부품 등록 03.21 int CTcategoryNo, String componentTitle, String componentPrice, String componentStock, String uuidfile
     public boolean CTwrite (ComponentEntity componentEntity) {
         try {
-            componentRepository.save(componentEntity);
+            ComponentCategoryEntity ctcategory =  ctcategory(componentEntity.getComponentCategoryEntity().getComponentcategoryNo());
+            int componentNo = componentRepository.save(componentEntity).getComponentNo();
+            ComponentEntity entity = componentRepository.findById(componentNo).get();
+            ctcategory.getComponentEntities().add(entity);
             return true;
         }catch (Exception e) {
             System.out.println("부품 등록 실패" + e);
             return false;
         }
     }
+
+    // 부품 카테고리 번호로 카테고리 Entity 가져오기
+    public ComponentCategoryEntity ctcategory (int ctNo) {
+        ComponentCategoryEntity entity = componentCategoryRepository.findById(ctNo).get();
+        if(entity != null) {
+            return entity;
+        }else {
+            return null;
+        }
+    }
+
 }
