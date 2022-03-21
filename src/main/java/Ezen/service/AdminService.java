@@ -7,6 +7,7 @@ import Ezen.domain.repository.ComponentCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Service
@@ -17,63 +18,59 @@ public class AdminService {
 
     @Autowired
     ComponentCategoryRepository componentCategoryRepository;
-
-
-//    public boolean categorywrite(String categoryNo, String categoryName){
-//
-//        CPCategoryEntity cpCategoryEntity = null;
-//        ComponentCategoryEntity componentCategoryEntity = null;
-//
-//        System.out.println(categoryNo);
-//        System.out.println(categoryName);
-//
-//        if(categoryNo.equals("1")) {
-//            List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
-//            for(CPCategoryEntity entity : CPlist) {
-//                if(!entity.getCpcategoryName().equals(categoryName) && entity.getCpcategoryName() == null) {
-//                    cpCategoryEntity.setCpcategoryName(categoryName);
-//                    cpCategoryRepository.save(cpCategoryEntity);
-//                    return true;
-//                }
-//                else {
-//                    return false;
-//                }
-//            }
-//        }else {
-//            List<ComponentCategoryEntity> componentlist = componentCategoryRepository.findAll();
-//            for(ComponentCategoryEntity entity : componentlist) {
-//                if(!entity.getComponentcategoryName().equals(categoryName) && entity.getComponentcategoryName() == null) {
-//                    System.out.println("2테스트");
-//                    componentCategoryEntity.setComponentcategoryName(categoryName);
-//                    componentCategoryRepository.save(componentCategoryEntity);
-//                    return true;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        }
-//        return false;
-//    }
-
+    
+    // 카테고리 등록
     public boolean categorywrite(int categoryNo, String categoryName) {
-
-        
         List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
-        if (categoryNo == 1) {
-            for (CPCategoryEntity entity : CPlist) {
-                if (entity.getCpcategoryName().equals(categoryName)) {
-                    System.out.println("if 등록실패");
+        
+        if (categoryNo == 1 ) { 
+            if(CPlist.size() == 0) {
+                CPCategoryEntity categoryEntity = new CPCategoryEntity();
+                categoryEntity.setCpcategoryName(categoryName);
+                cpCategoryRepository.save(categoryEntity);
+                return false;
+            }
+            for( CPCategoryEntity CPEntity : CPlist ) {
+                if(CPEntity.getCpcategoryName().equals(categoryName) ) {
                     return true;
-                }else {
-                    System.out.println("else 들어왔다.");
-                    CPCategoryEntity cpCategoryEntity = new CPCategoryEntity();
-                     cpCategoryEntity.setCpcategoryName(categoryName);
-                     cpCategoryRepository.save(cpCategoryEntity);
-                     System.out.println("엔티티 등록성공.");
-                     return false;
+                } else {
+                    CPCategoryEntity categoryEntity = new CPCategoryEntity();
+                    categoryEntity.setCpcategoryName(categoryName);
+                    cpCategoryRepository.save(categoryEntity);
+                    return false;
+                }
+            }
+        } else {
+            List<ComponentCategoryEntity> componentlist = componentCategoryRepository.findAll();
+            if(componentlist.size() == 0) {
+                ComponentCategoryEntity componentEntity = new ComponentCategoryEntity();
+                componentEntity.setComponentcategoryName(categoryName);
+                componentCategoryRepository.save(componentEntity);
+                return false;
+            }
+            for( ComponentCategoryEntity ComponentEntity : componentlist ) {
+                if(ComponentEntity.getComponentcategoryName().equals(categoryName) ) {
+                    return true;
+                } else {
+                    ComponentCategoryEntity componentEntity = new ComponentCategoryEntity();
+                    componentEntity.setComponentcategoryName(categoryName);
+                    componentCategoryRepository.save(componentEntity);
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
+    } // 카테고리 등록 end
+
+    // 완제품 전체 카테고리 
+    public List<CPCategoryEntity> CPcategorylist() {
+        List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
+        return CPlist;
+    }
+
+    // 부품 전체 카테고리
+    public List<ComponentCategoryEntity> CTlist() {
+        List<ComponentCategoryEntity> CTlist = componentCategoryRepository.findAll();
+        return CTlist;
     }
 }

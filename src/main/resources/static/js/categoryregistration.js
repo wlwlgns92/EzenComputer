@@ -4,15 +4,13 @@ function categoryregistration() {
 
     $.ajax({
         url: "/admin/categorywrite",
-        date:{"categoryNo" : categoryNo, "categoryName" : categoryName},
-        method: "get",
+        data: { "categoryNo": categoryNo, "categoryName": categoryName },
         success: function(result) {
-            if(result == 1) {
+            if (result == 1) {
                 alert("등록성공");
-            }else {
-                alert("등록실패");
+            } else {
+                alert("등록 실패");
             }
         }
     });
-
 }

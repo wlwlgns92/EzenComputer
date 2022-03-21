@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="카테고리 등록 작업중">
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/domain/repository/ComponentCategoryRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/main/Ezen/service/AdminService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/main/static/js/categoryregistration.js" afterDir="false" />
+    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="카테고리 출력까지 완료">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,7 +98,7 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager">
-    <configuration name="AppStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="AppStart" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ezen.AppStart" />
       <module name="EzenComputer.main" />
       <extension name="coverage">
@@ -112,11 +111,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="애플리케이션.AppStart" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -127,14 +121,28 @@
       <option name="presentableId" value="Default" />
       <updated>1647434485094</updated>
     </task>
-    <task id="LOCAL-00001" summary="카테고리 등록 작업중">
-      <created>1647503676997</created>
+    <task id="LOCAL-00001" summary="카테고리 DB저장 완료">
+      <created>1647529506867</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1647503676997</updated>
+      <updated>1647529506867</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="카테고리 출력까지 완료">
+      <created>1647530817522</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1647530817522</updated>
+    </task>
+    <task id="LOCAL-00003" summary="카테고리 출력까지 완료">
+      <created>1647530877098</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1647530877098</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,8 +159,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Changes" />
-    <MESSAGE value="카테고리 등록 작업중" />
-    <option name="LAST_COMMIT_MESSAGE" value="카테고리 등록 작업중" />
+    <MESSAGE value="카테고리 DB저장 완료" />
+    <MESSAGE value="카테고리 출력까지 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="카테고리 출력까지 완료" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
