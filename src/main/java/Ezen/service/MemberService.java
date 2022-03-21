@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -82,8 +83,17 @@ public class MemberService {
         } return false; // 중복 없음
     }
     
-    
-    
+    // 회원번호 → 회원정보 반환
+    public MemberEntity getMemberEntity(int memberNo) {
+        Optional<MemberEntity> entityOptional = memberRepository.findById(memberNo);
+        return MemberEntity.builder()
+                .memberId(entityOptional.get().getMemberId())
+                .memberName(entityOptional.get().getMemberName())
+                .memberPhone(entityOptional.get().getMemberPhone())
+                .memberEmail(entityOptional.get().getMemberEmail())
+                .memberAddress(entityOptional.get().getMemberAddress())
+                .build();
+    }
     
     
     

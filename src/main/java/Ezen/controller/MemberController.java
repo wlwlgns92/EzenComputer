@@ -111,5 +111,14 @@ public class MemberController { // member와 관련된 컨트롤러
         }
     }
 
+    // 내 정보(마이페이지) 연결
+    @GetMapping("/member/info")
+    public String emailcheck(Model model) {
+        HttpSession session = request.getSession();
+        MemberEntity loginEntity = (MemberEntity)  session.getAttribute("loginEntity");
+        MemberEntity memberEntity = memberService.getMemberEntity(loginEntity.getMemberNo());
+        model.addAttribute("memberEntity", memberEntity);
+        return "member/info";
+    }
 
 }
