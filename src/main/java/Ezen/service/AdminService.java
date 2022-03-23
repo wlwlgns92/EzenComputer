@@ -108,6 +108,7 @@ public class AdminService {
     public List<ComponentEntity> componentlist (int componentcategoryNo) {
         ComponentCategoryEntity entity = componentCategoryRepository.findById(componentcategoryNo).get();
         List<ComponentEntity> CTEntity = entity.getComponentEntities();
+
         return CTEntity;
     }
 

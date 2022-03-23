@@ -44,13 +44,13 @@
                         <div class="row">
                             <div class="col-8" style="border: solid 1px black;">
                                 <div id="componentlist" style="height: 30rem;">
-                                    <ul>
-                                        <li class="componentdata">
-                                            <div></div> <!-- 상품 이미지 -->
-                                            <div></div> <!-- 상품 정보 -->
-                                            <div></div> <!-- 상품 가격 버튼 -->
-                                        </li>
-                                    </ul>
+                                    <table id="componenttable">
+                                        <tr class="componentdata" th:each="ctinfo : ${CTinfo}">
+                                            <td><div th:text="${ctinfo.componentTitle}"></div></td> <!-- 상품 이미지 -->
+                                            <td>><div></div></td> <!-- 상품 정보 -->
+                                            <td><div></div></td> <!-- 상품 가격 버튼 -->
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                             <div class="col-3" style="border: solid 1px black;">

@@ -73,11 +73,12 @@ public class AdminController {
         @RequestParam("componentStock") int componentStock,
         @RequestParam("componentImg") MultipartFile file
     ) {
-      /*  System.out.println("###########" + componentCategoryNo);
+        System.out.println("###########" + componentCategoryNo);
         System.out.println("###########" + componentTitle);
-        System.out.println("###########" + componentPrice);
+        System.out.println("###########" + componentMaker);
+        System.out.println("###########" + componentPrice );
         System.out.println("###########" + componentStock);
-        System.out.println("###########" + file.toString()); */
+
 
         try{
             String uuidfile = null;
@@ -86,9 +87,8 @@ public class AdminController {
                 uuidfile = uuid.toString() + "_" + file.getOriginalFilename().replaceAll("_", "-");
                 String dir = "C:\\EzenComputer\\build\\resources\\main\\static\\componentimg"; // 경로
                 String filepath = dir + "/" + uuidfile;
-
                 file.transferTo(new File(filepath));
-                System.out.println("########### transfer");
+
             }
             // CTcategoryNo,componentTitle,componentPrice,componentStock,uuidfile
             ComponentCategoryEntity CTno = adminService.ctcategory(componentCategoryNo);
@@ -104,17 +104,24 @@ public class AdminController {
             );
             return "main";
         }catch(Exception e){
-
+            System.out.println("###########에러" + e);
         }
         return "";
     }
 
     // 카테고리 번호를 받아서 해당 제품 출력
+//    @GetMapping("/CTlist")
+//    @ResponseBody
+//    public List<ComponentEntity> CTlist(@RequestParam("componentcategoryNo") int componentcategoryNo) {
+//        List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
+//        return entity;
+//    }
+
     @GetMapping("/CTlist")
-    @ResponseBody
-    public List<ComponentEntity> CTlist(@RequestParam("componentcategoryNo") int componentcategoryNo) {
+    public String CTlist(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
         List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
-        return entity;
+        model.addAttribute("CTinfo" , entity);
+        return "admin/productregistration :: #componentlist";
     }
 
 }

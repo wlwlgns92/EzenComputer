@@ -1,9 +1,9 @@
 function CTlist(componentcategoryNo) {
     $.ajax({
         url: "/admin/CTlist",
-        data: {"componentcategoryNo" : componentcategoryNo },
-        success: function(result) {
+        data: {"componentcategoryNo" : componentcategoryNo }
 
-        }
+    }).done(function(fragment) {
+    $("#componentlist").replaceWith(fragment);
     });
 }
