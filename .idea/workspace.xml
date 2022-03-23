@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="카테고리 출력까지 완료" />
+    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="데탑" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647797079819</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="데탑">
+      <created>1648042378417</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648042378417</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,7 +171,8 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="카테고리 DB저장 완료" />
     <MESSAGE value="카테고리 출력까지 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="카테고리 출력까지 완료" />
+    <MESSAGE value="데탑" />
+    <option name="LAST_COMMIT_MESSAGE" value="데탑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
