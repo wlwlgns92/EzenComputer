@@ -25,6 +25,9 @@ public class ComponentEntity {
     @Column(name = "componentTitle") // 부품 제목
     private String componentTitle;
 
+    @Column(name = "componentMaker") // 제조사
+    private String componentMaker;
+
     @Column(name = "componentPrice") // 부품 가격
     private int componentPrice;
 
@@ -35,4 +38,7 @@ public class ComponentEntity {
     private String componentImg;
 
 
+    @ManyToOne
+    @JoinColumn(name="componentcategoryNo")
+    private ComponentCategoryEntity componentCategoryEntity;
 }
