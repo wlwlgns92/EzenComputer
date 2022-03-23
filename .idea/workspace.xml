@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="카테고리 출력까지 완료">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" afterDir="false" />
-    </list>
+    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="카테고리 출력까지 완료" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647530877098</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="카테고리 출력까지 완료">
+      <created>1647797079819</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647797079819</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
