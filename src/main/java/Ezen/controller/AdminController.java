@@ -42,10 +42,6 @@ public class AdminController {
     @ResponseBody
     public String categorywrite (@RequestParam("categoryNo") int categoryNo,
                                  @RequestParam("categoryName") String categoryName) {
-
-        System.out.println("##################"+categoryNo);
-        System.out.println("##################"+categoryName);
-
       boolean result = adminService.categorywrite(categoryNo,categoryName);
 
         if(result) {
@@ -113,5 +109,12 @@ public class AdminController {
         return "";
     }
 
+    // 카테고리 번호를 받아서 해당 제품 출력
+    @GetMapping("/CTlist")
+    @ResponseBody
+    public List<ComponentEntity> CTlist(@RequestParam("componentcategoryNo") int componentcategoryNo) {
+        List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
+        return entity;
+    }
 
 }

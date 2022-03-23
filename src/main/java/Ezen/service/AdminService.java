@@ -80,7 +80,7 @@ public class AdminService {
         return CTlist;
     }
 
-    // 부품 등록 03.21 int CTcategoryNo, String componentTitle, String componentPrice, String componentStock, String uuidfile
+    // 부품 등록 03.21
     public boolean CTwrite (ComponentEntity componentEntity) {
         try {
             ComponentCategoryEntity ctcategory =  ctcategory(componentEntity.getComponentCategoryEntity().getComponentcategoryNo());
@@ -102,6 +102,13 @@ public class AdminService {
         }else {
             return null;
         }
+    }
+
+    // 카테고리 번호로 등록된 부품 가저오기
+    public List<ComponentEntity> componentlist (int componentcategoryNo) {
+        ComponentCategoryEntity entity = componentCategoryRepository.findById(componentcategoryNo).get();
+        List<ComponentEntity> CTEntity = entity.getComponentEntities();
+        return CTEntity;
     }
 
 }
