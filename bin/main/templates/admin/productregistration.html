@@ -44,13 +44,26 @@
                         <div class="row">
                             <div class="col-8" style="border: solid 1px black;">
                                 <div id="componentlist" style="height: 30rem;">
-                                    <ul>
-                                        <li class="componentdata">
-                                            <div></div> <!-- 상품 이미지 -->
-                                            <div></div> <!-- 상품 정보 -->
-                                            <div></div> <!-- 상품 가격 버튼 -->
-                                        </li>
-                                    </ul>
+                                    <table id="componenttable">
+                                        <tr class="componentdata" th:each="ctinfo : ${CTinfo}">
+                                            <td id="imgtd">
+                                                <div id="imgtddiv">
+                                                    <img th:src="@{'/componentimg/' + ${ctinfo.componentImg}}" alt="">
+                                                </div>
+                                            </td> <!-- 상품 이미지 -->
+                                            <td id="ctinfotd">
+                                                <div id="ctinfodiv">
+                                                    <span>제품명 : </span><span th:text="${ctinfo.componentTitle}"> </span><br>
+                                                    <span>제조사 : </span><span th:text="${ctinfo.componentMaker}"></span>
+                                                </div>
+                                            </td> <!-- 상품 정보 -->
+                                            <td>
+                                                <div id="buttondiv">
+                                                    <button type="button" th:onclick="CTpick([[${ctinfo.componentNo}]]);">담기</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                             <div class="col-3" style="border: solid 1px black;">
@@ -61,7 +74,14 @@
                                     <div id="componentselect">
                                         <div class="parts" th:each="CTselect : ${ctlist}">
                                             <div>
-                                                <button type="button" th:onclick="CTlist([[${CTselect.componentcategoryNo}]]);" th:text="${CTselect.componentcategoryName}"></button>
+                                                <a href="#" type="button"
+                                                th:onclick="CTlist([[${CTselect.componentcategoryNo}]]);"
+                                                th:text="${CTselect.componentcategoryName}"></a>
+                                               <!-- <input type="button" th:onclick="CT list([[${CTselect.componentcategoryNo}]]);"
+                                                th:value="${CTselect.componentcategoryName}">
+                                                <button type="button"
+                                                    th:onclick="CTlist([[${CTselect.componentcategoryNo}]]);"
+                                                    th:text="${CTselect.componentcategoryName}"></button> -->
                                             </div>
                                             <div class="data">
                                                 <ul>

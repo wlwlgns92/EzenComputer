@@ -112,4 +112,12 @@ public class AdminService {
         return CTEntity;
     }
 
+    
+    // 담기 버튼 클릭시 해당 카테고리 밑에 선택한 부품 정보 출력
+    public ComponentEntity CTpick (int componentNo) {
+        ComponentEntity entity = 
+
+        return null;
+    }
+
 }

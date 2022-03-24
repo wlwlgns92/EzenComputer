@@ -7,3 +7,12 @@ function CTlist(componentcategoryNo) {
     $("#componentlist").replaceWith(fragment);
     });
 }
+
+function CTpick (componentNo) {
+
+    $.ajax({
+        url: "/admin/CTpick",
+        data: {"componentNo" : componentNo},
+        method: "post"
+    });
+}
