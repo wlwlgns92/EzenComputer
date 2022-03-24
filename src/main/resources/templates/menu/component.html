@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/component.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div th:replace="header.html :: header"></div>
+
+    <div class="container">
+        <div class="row">
+            <div id="searchbox">
+                <input type="text"> <button type="button">검색</button>
+            </div>
+            <div id="categorybox"><!-- 카테고리 선택 하면 리스트에 출력 -->
+                <ul>
+                    <li><a href="#">CPU</a></li> <!-- 반복문 -->
+                </ul>
+            </div>
+
+            <div>
+                <!-- 리스트 출력 -->
+                <div>
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <span>상품이름</span>
+                        <span>제조사</span>
+                    </div>
+                    <div>
+                        <span>가격</span>
+                        <button>장바구니</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
