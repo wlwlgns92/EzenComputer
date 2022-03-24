@@ -8,11 +8,12 @@ function CTlist(componentcategoryNo) {
     });
 }
 
-function CTpick (componentNo) {
-
+function CTpick (componentNo, componentcategoryNo) {
     $.ajax({
         url: "/admin/CTpick",
-        data: {"componentNo" : componentNo},
+        data: {"componentNo" : componentNo, "componentcategoryNo" : componentcategoryNo},
         method: "post"
+    }).done(function(fragment) {
+    $('#data'+componentcategoryNo).replaceWith(fragment);
     });
 }

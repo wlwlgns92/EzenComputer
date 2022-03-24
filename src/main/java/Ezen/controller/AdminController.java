@@ -109,14 +109,6 @@ public class AdminController {
         return "";
     }
 
-    // 카테고리 번호를 받아서 해당 제품 출력
-//    @GetMapping("/CTlist")
-//    @ResponseBody
-//    public List<ComponentEntity> CTlist(@RequestParam("componentcategoryNo") int componentcategoryNo) {
-//        List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
-//        return entity;
-//    }
-
     @GetMapping("/CTlist")
     public String CTlist(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
         List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
@@ -126,9 +118,11 @@ public class AdminController {
 
     // 담기 버튼 클릭시 해당 카테고리 밑에 선택한 부품 정보 출력
     @PostMapping("/CTpick")
-    @ResponseBody
-    public String CTpick (@RequestParam("componentNo") int componentNo) {
-
-        return "";
+    public String CTpick (@RequestParam("componentNo") int componentNo, @RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
+        ComponentEntity entity = adminService.CTpick(componentNo);
+        model.addAttribute("ctdata" , entity);
+        return "admin/productregistration :: .data"+componentcategoryNo;
     }
+
+
 }

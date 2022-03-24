@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="등록 작업중" />
-    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="데탑">
+    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="선택시 카테고리밑에 선택한 부품 정보 출력 작업중">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Ezen/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Ezen/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Ezen/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Ezen/service/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/static/js/productregistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/static/js/productregistration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/templates/admin/productregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/templates/admin/productregistration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ezen/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ezen/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/productregistration.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/productregistration.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/productregistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/productregistration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/productregistration.html" afterDir="false" />
     </list>
@@ -55,7 +57,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -168,7 +169,6 @@
       <option name="project" value="LOCAL" />
       <updated>1647849203837</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
     <task id="LOCAL-00007" summary="등록 작업중">
       <created>1648042268570</created>
       <option name="number" value="00007" />
@@ -176,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648042268570</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="선택시 카테고리밑에 선택한 부품 정보 출력 작업중">
+      <created>1648096921961</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1648096921961</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,7 +204,8 @@
     <MESSAGE value="카테고리 출력까지 완료" />
     <MESSAGE value="데탑" />
     <MESSAGE value="등록 작업중" />
-    <option name="LAST_COMMIT_MESSAGE" value="등록 작업중" />
+    <MESSAGE value="선택시 카테고리밑에 선택한 부품 정보 출력 작업중" />
+    <option name="LAST_COMMIT_MESSAGE" value="선택시 카테고리밑에 선택한 부품 정보 출력 작업중" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

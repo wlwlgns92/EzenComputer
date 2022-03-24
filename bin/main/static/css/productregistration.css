@@ -61,5 +61,5 @@ height: 100px;
     text-decoration: none;
  }
 .parts ul{
-    display: none;
+    list-style: none;
 }
