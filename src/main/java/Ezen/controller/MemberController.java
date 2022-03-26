@@ -39,17 +39,25 @@ public class MemberController { // member와 관련된 컨트롤러
 
     // 로그인 처리
     @PostMapping("/logincontroller")
-    @ResponseBody
-    public String logincontroller(@RequestBody MemberEntity memberEntity) {
-        MemberEntity loginEntity = memberService.login(memberEntity);
-          if(loginEntity != null){
-              HttpSession session = request.getSession(); // 서버내 세션 가져오기
-              session.setAttribute("loginEntity", loginEntity); // 세션 설정
-              // session.getAttribute("loginEntity"); // 세션 호출
-              return "1";
-          }else{
-              return "2";
-          }
+    public String logincontroller(@RequestParam("memberId") String memberId,
+                                    @RequestParam("memberPw") String memberPw) {
+            MemberEntity memberEntity = memberService.login(memberId, memberPw);
+
+            if(memberEntity != null)  {
+                HttpSession session = request.getSession();
+                session.setAttribute("loginEntity", memberEntity);
+                return "main";
+            }
+        return "";
+        // MemberEntity loginEntity = memberService.login(memberEntity);
+        //   if(loginEntity != null){
+        //       HttpSession session = request.getSession(); // 서버내 세션 가져오기
+        //       session.setAttribute("loginEntity", loginEntity); // 세션 설정
+        //       // session.getAttribute("loginEntity"); // 세션 호출
+        //       return "1";
+        //   }else{
+        //       return "2";
+        //   }
     }
     // 로그아웃 처리
     @GetMapping("/logout")

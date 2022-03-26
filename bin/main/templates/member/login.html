@@ -14,19 +14,21 @@
         <div class="row" id="loginrow">
             <div class="row" style="border: 1px solid black;">
                 <!-- 로그인 박스 div -->
-                <div class="col-md-8">
-                    <div class="form-floating mb-3" id="iddiv">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="아이디">
-                        <label for="floatingInput">아이디</label>
+                <form action="/member/logincontroller" method="post">
+                    <div class="col-md-8">
+                        <div class="form-floating mb-3" id="iddiv">
+                            <input type="text" class="form-control" id="memberId" placeholder="아이디" name="memberId">
+                            <label for="memberId">아이디</label>
+                        </div>
+                        <div class="form-floating" id="passworddiv">
+                            <input type="password" class="form-control" id="memberPw" placeholder="비밀번호" name="memberPw">
+                            <label for="memberPw">비밀번호</label>
+                        </div>
                     </div>
-                    <div class="form-floating" id="passworddiv">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="비밀번호">
-                        <label for="floatingPassword">비밀번호</label>
+                    <div class="col-md-3">
+                        <input type="submit" value="로그인">
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <button>로그인</button>
-                </div>
+                </form>
             </div>
             <div style="border: 1px solid black;">
                 <span> 회원이 아니시라면 회원가입을 해주세요!</span> <button>회원가입</button><br>
