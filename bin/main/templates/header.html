@@ -41,7 +41,7 @@
             <!-- 검색창 div end -->
             <div class="col-md-3">
                 <!-- 로그인 관련 div -->
-                <a th:href="@{/member/login}"><button type="button"> 로그인</button></a>
+                <a th:if="${session.loginEntity == null}" th:href="@{/member/login}"><button>로그인</button></a>
                 <a th:href="@{/member/signup}">
                     <button type="button"> 회원가입</button>
                 </a>
