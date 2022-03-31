@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="ㅎㅎ">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7ee5b14a-c772-4f50-bd1b-341a34ad9f36" name="변경" comment="ㅎㅎ" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,12 +159,12 @@
       <option name="project" value="LOCAL" />
       <updated>1648058717145</updated>
     </task>
-    <task id="LOCAL-00007" summary="등록 작업중">
-      <created>1648042268570</created>
+    <task id="LOCAL-00007" summary="ㅎㅎ">
+      <created>1648269627838</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1648042268570</updated>
+      <updated>1648269627838</updated>
     </task>
     <task id="LOCAL-00008" summary="선택시 카테고리밑에 선택한 부품 정보 출력 작업중">
       <created>1648096921961</created>
@@ -175,7 +173,7 @@
       <option name="project" value="LOCAL" />
       <updated>1648096921961</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,7 +196,8 @@
     <MESSAGE value="등록 작업중" />
     <MESSAGE value="드디어 출력완료" />
     <MESSAGE value="선택시 카테고리밑에 선택한 부품 정보 출력 작업중" />
-    <option name="LAST_COMMIT_MESSAGE" value="선택시 카테고리밑에 선택한 부품 정보 출력 작업중" />
+    <MESSAGE value="ㅎㅎ" />
+    <option name="LAST_COMMIT_MESSAGE" value="ㅎㅎ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
