@@ -8,13 +8,13 @@
 </head>
 
 <body>
-
+<script th:src="@{/js/main.js}"></script>
     <div th:replace="header.html :: header"></div>
     <div class="container">
         <div class="row" id="loginrow">
             <div class="row" style="border: 1px solid black;">
                 <!-- 로그인 박스 div -->
-                <form action="/member/logincontroller" method="post">
+                <!-- <form action="/member/logincontroller" method="post"> -->
                     <div class="col-md-8">
                         <div class="form-floating mb-3" id="iddiv">
                             <input type="text" class="form-control" id="memberId" placeholder="아이디" name="memberId">
@@ -26,9 +26,9 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <input type="submit" value="로그인">
+                        <input type="button" onclick="login()" value="로그인">
                     </div>
-                </form>
+                <!-- </form> -->
             </div>
             <div style="border: 1px solid black;">
                 <span> 회원이 아니시라면 회원가입을 해주세요!</span> <button>회원가입</button><br>
@@ -36,6 +36,7 @@
             </div>
         </div>
     </div>
+    <script th:src="@{/js/main.js}"></script>
 </body>
 
 </html>

@@ -46,7 +46,7 @@ public class MemberController { // member와 관련된 컨트롤러
             if(memberEntity != null)  {
                 HttpSession session = request.getSession();
                 session.setAttribute("loginEntity", memberEntity);
-                return "/";
+                return "main";
             }
         return "";
         // MemberEntity loginEntity = memberService.login(memberEntity);
