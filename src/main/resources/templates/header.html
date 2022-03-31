@@ -42,10 +42,13 @@
             <div class="col-md-3">
                 <!-- 로그인 관련 div -->
                 <a th:if="${session.loginEntity == null}" th:href="@{/member/login}"><button>로그인</button></a>
-                <a th:href="@{/member/signup}">
+                <a th:if="${session.loginEntity == null}" th:href="@{/member/signup}">
                     <button type="button"> 회원가입</button>
                 </a>
-                <button> 로그아웃</button>
+                <div th:if="${session.loginEntity != null}">
+                    <span th:text="${session.loginEntity.memberId}"></span><span>님 환영합니다.</span>
+                    <button type="button" th:if="${session.loginEntity != null}" onclick="logout()"> 로그아웃</button>
+                </div>
             </div>
             <!-- 로그인 관련 div end -->
         </div>
@@ -93,11 +96,11 @@
                     </li>
                     <li><a href=""> Q&A </a></li>
                     <li><a href=""> 장바구니 </a></li>
-                    <li><a href=""> 제품리스트 </a></li>
+                    <li th:if="${session.loginEntity != null} and ${session.loginEntity.memberId.equals('admin')}"><a href=""> 제품리스트 </a></li>
                     <!-- 관리자 -->
-                    <li><a th:href="@{/admin/productregistration}"> 제품등록 </a></li>
+                    <li th:if="${session.loginEntity != null} and ${session.loginEntity.memberId.equals('admin')}"><a th:href="@{/admin/productregistration}"> 제품등록 </a></li>
                     <!-- 관리자 -->
-                    <li><a th:href="@{/admin/categoryregistration}"> 카테고리 등록 </a></li>
+                    <li th:if="${session.loginEntity != null} and ${session.loginEntity.memberId.equals('admin')}"><a th:href="@{/admin/categoryregistration}"> 카테고리 등록 </a></li>
                     <!-- 관리자 -->
                 </ul>
             </div>

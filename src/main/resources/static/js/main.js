@@ -1,25 +1,34 @@
 function login() {
 
     var memberPw = $("#memberPw").val();
+    var memberId = $("#memberId").val();
 
-    alert(memberPw);
-    // var memberEntity = { "memberId": memberId, "memberPassword": memberPassword };
-
-    // $.ajax({
-    //     url: "/logincontroller",
-    //     data: JSON.stringify(memberEntity),
-    //     method: "post",
-    //     contentType: "application/json",
-    //     success: function(result) {
-    //         if (result == 1) {
-    //             location.href = "/"
-    //         } else {
-    //             $("#loginfailmsg").html("아이디 혹은 비밀번호가 다릅니다.");
-    //         }
-    //     }
-    // });
+    $.ajax({
+        url: "/member/logincontroller",
+        data: { "memberId": memberId, "memberPw": memberPw },
+        method: "post",
+        success: function(result) {
+            if (result == 1) {
+                location.href = "/"
+            } else {
+                $("#loginfailmsg").html("아이디 혹은 비밀번호가 다릅니다.");
+            }
+        }
+    });
 }
-    
+
+function logout() {
+    $.ajax({
+        url: "/member/logout",
+        success: function(result) {
+            if (result == 1) {
+                alert("로그아웃 되었습니다.");
+                location.href = "/";
+            }
+        }
+    });
+}
+
 // 다음 Api
 function sample4_execDaumPostcode() {
     new daum.Postcode({
