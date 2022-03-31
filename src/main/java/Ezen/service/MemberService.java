@@ -19,14 +19,14 @@ public class MemberService {
     }
 
     // 회원 로그인 메소드
-    public MemberEntity login(MemberEntity memberEntity) {
+    public MemberEntity login(String memberId, String memberPw) {
         List<MemberEntity> memberEntityList = memberRepository.findAll();
         for(MemberEntity memberEntitylogin : memberEntityList) {
-            if(memberEntity.getMemberId().equals(memberEntity.getMemberId())&&
-            memberEntity.getMemberPassword().equals(memberEntity.getMemberPassword())) {
+            if(memberEntitylogin.getMemberId().equals(memberId)&&
+            memberEntitylogin.getMemberPassword().equals(memberPw)) {
                 return MemberEntity.builder()
-                        .memberId(memberEntity.getMemberId())
-                        .memberNo(memberEntity.getMemberNo()) .build();
+                        .memberId(memberEntitylogin.getMemberId())
+                        .memberNo(memberEntitylogin.getMemberNo()) .build();
             }
         } return null;
     }

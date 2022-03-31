@@ -15,30 +15,35 @@
             <div id="searchbox">
                 <input type="text"> <button type="button">검색</button>
             </div>
-            <div id="categorybox"><!-- 카테고리 선택 하면 리스트에 출력 -->
+            <div id="categorybox">
+                <!-- 카테고리 선택 하면 리스트에 출력 -->
                 <ul>
-                    <li><a href="#">CPU</a></li> <!-- 반복문 -->
+                    <li th:each="CTlist : ${CTlist}"><a href="#" th:text="${CTlist.componentcategoryName}" type="button"
+                            th:onclick="CToutput([[${CTlist.componentcategoryNo}]])"></a></li> <!-- 반복문 -->
                 </ul>
             </div>
-
+                
             <div>
                 <!-- 리스트 출력 -->
-                <div>
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <span>상품이름</span>
-                        <span>제조사</span>
-                    </div>
-                    <div>
-                        <span>가격</span>
-                        <button>장바구니</button>
+                <div id="listbox">
+                    <div class="row" th:each="Ctdata : ${CTdata}" id="underbox">
+                        <div class="col-md-2" id="imgbox">
+                            <img th:src="@{'/componentimg/' + ${Ctdata.componentImg}}">
+                        </div>
+                        <div class="col-md-6" id="infobox">
+                            <span>제품명 : </span><span th:text="${Ctdata.componentTitle}"></span><br>
+                            <span>제조사 : </span><span th:text="${Ctdata.componentMaker}"></span>
+                        </div>
+                        <div class="col-md-2" id="pricebox">
+                            <span>가격 : </span><span th:text="${Ctdata.componentPrice}"></span><span>원</span><br>
+                            <button>장바구니</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script th:src="@{/js/component.js}"></script>
 </body>
 
 </html>
