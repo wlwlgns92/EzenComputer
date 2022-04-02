@@ -21,14 +21,17 @@ public class MemberService {
     // 회원 로그인 메소드
     public MemberEntity login(String memberId, String memberPw) {
         List<MemberEntity> memberEntityList = memberRepository.findAll();
-        for(MemberEntity memberEntitylogin : memberEntityList) {
-            if(memberEntitylogin.getMemberId().equals(memberId)&&
-            memberEntitylogin.getMemberPassword().equals(memberPw)) {
+        System.out.println("service1");
+        for(MemberEntity entity : memberEntityList) {
+            if(entity.getMemberId().equals(memberId) && entity.getMemberPassword().equals(memberPw)) {
+                System.out.println("######### if 들어옴");
                 return MemberEntity.builder()
-                        .memberId(memberEntitylogin.getMemberId())
-                        .memberNo(memberEntitylogin.getMemberNo()) .build();
+                .memberId(entity.getMemberId())
+                .memberPassword(entity.getMemberPassword())
+                .build();
             }
-        } return null;
+        }
+        return null;
     }
 
     // 회원 아이디 찾기
