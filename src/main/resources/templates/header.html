@@ -95,7 +95,7 @@
                         </a>
                     </li>
                     <li><a href=""> Q&A </a></li>
-                    <li><a href=""> 장바구니 </a></li>
+                    <li><a th:href="@{/cart/productcart}"> 장바구니 </a></li>
                     <li th:if="${session.loginEntity != null} and ${session.loginEntity.memberId.equals('admin')}"><a href=""> 제품리스트 </a></li>
                     <!-- 관리자 -->
                     <li th:if="${session.loginEntity != null} and ${session.loginEntity.memberId.equals('admin')}"><a th:href="@{/admin/productregistration}"> 제품등록 </a></li>

@@ -4,6 +4,8 @@ package Ezen.domain.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="component")
@@ -37,6 +39,8 @@ public class ComponentEntity {
     @Column(name="componentImg") // 부품 이미지
     private String componentImg;
 
+    @OneToMany(mappedBy = "componentEntity", cascade = CascadeType.ALL)
+    private List<CartEntity> cartEntities = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name="componentcategoryNo")

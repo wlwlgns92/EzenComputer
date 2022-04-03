@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import Ezen.domain.entity.ComponentCategoryEntity;
 import Ezen.domain.entity.ComponentEntity;
 import Ezen.service.AdminService;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
@@ -34,4 +35,6 @@ public class ComponentController {
         model.addAttribute("CTdata" , entity);
         return "menu/component :: #listbox";
     }
+
+
 }

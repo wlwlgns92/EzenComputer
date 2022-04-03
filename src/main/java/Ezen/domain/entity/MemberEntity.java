@@ -3,6 +3,8 @@ package Ezen.domain.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity @Table(name="member")
 @NoArgsConstructor @AllArgsConstructor
@@ -36,5 +38,9 @@ public class MemberEntity {
     // Qna Entity와 맵핑 예정
 
     // ReviewEntity 와 맵핑 예정
+
+    // CartEntity 와 맵핑
+    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.ALL)
+    private List<CartEntity> cartEntities = new ArrayList<>();
 
 }
