@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<div th:replace="header.html :: header"></div>
-<div class="container">
-    <h3 style="border-bottom: solid 1px #eeeee;"> 장바구니 </h3> <br><br>
-    <table class="table">
-        <tr>
-            <th> 이미지 </th> <th> 카테고리 </th> <th> 상품명 </th> <th> 수량 </th> <th> 가격 </th> <th> 삭제 </th>
-        </tr>
+    <div th:replace="header.html :: header"></div>
+    <div class="container">
+        <h3 style="border-bottom: solid 1px #eeeeee;"> 장바구니 </h3> <br><br>
+        <table class="table">
+            <tr style="text-align: center;">
+                <th> 이미지</th>
+                <th> 카테고리</th>
+                <th> 상품명</th>
+                <th> 수량</th>
+                <th> 가격</th>
+                <th> 삭제</th>
+            </tr>
 
-        <tr>
-            <td width="10%" class="align-middle"> <!-- 이미지 넣는곳 -->
-                <img th:src="@{/img/logo.jpg}" style="max-width: 100%;">
-            </td><!-- 이미지 넣는곳 끝 -->
-            <td width="10%" class="align-middle"> <!-- 카테고리 -->
-                CPU
-            </td><!-- 카테고리 끝 -->
-            <td width="50%"> <!-- 상품명 -->
-                <div class="px-1">
-                    [인텔] 인텔 코어i5-12세대 12400F (엘더레이크)
-                </div>
-            </td><!-- 상품명 끝 -->
-            <td class="row no-gutters"> <!-- 수량 증가 -->
-                <button class="btn btn-outline-secondary"> + </button>
+            <tr th:each="Cartlist : ${cartlist}" style="text-align: center;">
+                <td width="10%" class="align-middle">
+                    <!-- 이미지 넣는곳 -->
+                    <img th:src="@{'/componentimg/' + ${Cartlist.componentEntity.componentImg}}"
+                        style="max-width: 100%;">
+                </td><!-- 이미지 넣는곳 끝 -->
+                <td width="10%" class="align-middle">
+                    <!-- 카테고리 -->
+                    <div th:text="${Cartlist.componentEntity.componentCategoryEntity.componentcategoryName}"></div>
+                </td><!-- 카테고리 끝 -->
+                <td width="50%" class="align-middle">
+                    <!-- 상품명 -->
+                    <div class="px-1" th:text="${Cartlist.componentEntity.componentTitle}"></div>
+                </td><!-- 상품명 끝 -->
+                <td class="align-middle">
+                    <div class="row" id="stockdiv">
+                        <!-- 수량 증가 -->
+                        <div class="col-md-3" style="margin-right: 10px;">
+                            <button class="btn btn-outline-secondary" th:onclick="stockplus('p',[[${Cartlist.cartNo}]], [[${Cartlist.cartStock}]], [[${Cartlist.componentEntity.componentStock}]] )"> +</button>
+                        </div>
+                        <div class="col-md-5">
+                            <!-- 수량 개수 -->
+                            <input class="form-control" type="text" th:id="'stock'+${Cartlist.cartNo}" th:value="${Cartlist.cartStock}">
+                        </div>
+                        <!-- 수량 감소 -->
+                        <div class="col-md-3" style="padding-left: 0px;">
+                            <button class="btn btn-outline-secondary" th:onclick="stockplus('m',[[${Cartlist.cartNo}]], [[${Cartlist.componentEntity.componentStock}]])"> -</button>
+                        </div>
+                    </div>
+                </td>
 
-                <div class="col-md-3"> <!-- 수량 개수 -->
-                    <input class="form-control" type="text" id="productcartinput">
-                </div>
-                <!-- 수량 감소 -->
-                <button class="btn btn-outline-secondary"> - </button>
-            </td>
-            <td width="15%" class="align-middle" id="productcarttd"> <!-- 가격 -->
+                <td width="15%" class="align-middle" id="productcarttd">
+                    <!-- 가격 -->
+                    <div th:text="${Cartlist.componentEntity.componentPrice}"></div>
+                </td>
+                <td width="5%" class="align-middle">
+                    <!-- X버튼을 누르면 삭제 -->
+                    <button class="form-control"> X</button>
+                </td>
+            </tr>
+        </table>
 
-            </td>
-            <td width="5%"> <!-- X버튼을 누르면 삭제 -->
-                <button class="form-control"> X </button></td>
-        </tr>
-    </table>
-
-    <div class="row">
-        <div class="col-md-3 offset-3"> <!-- 결제 페이지로 이동 -->
-            <a href="">
-                <button class="form-control bg-success text-white p-3"> 주문하기 </button>
-            </a>
-        </div><!-- 결제 페이지로 이동 끝 -->
-        <div class="col-md-3"> <!-- 견적내기 페이지로 이동 -->
-            <button class="form-control p-3"> 쇼핑하기 </button>
-        </div> <!-- 견적내기 페이지로 이동 끝 -->
+        <div class="row">
+            <div class="col-md-3 offset-3">
+                <!-- 결제 페이지로 이동 -->
+                <a href="">
+                    <button class="form-control bg-success text-white p-3"> 주문하기</button>
+                </a>
+            </div><!-- 결제 페이지로 이동 끝 -->
+            <div class="col-md-3">
+                <!-- 견적내기 페이지로 이동 -->
+                <button class="form-control p-3"> 쇼핑하기</button>
+            </div> <!-- 견적내기 페이지로 이동 끝 -->
+        </div>
+        <br><br><br><br><br>
     </div>
-    <br><br><br><br><br>
-</div>
 
-<div th:replace="footer.html :: footer"></div>
+    <div th:replace="footer.html :: footer"></div>
+    <script th:src="@{/js/cart.js}"></script>
 </body>
+
 </html>

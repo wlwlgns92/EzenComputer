@@ -6,8 +6,10 @@ import javax.servlet.http.HttpSession;
 
 import Ezen.domain.entity.CartEntity;
 import Ezen.service.CartService;
+import Ezen.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,9 +28,16 @@ public class CartController {
     @Autowired
     HttpServletRequest request;
 
+    @Autowired
+    MemberService memberService;
+
     // 카트 페이지 맵핑
     @GetMapping("/productcart")
-    public String productcart() {
+    public String productcart(Model model) {
+        HttpSession session = request.getSession();
+        MemberEntity memberEntity = (MemberEntity) session.getAttribute("loginEntity");
+        MemberEntity entity = memberService.getMemberEntity(memberEntity.getMemberNo());
+        model.addAttribute("cartlist", entity.getCartEntities());
         return "cart/productcart";
     }
 

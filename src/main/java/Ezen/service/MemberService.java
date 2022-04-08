@@ -59,7 +59,11 @@ public class MemberService {
         } return false; // 중복 없음
     }
     
-    
+    // 회원번호로 회원 꺼내오기
+    public MemberEntity getMemberEntity(int memberNo) {
+        MemberEntity memberEntity = memberRepository.findById(memberNo).get();
+        return memberEntity;
+    }
     
     
     
