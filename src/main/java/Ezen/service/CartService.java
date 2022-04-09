@@ -46,4 +46,9 @@ public class CartService {
         componentEntity.getCartEntities().add(getcartEntity);
         return true;
     }
+
+    public boolean cartdelete (int cartNo) {
+        CartEntity cartEntity = cartRepository.findById(cartNo).get();
+        
+    }
 }

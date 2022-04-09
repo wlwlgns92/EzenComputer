@@ -38,7 +38,7 @@
                     <div class="row" id="stockdiv">
                         <!-- 수량 증가 -->
                         <div class="col-md-3" style="margin-right: 10px;">
-                            <button class="btn btn-outline-secondary" th:onclick="stockplus('p',[[${Cartlist.cartNo}]], [[${Cartlist.cartStock}]], [[${Cartlist.componentEntity.componentStock}]] )"> +</button>
+                            <button class="btn btn-outline-secondary" th:onclick="stockplus('p',[[${Cartlist.cartNo}]], [[${Cartlist.cartStock}]], [[${Cartlist.componentEntity.componentStock}]], [[${Cartlist.componentEntity.componentPrice}]] )"> +</button>
                         </div>
                         <div class="col-md-5">
                             <!-- 수량 개수 -->
@@ -46,18 +46,18 @@
                         </div>
                         <!-- 수량 감소 -->
                         <div class="col-md-3" style="padding-left: 0px;">
-                            <button class="btn btn-outline-secondary" th:onclick="stockplus('m',[[${Cartlist.cartNo}]], [[${Cartlist.componentEntity.componentStock}]])"> -</button>
+                            <button class="btn btn-outline-secondary" th:onclick="stockplus('m',[[${Cartlist.cartNo}]], [[${Cartlist.cartStock}]], [[${Cartlist.componentEntity.componentStock}]], [[${Cartlist.componentEntity.componentPrice}]] )"> -</button>
                         </div>
                     </div>
                 </td>
 
                 <td width="15%" class="align-middle" id="productcarttd">
                     <!-- 가격 -->
-                    <div th:text="${Cartlist.componentEntity.componentPrice}"></div>
+                    <div th:id="'price'+${Cartlist.cartNo}" th:text="${Cartlist.componentEntity.componentPrice}"></div>
                 </td>
                 <td width="5%" class="align-middle">
                     <!-- X버튼을 누르면 삭제 -->
-                    <button class="form-control"> X</button>
+                    <button class="form-control" type="button" th:onclick="cartdelete([[${Cartlist.cartNo}]])"> X</button>
                 </td>
             </tr>
         </table>

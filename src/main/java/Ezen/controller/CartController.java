@@ -56,7 +56,13 @@ public class CartController {
             return "2";
         }
     }
-    
+    // 장바구니에서 개별 삭제
+    @GetMapping("/cartdelete")
+    @ResponseBody
+    public String cartdelete(@RequestParam("cartNo") int cartNo) {
+        boolean result = cartService.
+        return "";
+    }
     // 결제 페이지 맵핑
     @GetMapping("/productpay")
     public String productpay() {
