@@ -14,6 +14,6 @@ function CTpick (componentNo, componentcategoryNo) {
         data: {"componentNo" : componentNo, "componentcategoryNo" : componentcategoryNo},
         method: "post"
     }).done(function(fragment) {
-    $('#data'+componentcategoryNo).replaceWith(fragment);
+    $("#data"+componentcategoryNo).replaceWith(fragment);
     });
 }

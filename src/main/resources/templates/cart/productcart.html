@@ -21,44 +21,53 @@
             </tr>
 
             <tr th:each="Cartlist : ${cartlist}" style="text-align: center;">
-                <td width="10%" class="align-middle">
-                    <!-- 이미지 넣는곳 -->
-                    <img th:src="@{'/componentimg/' + ${Cartlist.componentEntity.componentImg}}"
-                        style="max-width: 100%;">
-                </td><!-- 이미지 넣는곳 끝 -->
-                <td width="10%" class="align-middle">
-                    <!-- 카테고리 -->
-                    <div th:text="${Cartlist.componentEntity.componentCategoryEntity.componentcategoryName}"></div>
-                </td><!-- 카테고리 끝 -->
-                <td width="50%" class="align-middle">
-                    <!-- 상품명 -->
-                    <div class="px-1" th:text="${Cartlist.componentEntity.componentTitle}"></div>
-                </td><!-- 상품명 끝 -->
-                <td class="align-middle">
-                    <div class="row" id="stockdiv">
-                        <!-- 수량 증가 -->
-                        <div class="col-md-3" style="margin-right: 10px;">
-                            <button class="btn btn-outline-secondary" th:onclick="stockplus('p',[[${Cartlist.cartNo}]], [[${Cartlist.cartStock}]], [[${Cartlist.componentEntity.componentStock}]], [[${Cartlist.componentEntity.componentPrice}]] )"> +</button>
+                
+                    <td width="10%" class="align-middle">
+                        <!-- 이미지 넣는곳 -->
+                        <img th:src="@{'/componentimg/' + ${Cartlist.componentEntity.componentImg}}"
+                            style="max-width: 100%;">
+                    </td><!-- 이미지 넣는곳 끝 -->
+                    <td width="10%" class="align-middle">
+                        <!-- 카테고리 -->
+                        <div th:text="${Cartlist.componentEntity.componentCategoryEntity.componentcategoryName}"></div>
+                    </td><!-- 카테고리 끝 -->
+                    <td width="50%" class="align-middle">
+                        <!-- 상품명 -->
+                        <div class="px-1" th:text="${Cartlist.componentEntity.componentTitle}"></div>
+                    </td><!-- 상품명 끝 -->
+                    <td class="align-middle">
+                        <div class="row" id="stockdiv">
+                            <!-- 수량 증가 -->
+                            <div class="col-md-3" style="margin-right: 10px;">
+                                <button class="btn btn-outline-secondary"
+                                    th:onclick="stockplus('p',[[${Cartlist.cartNo}]], [[${Cartlist.cartStock}]], [[${Cartlist.componentEntity.componentStock}]], [[${Cartlist.componentEntity.componentPrice}]] )">
+                                    +</button>
+                            </div>
+                            <div class="col-md-5">
+                                <!-- 수량 개수 -->
+                                <input class="form-control" type="text" th:id="'stock'+${Cartlist.cartNo}"
+                                    th:value="${Cartlist.cartStock}">
+                            </div>
+                            <!-- 수량 감소 -->
+                            <div class="col-md-3" style="padding-left: 0px;">
+                                <button class="btn btn-outline-secondary"
+                                    th:onclick="stockplus('m',[[${Cartlist.cartNo}]], [[${Cartlist.cartStock}]], [[${Cartlist.componentEntity.componentStock}]], [[${Cartlist.componentEntity.componentPrice}]] )">
+                                    -</button>
+                            </div>
                         </div>
-                        <div class="col-md-5">
-                            <!-- 수량 개수 -->
-                            <input class="form-control" type="text" th:id="'stock'+${Cartlist.cartNo}" th:value="${Cartlist.cartStock}">
-                        </div>
-                        <!-- 수량 감소 -->
-                        <div class="col-md-3" style="padding-left: 0px;">
-                            <button class="btn btn-outline-secondary" th:onclick="stockplus('m',[[${Cartlist.cartNo}]], [[${Cartlist.cartStock}]], [[${Cartlist.componentEntity.componentStock}]], [[${Cartlist.componentEntity.componentPrice}]] )"> -</button>
-                        </div>
-                    </div>
-                </td>
+                    </td>
 
-                <td width="15%" class="align-middle" id="productcarttd">
-                    <!-- 가격 -->
-                    <div th:id="'price'+${Cartlist.cartNo}" th:text="${Cartlist.componentEntity.componentPrice}"></div>
-                </td>
-                <td width="5%" class="align-middle">
-                    <!-- X버튼을 누르면 삭제 -->
-                    <button class="form-control" type="button" th:onclick="cartdelete([[${Cartlist.cartNo}]])"> X</button>
-                </td>
+                    <td width="15%" class="align-middle" id="productcarttd">
+                        <!-- 가격 -->
+                        <div th:id="'price'+${Cartlist.cartNo}" th:text="${Cartlist.componentEntity.componentPrice}">
+                        </div>
+                    </td>
+                    <td width="5%" class="align-middle">
+                        <!-- X버튼을 누르면 삭제 -->
+                        <button class="form-control" type="button" th:onclick="cartdelete([[${Cartlist.cartNo}]])">
+                            X</button>
+                    </td>
+
             </tr>
         </table>
 

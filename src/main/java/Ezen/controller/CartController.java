@@ -60,8 +60,12 @@ public class CartController {
     @GetMapping("/cartdelete")
     @ResponseBody
     public String cartdelete(@RequestParam("cartNo") int cartNo) {
-        boolean result = cartService.
-        return "";
+        boolean result = cartService.cartdelete(cartNo);
+        if(result) {
+            return "1";
+        }else {
+            return "2";
+        }
     }
     // 결제 페이지 맵핑
     @GetMapping("/productpay")

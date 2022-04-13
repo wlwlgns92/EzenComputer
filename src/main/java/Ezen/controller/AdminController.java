@@ -120,8 +120,8 @@ public class AdminController {
     @PostMapping("/CTpick")
     public String CTpick (@RequestParam("componentNo") int componentNo, @RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
         ComponentEntity entity = adminService.CTpick(componentNo);
-        model.addAttribute("ctdata" , entity);
-        return "admin/productregistration :: .data"+componentcategoryNo;
+        model.addAttribute("ctdata"+componentcategoryNo , entity);
+        return "admin/productregistration :: #data"+componentcategoryNo;
     }
 
 

@@ -49,6 +49,12 @@ public class CartService {
 
     public boolean cartdelete (int cartNo) {
         CartEntity cartEntity = cartRepository.findById(cartNo).get();
-        
+        if(cartEntity != null) {
+            cartRepository.delete(cartEntity);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
