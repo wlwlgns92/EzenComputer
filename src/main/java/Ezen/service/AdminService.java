@@ -109,6 +109,7 @@ public class AdminService {
 
     // 카테고리 번호로 등록된 부품 가저오기
     public List<ComponentEntity> componentlist (int componentcategoryNo) {
+
         ComponentCategoryEntity entity = componentCategoryRepository.findById(componentcategoryNo).get();
         List<ComponentEntity> CTEntity = entity.getComponentEntities();
         return CTEntity;

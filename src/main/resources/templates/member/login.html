@@ -17,16 +17,16 @@
                 <!-- <form action="/member/logincontroller" method="post"> -->
                 <div class="col-md-8">
                     <div class="form-floating mb-3" id="iddiv">
-                        <input type="text" class="form-control" id="memberId" placeholder="아이디" name="memberId">
+                        <input type="text" class="form-control" id="memberId" placeholder="아이디" name="memberId" onkeypress="if(event.keyCode == 13){login(); return false;}">
                         <label for="memberId">아이디</label>
                     </div>
                     <div class="form-floating" id="passworddiv">
-                        <input type="password" class="form-control" id="memberPw" placeholder="비밀번호" name="memberPw">
+                        <input type="password" class="form-control" id="memberPw" placeholder="비밀번호" name="memberPw" onkeypress="if(event.keyCode == 13){login(); return false;}">
                         <label for="memberPw">비밀번호</label>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <input type="button" onclick="login()" value="로그인">
+                    <input type="button" onclick="login()"  value="로그인">
                 </div>
                 <!-- </form> -->
                 <div id="loginfailmsg"></div>

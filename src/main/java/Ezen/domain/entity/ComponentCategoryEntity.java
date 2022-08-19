@@ -13,7 +13,6 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-@ToString
 public class ComponentCategoryEntity {
 
     // 부품 카테고리 Entity Ex) CPU , VGA , RAM ..

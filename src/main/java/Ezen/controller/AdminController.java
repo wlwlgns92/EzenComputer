@@ -7,17 +7,17 @@ import Ezen.service.AdminService;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping(value = "/admin")
@@ -25,7 +25,6 @@ public class AdminController {
 
     @Autowired
     AdminService adminService;
-
 
     // 카테고리 페이지 맵핑
     @GetMapping("/categoryregistration")
@@ -73,13 +72,6 @@ public class AdminController {
         @RequestParam("componentStock") int componentStock,
         @RequestParam("componentImg") MultipartFile file
     ) {
-        System.out.println("###########" + componentCategoryNo);
-        System.out.println("###########" + componentTitle);
-        System.out.println("###########" + componentMaker);
-        System.out.println("###########" + componentPrice );
-        System.out.println("###########" + componentStock);
-
-
         try{
             String uuidfile = null;
             if(!file.getOriginalFilename().equals("")) {
@@ -111,17 +103,39 @@ public class AdminController {
 
     @GetMapping("/CTlist")
     public String CTlist(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
+
+        return "admin/productregistration";
+    }
+//    @PostMapping("/searchCTList")
+//    @ResponseBody
+//    public String searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
+//        List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo); // 정상
+//        model.addAttribute("CTinfo", entity);
+//        return "admin/productregistration";
+//    }
+
+    @PostMapping("/searchCTList")
+    public ModelAndView searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model){
         List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
-        model.addAttribute("CTinfo" , entity);
-        return "admin/productregistration :: #componentlist";
+        model.addAttribute("CTinfo", entity);
+
+        return new ModelAndView("jsonView");
     }
 
     // 담기 버튼 클릭시 해당 카테고리 밑에 선택한 부품 정보 출력
+//    @PostMapping("/CTpick")
+//    public String CTpick (@RequestParam("componentNo") int componentNo, @RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
+//        ComponentEntity entity = adminService.CTpick(componentNo);
+//        model.addAttribute("ctdata"+componentcategoryNo , entity);
+//        return "admin/productregistration :: #data"+componentcategoryNo;
+//    }
+
     @PostMapping("/CTpick")
-    public String CTpick (@RequestParam("componentNo") int componentNo, @RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
+    public ModelAndView CTpick (@RequestParam("componentNo") int componentNo, @RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
+        Map<String, ComponentEntity> pick = null;
         ComponentEntity entity = adminService.CTpick(componentNo);
-        model.addAttribute("ctdata"+componentcategoryNo , entity);
-        return "admin/productregistration :: #data"+componentcategoryNo;
+        pick.put("pick", entity);
+        return new ModelAndView("pick", pick);
     }
 
 
