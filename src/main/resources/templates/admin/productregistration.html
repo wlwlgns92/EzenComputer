@@ -45,7 +45,24 @@
                             <div class="col-8" style="border: solid 1px black;">
                                 <div id="componentlist" style="height: 30rem;">
                                     <table id="componenttable">
-
+                                        <tr class="componentdata" th:each="ctinfo : ${CTinfo}">
+                                            <td id="imgtd">
+                                                <div id="imgtddiv">
+                                                    <img th:src="@{'/componentimg/' + ${ctinfo.componentImg}}" alt="">
+                                                </div>
+                                            </td> <!-- 상품 이미지 -->
+                                            <td id="ctinfotd">
+                                                <div id="ctinfodiv">
+                                                    <span>제품명 : </span><span th:text="${ctinfo.componentTitle}"> </span><br>
+                                                    <span>제조사 : </span><span th:text="${ctinfo.componentMaker}"></span>
+                                                </div>
+                                            </td> <!-- 상품 정보 -->
+                                            <td>
+                                                <div id="buttondiv">
+                                                    <button type="button" th:onclick="CTpick([[${ctinfo.componentNo}]], [[${ctinfo.componentCategoryEntity.componentcategoryNo}]],[[${ctinfo.componentTitle}]],[[${ctinfo.componentPrice}]]);">담기</button>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </table>
                                 </div>
                             </div>
@@ -55,25 +72,24 @@
                                         <h3>컴퓨터 부품</h3>
                                     </div>
                                     <div id="componentselect">
+                                        <input type="hidden" name="" id="pickCpu" value="">
+                                        <input type="hidden" name="" id="pickVga" value="">
+                                        <input type="hidden" name="" id="pickCase" value="">
+                                        <input type="hidden" name="" id="pickRam" value="">
+                                        <input type="hidden" name="" id="pickSsd" value="">
+                                        <input type="hidden" name="" id="pickPower" value="">
                                         <div class="parts" th:each="CTselect : ${ctlist}">
                                             <div>
-                                                <a href="#" type="button"
-                                                th:onclick="searchCTList([[${CTselect.componentcategoryNo}]]);"
-                                                th:text="${CTselect.componentcategoryName}"></a>
-                                                <span th:id="pickparts+${CTselect.componentcategoryNo}"></span>
-                                            </div>
-                                            <div th:id="'data'+${CTselect.componentcategoryNo}">
-                                                <ul>
-                                                    <li>
-                                                        <div th:id="'pick'+${CTselect.componentcategoryNo}">
-
-                                                        </div> <!-- 상품 이름 -->
-                                                        <div></div> <!-- 상품 가격 및 삭제버튼 -->
-                                                    </li>
-                                                </ul>
+                                                <a type="button" th:onclick="searchCTList([[${CTselect.componentcategoryNo}]]);" th:text="${CTselect.componentcategoryName}"></a>
+                                                <div th:id="pickDiv+${CTselect.componentcategoryNo}" style="display: none;">
+                                                    <span th:id="pickTitle+${CTselect.componentcategoryNo}"></span>
+                                                    <span th:id="pickPrice + ${CTselect.componentcategoryNo}"></span>
+                                                    <button type="button" th:onclick="CTDelete([[${CTselect.componentcategoryNo}]])">삭제</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                        <button onclick="CPRegistration();">등록</button>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,9 @@
 package Ezen.domain.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -40,6 +43,8 @@ public class ComponentEntity {
     private String componentImg;
 
     @OneToMany(mappedBy = "componentEntity", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @ToString.Exclude
     private List<CartEntity> cartEntities = new ArrayList<>();
 
     @ManyToOne

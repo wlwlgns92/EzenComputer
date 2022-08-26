@@ -114,12 +114,18 @@ public class AdminController {
 //        return "admin/productregistration";
 //    }
 
+//    @PostMapping("/searchCTList")
+//    public ModelAndView searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model){
+//        List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
+//        model.addAttribute("CTinfo", entity);
+//        return new ModelAndView("jsonView");
+//    }
+
     @PostMapping("/searchCTList")
-    public ModelAndView searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model){
+    public String searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model){
         List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
         model.addAttribute("CTinfo", entity);
-
-        return new ModelAndView("jsonView");
+        return "admin/productregistration :: #componenttable";
     }
 
     // 담기 버튼 클릭시 해당 카테고리 밑에 선택한 부품 정보 출력

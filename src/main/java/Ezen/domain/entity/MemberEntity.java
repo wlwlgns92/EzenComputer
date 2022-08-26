@@ -1,14 +1,21 @@
 package Ezen.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity @Table(name="member")
-@NoArgsConstructor @AllArgsConstructor
-@Getter @Setter @Builder @ToString
+@Entity
+@Table(name="memberEntity")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+@ToString
 public class MemberEntity {
     // 회원 Entity
 
@@ -40,7 +47,9 @@ public class MemberEntity {
     // ReviewEntity 와 맵핑 예정
 
     // CartEntity 와 맵핑
-    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.ALL)
+    @OneToMany( mappedBy = "memberEntity", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @ToString.Exclude
     private List<CartEntity> cartEntities = new ArrayList<>();
 
 }

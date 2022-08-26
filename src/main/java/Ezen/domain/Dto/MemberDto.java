@@ -3,8 +3,12 @@ package Ezen.domain.Dto;
 import Ezen.domain.entity.MemberEntity;
 import lombok.*;
 
-@NoArgsConstructor @AllArgsConstructor
-@Getter @Setter @ToString @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@Builder
 public class MemberDto {
     private int memberNo;
     private String memberId;
@@ -13,8 +17,4 @@ public class MemberDto {
     private String memberPhone;
     private String memberEmail;
     private String memberAddress;
-
-
-
-
 }
