@@ -24,7 +24,30 @@ public class CompleteProductEntity {
     @Column(name = "cpImg") // 완제품 이미지
     private String cpImg;
 
-    // CPCompleteProducetEntity 와 맵핑 예정
+    @Column(name = "cpuNo")
+    private String cpuNo;
+
+    @Column(name = "vgaNo")
+    private String vgaNo;
+
+    @Column(name ="caseNo")
+    private String caseNo;
+
+    @Column(name = "ramNo")
+    private String ramNo;
+
+    @Column(name = "ssdNo")
+    private String ssdNo;
+
+    @Column(name = "powerNo")
+    private String powerNo;
+
+    @Column(name = "cpPrice")
+    private String cpPrice;
+
+    @ManyToOne // 완제품 카테고리 [ 게이밍.. 사무용 .. ]
+    @JoinColumn(name = "CPCategoryNo")
+    private CPCategoryEntity cpCategoryEntity;
 
 
 }

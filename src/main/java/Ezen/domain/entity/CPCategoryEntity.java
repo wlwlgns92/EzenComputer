@@ -3,6 +3,8 @@ package Ezen.domain.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="cpcategory")
@@ -23,6 +25,8 @@ public class CPCategoryEntity {
     @Column(name = "cpcategoryName") // 완제품 카테고리명
     private String cpcategoryName;
 
-    // ComponentEntity와 맵핑 예정
+    @OneToMany(mappedBy = "cpCategoryEntity", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    private List<CompleteProductEntity> CPEntities = new ArrayList<>();
 
 }

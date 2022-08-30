@@ -27,31 +27,32 @@ function searchCTList(componentcategoryNo) {
 
 
 function CTpick (componentNo, componentCategoryNo, componentTitle, componentPrice) {
+    var compoTotalPrice = 0;
+    var pickPrice;
     $("#pickDiv"+componentCategoryNo).show();
     $("#pickTitle"+componentCategoryNo).text(componentTitle);
     $("#pickPrice"+componentCategoryNo).text(componentPrice);
 
-    var pickTitle = $("#pickTitle"+componentCategoryNo).text();
-    var pickPrice = $("#pickPrice"+componentCategoryNo).text();
-    if(componentCategoryNo == 1) {
-        $("#pickCpu").val();
-    } else if(componentCategoryNo == ){
-        $("#Vga").val();
-    }else if(componentCategoryNo == ){
-        $("#").val();
-    }else if(componentCategoryNo == ){
-        $("#").val();
-    }else if(componentCategoryNo == ){
-        $("#").val();
-    }else if(componentCategoryNo == ){
-        $("#").val();
-    }
+    $("#pickTitle"+componentCategoryNo).text();
+    $("#pickPrice"+componentCategoryNo).text();
+    $("#pickComponent"+componentCategoryNo).val(componentNo);
 
+    for(var i = 1; i < 6; i++) {
+        pickPrice = $("#pickPrice"+i).text();
+        if(pickPrice == "") {
+            pickPrice = "0";
+        }
+        compoTotalPrice += parseInt(pickPrice);
+        console.log(compoTotalPrice);
+    }
+    $("#compoTotalPrice").text(compoTotalPrice);
 }
 
 function CTDelete(componentCategoryNo) {
     $("#pickTitle"+componentCategoryNo).text("");
     $("#pickPrice"+componentCategoryNo).text("");
+    $("#pickComponent"+componentCategoryNo).val("");
+    $("#pickDiv"+componentCategoryNo).hide();
 
 }
 

@@ -5,8 +5,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/productregistration.css}">
+<script type="text/javascript">
+    function priceVail(){
+        var cpPrice = $("#cpPrice").val();
+        var check = /^[0-9]+$/;
+        if(!check.test(cpPrice)) {
+            alert("숫자만 입력 가능합니다.");
+            $("#cpPrice").val("");
+            return false;
+        }
+    }
+</script>
 </head>
-
 <body>
     <div th:replace="header.html :: header"></div>
     <div class="container">
@@ -54,7 +64,8 @@
                                             <td id="ctinfotd">
                                                 <div id="ctinfodiv">
                                                     <span>제품명 : </span><span th:text="${ctinfo.componentTitle}"> </span><br>
-                                                    <span>제조사 : </span><span th:text="${ctinfo.componentMaker}"></span>
+                                                    <span>제조사 : </span><span th:text="${ctinfo.componentMaker}"></span><br>
+                                                    <span>수량 : </span><span th:text="${ctinfo.componentStock}"></span>
                                                 </div>
                                             </td> <!-- 상품 정보 -->
                                             <td>
@@ -72,12 +83,12 @@
                                         <h3>컴퓨터 부품</h3>
                                     </div>
                                     <div id="componentselect">
-                                        <input type="hidden" name="" id="pickCpu" value="">
-                                        <input type="hidden" name="" id="pickVga" value="">
-                                        <input type="hidden" name="" id="pickCase" value="">
-                                        <input type="hidden" name="" id="pickRam" value="">
-                                        <input type="hidden" name="" id="pickSsd" value="">
-                                        <input type="hidden" name="" id="pickPower" value="">
+                                        <input type="hidden" name="" id="pickComponent1" value=""> <!-- CPU -->
+                                        <input type="hidden" name="" id="pickComponent2" value=""> <!-- VGA -->
+                                        <input type="hidden" name="" id="pickComponent3" value=""> <!-- CASE -->
+                                        <input type="hidden" name="" id="pickComponent4" value=""> <!-- RAM -->
+                                        <input type="hidden" name="" id="pickComponent5" value=""> <!-- SSD -->
+                                        <input type="hidden" name="" id="pickComponent6" value=""> <!-- POWER -->
                                         <div class="parts" th:each="CTselect : ${ctlist}">
                                             <div>
                                                 <a type="button" th:onclick="searchCTList([[${CTselect.componentcategoryNo}]]);" th:text="${CTselect.componentcategoryName}"></a>
@@ -89,7 +100,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                        <button onclick="CPRegistration();">등록</button>
+                                    <div>
+                                        <span>부품 총 가격 : </span><span id="compoTotalPrice"></span>
+                                    </div>
+                                    <div>
+                                        <span>가격 : </span>
+                                        <input type="text" id="cpPrice" style="margin-bottom: 10px; width: 170px;" placeholder="가격을 입력해 주세요" onchange="priceVail();">
+                                    </div>
+                                    <div>
+                                        <button onclick="CPRegistration();" style="width: 100%;">등록</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

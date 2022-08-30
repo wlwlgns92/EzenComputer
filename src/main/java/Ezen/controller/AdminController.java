@@ -106,43 +106,22 @@ public class AdminController {
 
         return "admin/productregistration";
     }
-//    @PostMapping("/searchCTList")
-//    @ResponseBody
-//    public String searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
-//        List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo); // 정상
-//        model.addAttribute("CTinfo", entity);
-//        return "admin/productregistration";
-//    }
-
-//    @PostMapping("/searchCTList")
-//    public ModelAndView searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model){
-//        List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
-//        model.addAttribute("CTinfo", entity);
-//        return new ModelAndView("jsonView");
-//    }
 
     @PostMapping("/searchCTList")
-    public String searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model){
+    public String searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
         List<ComponentEntity> entity = adminService.componentlist(componentcategoryNo);
         model.addAttribute("CTinfo", entity);
         return "admin/productregistration :: #componenttable";
     }
 
-    // 담기 버튼 클릭시 해당 카테고리 밑에 선택한 부품 정보 출력
-//    @PostMapping("/CTpick")
-//    public String CTpick (@RequestParam("componentNo") int componentNo, @RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
-//        ComponentEntity entity = adminService.CTpick(componentNo);
-//        model.addAttribute("ctdata"+componentcategoryNo , entity);
-//        return "admin/productregistration :: #data"+componentcategoryNo;
-//    }
+    @PostMapping()
+    public String completeProductHandle() {
 
-    @PostMapping("/CTpick")
-    public ModelAndView CTpick (@RequestParam("componentNo") int componentNo, @RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
-        Map<String, ComponentEntity> pick = null;
-        ComponentEntity entity = adminService.CTpick(componentNo);
-        pick.put("pick", entity);
-        return new ModelAndView("pick", pick);
+        /* 완제품 등록
+        *  1. ajax로 부품 데이터 넘겨받기
+        *  2. 넘겨 받은 부품의 수량 체크 하나라도 0이라면 return false;
+        *  3. 수량체크 후
+        * */
+        return "";
     }
-
-
 }
