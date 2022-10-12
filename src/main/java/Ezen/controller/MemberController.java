@@ -43,8 +43,6 @@ public class MemberController { // member와 관련된 컨트롤러
     public String logincontroller(@RequestParam("memberId") String memberId,
                                     @RequestParam("memberPw") String memberPw) {
 
-            System.out.println("############" + memberId);
-            System.out.println("############" + memberPw);
             MemberEntity memberEntity = memberService.login(memberId, memberPw);
 
             if(memberEntity != null)  {

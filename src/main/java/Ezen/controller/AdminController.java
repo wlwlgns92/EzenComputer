@@ -41,6 +41,10 @@ public class AdminController {
     @ResponseBody
     public String categorywrite (@RequestParam("categoryNo") int categoryNo,
                                  @RequestParam("categoryName") String categoryName) {
+
+        if(categoryName == null || categoryName.equals("")) {
+            return "2";
+        }
       boolean result = adminService.categorywrite(categoryNo,categoryName);
 
         if(result) {
@@ -114,7 +118,7 @@ public class AdminController {
         return "admin/productregistration :: #componenttable";
     }
 
-    @PostMapping()
+    @PostMapping("/completeProductHandle")
     public String completeProductHandle() {
 
         /* 완제품 등록

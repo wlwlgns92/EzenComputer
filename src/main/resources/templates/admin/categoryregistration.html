@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <div th:replace="header.html :: header"></div>
+<input type="hidden" id="deleteCategoryNo" value="">
+<input type="hidden" id="deleteCategoryName" value="">
+<div th:replace="header.html :: header"></div>
     <div class="container">
         <div class="row">
             <div>
@@ -71,7 +73,7 @@
                     <p class="mb-0">해당 카테고리 삭제시 내용물도 같이 삭제됩니다. 정말 삭제하시겠습니까?</p>
                 </div>
                 <div class="modal-footer flex-nowrap p-0">
-                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right"><strong>삭제</strong></button>
+                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right" onclick="categoryDelete()"> 삭제 </button>
                     <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" data-bs-dismiss="modal">취소</button>
                 </div>
             </div>
@@ -103,8 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button" onclick="categoryregistration();">js테스트</button>
-                        <input type="submit" value="등록">
+                        <button type="button" onclick="categoryregistration();"> 등록 </button>
                         <hr class="my-4">
                     </form>
                 </div>

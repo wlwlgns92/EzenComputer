@@ -43,7 +43,6 @@ function CTpick (componentNo, componentCategoryNo, componentTitle, componentPric
             pickPrice = "0";
         }
         compoTotalPrice += parseInt(pickPrice);
-        console.log(compoTotalPrice);
     }
     $("#compoTotalPrice").text(compoTotalPrice);
 }
@@ -57,5 +56,21 @@ function CTDelete(componentCategoryNo) {
 }
 
 function CPRegistration() {
+    var pickComponent = {
+        pickCpu : $("#pickComponent1").val()
+        , pickVga : $("#pickComponent2").val()
+        , pickCase : $("#pickComponent3").val()
+        , pickRam : $("#pickComponent4").val()
+        , pickSsd : $("#pickComponent5").val()
+        , pickPower : $("#pickComponent6").val()
+    }
+    $.ajax({
+        url : "/admin/completeProductHandle",
+        type : "POST",
+        dataType : "json",
+        data : pickComponent,
+        success : function(data) {
 
+        }
+    });
 }
