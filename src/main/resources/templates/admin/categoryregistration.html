@@ -8,8 +8,8 @@
 </head>
 
 <body>
-<input type="hidden" id="deleteCategoryNo" value="">
-<input type="hidden" id="deleteCategoryName" value="">
+<input type="hidden" id="delCatNo" name="delCatNo" value="">
+<input type="hidden" id="delCatDiv" name="delCatDiv" value="">
 <div th:replace="header.html :: header"></div>
     <div class="container">
         <div class="row">
@@ -56,7 +56,7 @@
                             <td th:text="${CP.cpcategoryName}"></td>
                             <td>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="">수정</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#deletemodal">삭제</button>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" th:onclick="catDelCheck([[${CP.cpcategoryNo}]], [[${CP.catDiv}]]);">삭제</button>
                             </td>
                         </tr>
                     </tbody>
@@ -65,7 +65,7 @@
         </div>
     </div>
     <!-- 삭제 modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="deletemodal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content rounded-4 shadow">
                 <div class="modal-body p-4 text-center">
@@ -73,7 +73,7 @@
                     <p class="mb-0">해당 카테고리 삭제시 내용물도 같이 삭제됩니다. 정말 삭제하시겠습니까?</p>
                 </div>
                 <div class="modal-footer flex-nowrap p-0">
-                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right" onclick="categoryDelete()"> 삭제 </button>
+                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right" onclick="categoryDelete();"> 삭제 </button>
                     <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" data-bs-dismiss="modal">취소</button>
                 </div>
             </div>

@@ -30,6 +30,34 @@ function categoryregistration() {
     });
 }
 
+function catDelCheck(categoryNo, catDiv) {
+    $("#delCatNo").val(categoryNo);
+    $("#delCatDiv").val(catDiv);
+}
+
 function categoryDelete(){
+    let categoryNo = $("#delCatNo").val();
+    let catDiv = $("#delCatDiv").val();
+
+
+    if(categoryNo == null || categoryNo == "" || catDiv == null || catDiv == "") {
+        alert("오류가 발생했습니다. 새로고침 후 다시 시도해주시기 바랍니다.");
+        return false;
+    }
+
+    $.ajax({
+        url: "/admin/categoryDelete",
+        method: "POST",
+        data : {"categoryNo": categoryNo, "catDiv": catDiv},
+        success: function(result) {
+            if (result) {
+                alert("정상적으로 삭제되었습니다.");
+                    location.href = "/admin/categoryregistration";
+            } else {
+                alert("삭제 실패하였습니다. 관리자에게 문의하여 주세요");
+                return false;
+            }
+        }
+    });
 
 }

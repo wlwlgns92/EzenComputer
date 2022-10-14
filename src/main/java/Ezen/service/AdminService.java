@@ -122,4 +122,16 @@ public class AdminService {
         return entity;
     }
 
+    // 카테고리 삭제
+    public Boolean categoryDelete(int categoryNo, String catDiv) {
+        if(catDiv != null && catDiv.equals("1")){
+            cpCategoryRepository.deleteById(categoryNo);
+            return true;
+        } else if(catDiv != null && catDiv.equals("2")){
+            componentCategoryRepository.deleteById(categoryNo);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -25,7 +25,11 @@ public class ComponentCategoryEntity {
 
     @Column(name="componentcategoryName")
     private String componentcategoryName;
-    
+
+    // 카테고리 구분
+    @Column(name="catDiv")
+    private String catDiv;
+
     // ComponentEntity 와 맵핑 예정
     @OneToMany(mappedBy = "componentCategoryEntity", cascade = CascadeType.ALL)
     @JsonIgnore

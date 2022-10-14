@@ -25,6 +25,10 @@ public class CPCategoryEntity {
     @Column(name = "cpcategoryName") // 완제품 카테고리명
     private String cpcategoryName;
 
+    // 카테고리 구분
+    @Column(name="catDiv")
+    private String catDiv;
+
     @OneToMany(mappedBy = "cpCategoryEntity", cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<CompleteProductEntity> CPEntities = new ArrayList<>();

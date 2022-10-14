@@ -31,6 +31,8 @@ public class AdminController {
     public String categoryregistration(Model model) {
         List<CPCategoryEntity> CPlist = adminService.CPcategorylist();
         List<ComponentCategoryEntity> CTlist = adminService.CTlist();
+        System.out.println("완제품" + CPlist);
+        System.out.println("부품" + CTlist);
         model.addAttribute("CTcategory", CTlist);
         model.addAttribute("CPcategory", CPlist);
         return "admin/categoryregistration";
@@ -48,11 +50,27 @@ public class AdminController {
       boolean result = adminService.categorywrite(categoryNo,categoryName);
 
         if(result) {
-            System.out.println("등록실패");
             return "2";
         }else {
-            System.out.println("등록성공");
             return "1";
+        }
+    }
+
+    // 카테고리 삭제
+    @PostMapping(value = "/categoryDelete")
+    @ResponseBody
+    public String categoryDelete(@RequestParam("categoryNo") int categoryNo,
+                                 @RequestParam("catDiv") String catDiv) {
+
+        if(categoryNo == 0 || catDiv.equals("")){
+            return "2";
+        }
+
+        Boolean result = adminService.categoryDelete(categoryNo, catDiv);
+        if(result) {
+            return "1";
+        } else {
+            return "2";
         }
     }
 
