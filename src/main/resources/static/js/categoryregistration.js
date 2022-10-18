@@ -31,6 +31,7 @@ function categoryregistration() {
 }
 
 function catDelCheck(categoryNo, catDiv) {
+
     $("#delCatNo").val(categoryNo);
     $("#delCatDiv").val(catDiv);
 }
@@ -38,7 +39,6 @@ function catDelCheck(categoryNo, catDiv) {
 function categoryDelete(){
     let categoryNo = $("#delCatNo").val();
     let catDiv = $("#delCatDiv").val();
-
 
     if(categoryNo == null || categoryNo == "" || catDiv == null || catDiv == "") {
         alert("오류가 발생했습니다. 새로고침 후 다시 시도해주시기 바랍니다.");
@@ -60,4 +60,24 @@ function categoryDelete(){
         }
     });
 
+}
+
+function categoryUpdateInfo(cmd, categoryNo, catDiv){
+
+    $.ajax({
+        url : "/admin/updateSelect",
+        data : {"cmd" : cmd, "categoryNo": categoryNo, "catDiv": catDiv},
+        method : "POST",
+        success : function(result) {
+            $("#registrationmodal").replaceWith(result);
+            /*if(result == 1) {
+//                $('#registrationmodal').load(window.location.href+' #registrationmodal');
+//                $("#registrationmodal").modal('show');
+
+            } else {
+                alert("서버에 오류가 있습니다. 다시 시도해 주세요 ");
+                return false;
+            }*/
+        }
+    });
 }

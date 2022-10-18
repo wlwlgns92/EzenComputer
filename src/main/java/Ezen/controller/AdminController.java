@@ -31,8 +31,7 @@ public class AdminController {
     public String categoryregistration(Model model) {
         List<CPCategoryEntity> CPlist = adminService.CPcategorylist();
         List<ComponentCategoryEntity> CTlist = adminService.CTlist();
-        System.out.println("완제품" + CPlist);
-        System.out.println("부품" + CTlist);
+
         model.addAttribute("CTcategory", CTlist);
         model.addAttribute("CPcategory", CPlist);
         return "admin/categoryregistration";
@@ -136,6 +135,23 @@ public class AdminController {
         return "admin/productregistration :: #componenttable";
     }
 
+    @ResponseBody
+    @PostMapping("/updateSelect")
+    public String updateSelect(@RequestParam("cmd") String cmd,
+                               @RequestParam("categoryNo") int categoryNo,
+                               @RequestParam("catDiv") String catDiv,
+                               Model model) {
+
+        Map<String, Object> catInfo = adminService.updateSelect(categoryNo,catDiv);
+        if(catInfo != null) {
+            System.out.println("controller : " + catInfo);
+            model.addAttribute("catInfo", catInfo);
+            model.addAttribute("cmd", cmd);
+            return "admin/categoryregistration :: #registrationmodal";
+        } else {
+            return "";
+        }
+    }
     @PostMapping("/completeProductHandle")
     public String completeProductHandle() {
 

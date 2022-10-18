@@ -11,7 +11,9 @@ sourceCompatibility = '11'
 repositories {
     mavenCentral()
 }
-
+bootRun {
+    jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
+}
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'       // 3. 스프링부트 제공
     testImplementation 'org.springframework.boot:spring-boot-starter-test' // 3. 스프링부트 테스트모드 제공
@@ -29,6 +31,7 @@ dependencies {
     implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.0'
     implementation 'javax.activation:activation:1.1.1'
 
+    implementation 'org.springframework.boot:spring-boot-devtools' // 디버그
 }
 
 test {

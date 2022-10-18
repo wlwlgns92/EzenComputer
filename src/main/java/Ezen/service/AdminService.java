@@ -13,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AdminService {
@@ -36,6 +38,7 @@ public class AdminService {
             if(CPlist.size() == 0) {
                 CPCategoryEntity categoryEntity = new CPCategoryEntity();
                 categoryEntity.setCpcategoryName(categoryName);
+                categoryEntity.setCatDiv("1");
                 cpCategoryRepository.save(categoryEntity);
                 return false;
             }
@@ -45,6 +48,7 @@ public class AdminService {
                 } else {
                     CPCategoryEntity categoryEntity = new CPCategoryEntity();
                     categoryEntity.setCpcategoryName(categoryName);
+                    categoryEntity.setCatDiv("1");
                     cpCategoryRepository.save(categoryEntity);
                     return false;
                 }
@@ -54,6 +58,7 @@ public class AdminService {
             if(componentlist.size() == 0) {
                 ComponentCategoryEntity componentEntity = new ComponentCategoryEntity();
                 componentEntity.setComponentcategoryName(categoryName);
+                componentEntity.setCatDiv("2");
                 componentCategoryRepository.save(componentEntity);
                 return false;
             }
@@ -63,6 +68,7 @@ public class AdminService {
                 } else {
                     ComponentCategoryEntity componentEntity = new ComponentCategoryEntity();
                     componentEntity.setComponentcategoryName(categoryName);
+                    componentEntity.setCatDiv("2");
                     componentCategoryRepository.save(componentEntity);
                     return false;
                 }
@@ -133,5 +139,23 @@ public class AdminService {
         } else {
             return false;
         }
+    }
+
+    // 카테고리 정보 가져오기
+    public Map<String, Object> updateSelect(int categoryNo, String catDiv) {
+        Map<String, Object> catInfo = new HashMap<String, Object>();
+
+        if(catDiv.equals("1")) {
+            CPCategoryEntity cpCategoryEntity = cpCategoryRepository.findById(categoryNo).get();
+            System.out.println("완제품 : " + cpCategoryEntity);
+            catInfo.put("catInfo", cpCategoryEntity);
+        } else if (catDiv.equals("2")) {
+            ComponentCategoryEntity componentCategoryEntity = componentCategoryRepository.findById(categoryNo).get();
+            System.out.println("부품 : " + componentCategoryEntity);
+            catInfo.put("catInfo", componentCategoryEntity);
+        } else {
+            return null;
+        }
+        return catInfo;
     }
 }

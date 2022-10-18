@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -30,11 +30,11 @@
                     </thead>
                     <tbody>
                         <tr th:each="CT : ${CTcategory}">
-                            <td th:text="${CT.componentcategoryNo}"></td>
+                            <td th:text="${CTStat.count}"></td>
                             <td th:text="${CT.componentcategoryName}"></td>
                             <td>
                                 <button>수정</button>
-                                <button>삭제</button>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" th:onclick="catDelCheck([[${CT.componentcategoryNo}]], [[${CT.catDiv}]]);">삭제</button>
                             </td>
                         </tr>
                     </tbody>
@@ -52,10 +52,10 @@
                     </thead>
                     <tbody>
                         <tr th:each="CP : ${CPcategory}">
-                            <td th:text="${CP.cpcategoryNo}"></td>
+                            <td th:text="${CPStat.count}"></td>
                             <td th:text="${CP.cpcategoryName}"></td>
                             <td>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="">수정</button>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#registrationmodal" th:onclick="categoryUpdateInfo('U',[[${CP.cpcategoryNo}]], [[${CP.catDiv}]]);">수정</button>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" th:onclick="catDelCheck([[${CP.cpcategoryNo}]], [[${CP.catDiv}]]);">삭제</button>
                             </td>
                         </tr>
@@ -80,17 +80,23 @@
         </div>
     </div>
     <!-- 삭제 modal end -->
-    <!-- 등록 모달 -->
+    <!-- 등록/수정 모달 -->
     <div class="modal fade" tabindex="-1" role="dialog" id="registrationmodal">
         <div class="modal-dialog" role="document">
             <div class="modal-content rounded-5 shadow">
                 <div class="modal-header p-5 pb-4 border-bottom-0">
                     <!-- <h5 class="modal-title">Modal title</h5> -->
-                    <h2 class="fw-bold mb-0">카테고리 등록</h2>
+                    <block th:if="${cmd == 'I'}">
+                        <h2 class="fw-bold mb-0" >카테고리 등록</h2>
+                    </block>
+                    <block th:if="${cmd == 'U'}">
+                        <h2 class="fw-bold mb-0">카테고리 수정</h2>
+                    </block>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-5 pt-0">
                     <form class="" action="/admin/categorywrite" method="get">
+                        <input type="hidden" name="cmd" id="cmd" value="">
                         <div class="row">
                             <div class="col-md-1">
                                 <select name="categoryNo" id="categoryNo">
@@ -99,8 +105,12 @@
                                 </select>
                             </div>
                             <div class="col-md-8 offset-1">
-                                <div class="form-floating mb-3">
+                                <div class="form-floating mb-3" th:if="${catInfo == null}">
                                     <input type="text" class="form-control rounded-4" id="categoryName" placeholder="카테고리명" name="categoryName">
+                                    <label for="categoryName">카테고리명</label>
+                                </div>
+                                <div class="form-floating mb-3" th:if="${catInfo ne null}">
+                                    <input type="text" class="form-control rounded-4" id="categoryName" placeholder="카테고리명" name="categoryName" th:value="${catInfo.cpcategoryName}">
                                     <label for="categoryName">카테고리명</label>
                                 </div>
                             </div>
