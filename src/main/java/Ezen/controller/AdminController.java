@@ -46,7 +46,7 @@ public class AdminController {
         if(categoryName == null || categoryName.equals("")) {
             return "2";
         }
-      boolean result = adminService.categorywrite(categoryNo,categoryName);
+        boolean result = adminService.categorywrite(categoryNo,categoryName);
 
         if(result) {
             return "2";
@@ -78,6 +78,7 @@ public class AdminController {
     public String productregistration(Model model) {
         List<CPCategoryEntity> cplist = adminService.CPcategorylist();
         List<ComponentCategoryEntity> ctlist = adminService.CTlist();
+
         model.addAttribute("cplist", cplist);
         model.addAttribute("ctlist", ctlist);
         return "admin/productregistration";
