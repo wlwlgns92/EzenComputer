@@ -136,20 +136,17 @@ public class AdminController {
     }
 
     @ResponseBody
-    @PostMapping("/updateSelect")
-    public String updateSelect(@RequestParam("cmd") String cmd,
-                               @RequestParam("categoryNo") int categoryNo,
-                               @RequestParam("catDiv") String catDiv,
-                               Model model) {
+    @PostMapping("/updateCategory")
+    public String updateSelect(@RequestParam("categoryName") String categoryName,
+                               @RequestParam("upCatNo") int upCatNo,
+                               @RequestParam("upCatDiv") String upCatDiv) {
 
-        Map<String, Object> catInfo = adminService.updateSelect(categoryNo,catDiv);
-        if(catInfo != null) {
-            System.out.println("controller : " + catInfo);
-            model.addAttribute("catInfo", catInfo);
-            model.addAttribute("cmd", cmd);
-            return "admin/categoryregistration :: #registrationmodal";
+        boolean result = adminService.categoryUpdate(categoryName, upCatNo, upCatDiv);
+
+        if(result) {
+            return "1";
         } else {
-            return "";
+            return "2";
         }
     }
     @PostMapping("/completeProductHandle")

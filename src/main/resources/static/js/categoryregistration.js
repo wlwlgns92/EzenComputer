@@ -1,8 +1,22 @@
-var url1 = "/admin/categoryregistration"; // 카테고리 등록 페이지
 
+function categoryWriteModal(cmd) {
+      $("#categoryNo").removeAttr("disabled");  // disabled 해제
+      $("#categoryNo").val("1");
+      $("#categoryName").val("");
+      $("#cmd").val(cmd);
+      $("#registrationmodal").modal("show");
+}
 function categoryregistration() {
-    var categoryNo = $("#categoryNo").val();
-    var categoryName = $("#categoryName").val().trim();
+    let url1;
+    let message;
+    let failMessage;
+    let dataSet;
+
+    $("#categoryNo").removeAttr("disabled");  // disabled 해제
+
+    let categoryNo = $("#categoryNo").val();
+    let categoryName = $("#categoryName").val().trim();
+    let cmd = $("#cmd").val();
 
     if(categoryNo == null || categoryNo == "") {
         alert("오류가 발생했습니다. 새로고침 후 다시 시도해주시기 바랍니다.");
@@ -15,17 +29,31 @@ function categoryregistration() {
         return false;
     }
 
+    if(cmd == 'I') {
+        url1 = "/admin/categorywrite"; // 카테고리 등록 페이지
+        message = "등록 성공하였습니다.";
+        failMessage = "등록 실패하였습니다.";
+        dataSet = { "categoryNo": categoryNo, "categoryName": categoryName};
+    }  else if(cmd == 'U') {
+        url1 = "/admin/updateCategory";
+        message = "수정 성공하였습니다.";
+        failMessage = "수정 실패하였습니다.";
+        dataSet = {"categoryName": categoryName, "upCatNo" : $("#upCatNo").val(), "upCatDiv" : $("#upCatDiv").val() };
+    }
+
     $.ajax({
-        url: "/admin/categorywrite",
-        data: { "categoryNo": categoryNo, "categoryName": categoryName },
+        url: url1,
+        data: dataSet,
+        method : "POST",
         success: function(result) {
-               if (result == 1) {
-                 alert("등록성공");
-                 $(".btn-close").trigger('click');
-                 location.href = url1;
-               } else {
-                 alert("등록 실패");
-               }
+           if (result == 1) {
+             alert(message);
+             $(".btn-close").trigger('click');
+             location.reload();
+           } else {
+             alert(failMessage);
+             return false;
+           }
         }
     });
 }
@@ -62,22 +90,18 @@ function categoryDelete(){
 
 }
 
-function categoryUpdateInfo(cmd, categoryNo, catDiv){
+function categoryUpdateInfo(cmd, categoryNo, catDiv, categoryName){
+    $("#cmd").val(cmd); // cmd 값 설정
 
-    $.ajax({
-        url : "/admin/updateSelect",
-        data : {"cmd" : cmd, "categoryNo": categoryNo, "catDiv": catDiv},
-        method : "POST",
-        success : function(result) {
-            $("#registrationmodal").replaceWith(result);
-            /*if(result == 1) {
-//                $('#registrationmodal').load(window.location.href+' #registrationmodal');
-//                $("#registrationmodal").modal('show');
+    if(catDiv != null && catDiv == 1) {
+        $("#categoryNo").val("1");
+        $("#categoryNo").attr("disabled", "disabled"); // select 박스 잠금
+    } else if (catDiv != null && catDiv == 2) {
+        $("#categoryNo").val("2");
+        $("#categoryNo").attr("disabled", "disabled"); // select 박스 잠금
+    }
+    $("#categoryName").val(categoryName);
+    $("#upCatNo").val(categoryNo);
+    $("#upCatDiv").val(catDiv);
 
-            } else {
-                alert("서버에 오류가 있습니다. 다시 시도해 주세요 ");
-                return false;
-            }*/
-        }
-    });
 }

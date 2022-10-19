@@ -11,6 +11,8 @@ import Ezen.domain.repository.ComponentCategoryRepository;
 import Ezen.domain.repository.ComponentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 import java.util.HashMap;
@@ -32,9 +34,9 @@ public class AdminService {
 
     // 카테고리 등록
     public boolean categorywrite(int categoryNo, String categoryName) {
-        List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
-
         if (categoryNo == 1 ) {
+            List<CPCategoryEntity> CPlist = cpCategoryRepository.findAll();
+
             if(CPlist.size() == 0) {
                 CPCategoryEntity categoryEntity = new CPCategoryEntity();
                 categoryEntity.setCpcategoryName(categoryName);
@@ -55,6 +57,7 @@ public class AdminService {
             }
         } else {
             List<ComponentCategoryEntity> componentlist = componentCategoryRepository.findAll();
+
             if(componentlist.size() == 0) {
                 ComponentCategoryEntity componentEntity = new ComponentCategoryEntity();
                 componentEntity.setComponentcategoryName(categoryName);
@@ -147,15 +150,32 @@ public class AdminService {
 
         if(catDiv.equals("1")) {
             CPCategoryEntity cpCategoryEntity = cpCategoryRepository.findById(categoryNo).get();
-            System.out.println("완제품 : " + cpCategoryEntity);
             catInfo.put("catInfo", cpCategoryEntity);
         } else if (catDiv.equals("2")) {
             ComponentCategoryEntity componentCategoryEntity = componentCategoryRepository.findById(categoryNo).get();
-            System.out.println("부품 : " + componentCategoryEntity);
             catInfo.put("catInfo", componentCategoryEntity);
         } else {
             return null;
         }
         return catInfo;
+    }
+
+    @Transactional
+    public boolean categoryUpdate(String categoryName, int upCatNo, String upCatDiv) {
+        try {
+            if(upCatDiv.equals("1")) {
+                CPCategoryEntity cpCategoryEntity = cpCategoryRepository.findById(upCatNo).get();
+                cpCategoryEntity.setCpcategoryName(categoryName);
+                return true;
+            } else if(upCatDiv.equals("2")) {
+                ComponentCategoryEntity componentCategoryEntity = componentCategoryRepository.findById(upCatNo).get();
+                componentCategoryEntity.setComponentcategoryName(categoryName);
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
