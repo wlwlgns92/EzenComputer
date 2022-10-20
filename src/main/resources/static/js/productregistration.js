@@ -1,4 +1,5 @@
 function searchCTList(componentcategoryNo) {
+
     $.ajax({
         url : "/admin/searchCTList",
         data : {"componentcategoryNo" : componentcategoryNo},
@@ -7,24 +8,13 @@ function searchCTList(componentcategoryNo) {
 //        async : false,
         success : function(data) {
             $("#componenttable").replaceWith(data);
-//            for(var i = 0; i < data.CTinfo.length; i++) {
-//                var viewHtml = "";
-//                viewHtml += "<tr><td><span>"+data.CTinfo[i].componentNo+"</span></td></tr>";
-//                $("#componenttable").append(viewHtml);
-//                console.log(viewHtml);
-//            }
-//            var viewHtml = "";
-//            console.log(data);
-//            viewHtml += '<tr th:each="CTInfo : ${'+data.CTinfo+'}">';
-//            viewHtml += '<td><span th:text="${CTInfo.componentNo}"></span> </td>';
-//            viewHtml += '</tr>';
-//            $("#componenttable").append(viewHtml);
-//            console.log(viewHtml);
         }
     });
 }
 
-
+function trDelete(){
+    $("#componenttable > tbody").empty();
+}
 
 function CTpick (componentNo, componentCategoryNo, componentTitle, componentPrice) {
     var compoTotalPrice = 0;

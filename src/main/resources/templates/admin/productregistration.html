@@ -6,6 +6,26 @@
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/productregistration.css}">
 <script type="text/javascript">
+    function tabChange() {
+        let key = "${param.key}";
+        console.log(key);
+
+        if(key === "v-pills-CPproduct") {
+            $("#v-pills-component-tab").removeClass("active");
+            $("#v-pills-CPproduct-tab").addClass("active");
+
+            $("#v-pills-component").removeClass("show active");
+            $("#v-pills-CPproduct").addClass("show active");
+        } else if (key === "v-pills-component") {
+            $("#v-pills-CPproduct-tab").removeClass("active");
+            $("#v-pills-component-tab").addClass("active");
+
+            $("#v-pills-CPproduct").removeClass("show active");
+            $("#v-pills-component").addClass("show active");
+        }
+    }
+
+
     function priceVail(){
         var cpPrice = $("#cpPrice").val();
         var check = /^[0-9]+$/;
@@ -15,65 +35,53 @@
             return false;
         }
     }
+
 </script>
 </head>
 <body>
     <div th:replace="header.html :: header"></div>
     <div class="container">
         <div class="row">
-            <div class="col-3">
-                <div class="nav me-3 navlist">
-                    <table id="categorylist">
-                        <tr>
-                            <td>
-                                <button class="nav-link active" id="v-pills-CPproduct-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-CPproduct" type="button" role="tab"
-                                    aria-controls="v-pills-CPproduct" aria-selected="true">완제품 등록
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="nav-link" id="v-pills-component-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-component" type="button" role="tab"
-                                    aria-controls="v-pills-component" aria-selected="false">부품 등록
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>악세사리</td>
-                        </tr>
-                    </table>
+            <div class="d-flex align-items-start">
+                <div class="col-3">
+                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active" id="v-pills-cpProduct-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cpProduct" type="button" role="tab" aria-controls="v-pills-cpProduct" aria-selected="true">완제품 등록</button>
+                        <button class="nav-link" id="v-pills-component-tab" data-bs-toggle="pill" data-bs-target="#v-pills-component" type="button" role="tab" aria-controls="v-pills-component" aria-selected="false">부품 등록</button>
+                    </div>
                 </div>
-            </div>
             <div class="col-9">
                 <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-CPproduct" role="tabpanel"
-                        aria-labelledby="v-pills-CPproduct-tab">
+                    <div class="tab-pane fade show active" id="v-pills-cpProduct" role="tabpanel"
+                        aria-labelledby="v-pills-cpProduct-tab">
                         <!-- 완제품 -->
                         <div class="row">
                             <div class="col-8" style="border: solid 1px black;">
                                 <div id="componentlist" style="height: 30rem;">
                                     <table id="componenttable">
-                                        <tr class="componentdata" th:each="ctinfo : ${CTinfo}">
-                                            <td id="imgtd">
-                                                <div id="imgtddiv">
-                                                    <img th:src="@{'/componentimg/' + ${ctinfo.componentImg}}" alt="">
-                                                </div>
-                                            </td> <!-- 상품 이미지 -->
-                                            <td id="ctinfotd">
-                                                <div id="ctinfodiv">
-                                                    <span>제품명 : </span><span th:text="${ctinfo.componentTitle}"> </span><br>
-                                                    <span>제조사 : </span><span th:text="${ctinfo.componentMaker}"></span><br>
-                                                    <span>수량 : </span><span th:text="${ctinfo.componentStock}"></span>
-                                                </div>
-                                            </td> <!-- 상품 정보 -->
-                                            <td>
-                                                <div id="buttondiv">
-                                                    <button type="button" th:onclick="CTpick([[${ctinfo.componentNo}]], [[${ctinfo.componentCategoryEntity.componentcategoryNo}]],[[${ctinfo.componentTitle}]],[[${ctinfo.componentPrice}]]);">담기</button>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <tbody>
+                                            <tr class="componentdata" th:each="ctinfo : ${CTinfo}">
+                                                <td th:if="${ctinfo == null}">  <!-- 왜 안되는지 ? -->
+                                                    <span> 조회된 제품이 없습니다. </span>
+                                                </td>
+                                                <td id="imgtd">
+                                                    <div id="imgtddiv">
+                                                        <img th:src="@{'/componentimg/' + ${ctinfo.componentImg}}" alt="">
+                                                    </div>
+                                                </td> <!-- 상품 이미지 -->
+                                                <td id="ctinfotd">
+                                                    <div id="ctinfodiv">
+                                                        <span>제품명 : </span><span th:text="${ctinfo.componentTitle}"> </span><br>
+                                                        <span>제조사 : </span><span th:text="${ctinfo.componentMaker}"></span><br>
+                                                        <span>수량 : </span><span th:text="${ctinfo.componentStock}"></span>
+                                                    </div>
+                                                </td> <!-- 상품 정보 -->
+                                                <td>
+                                                    <div id="buttondiv">
+                                                        <button type="button" th:onclick="CTpick([[${ctinfo.componentNo}]], [[${ctinfo.componentCategoryEntity.componentcategoryNo}]],[[${ctinfo.componentTitle}]],[[${ctinfo.componentPrice}]]);">담기</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -109,6 +117,7 @@
                                     </div>
                                     <div>
                                         <button onclick="CPRegistration();" style="width: 100%;">등록</button>
+                                        <button onclick="trDelete();" style="width: 100%;">test</button>
                                     </div>
                                 </div>
                             </div>
@@ -156,6 +165,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

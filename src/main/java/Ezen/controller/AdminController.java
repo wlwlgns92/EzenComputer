@@ -38,7 +38,7 @@ public class AdminController {
     }
 
     // 카테고리 등록 
-    @GetMapping("/categorywrite")
+    @PostMapping("/categorywrite")
     @ResponseBody
     public String categorywrite (@RequestParam("categoryNo") int categoryNo,
                                  @RequestParam("categoryName") String categoryName) {
