@@ -7,6 +7,7 @@ function searchCTList(componentcategoryNo) {
 //        dataType : "json",
 //        async : false,
         success : function(data) {
+            console.log(data);
             $("#componenttable").replaceWith(data);
         }
     });

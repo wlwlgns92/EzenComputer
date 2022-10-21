@@ -95,12 +95,14 @@ public class AdminController {
         @RequestParam("componentImg") MultipartFile file
     ) {
         try{
+            System.out.println("#######" + file.toString());
             String uuidfile = null;
             if(!file.getOriginalFilename().equals("")) {
                 UUID uuid = UUID.randomUUID();
                 uuidfile = uuid.toString() + "_" + file.getOriginalFilename().replaceAll("_", "-");
                 String dir = "C:\\EzenComputer\\build\\resources\\main\\static\\componentimg"; // 경로
                 String filepath = dir + "/" + uuidfile;
+                System.out.println("#######" + filepath);
                 file.transferTo(new File(filepath));
 
             }
@@ -116,7 +118,7 @@ public class AdminController {
                             .componentCategoryEntity(CTno)
                             .build()
             );
-            return "main";
+            return "admin/productregistration";
         }catch(Exception e){
             System.out.println("###########에러" + e);
         }
@@ -128,6 +130,7 @@ public class AdminController {
 
         return "admin/productregistration";
     }
+
 
     @PostMapping("/searchCTList")
     public String searchCTList(@RequestParam("componentcategoryNo") int componentcategoryNo, Model model) {
