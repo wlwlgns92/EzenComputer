@@ -91,16 +91,11 @@
                                         <h3>컴퓨터 부품</h3>
                                     </div>
                                     <div id="componentselect">
-                                        <input type="hidden" name="" id="pickComponent1" value=""> <!-- CPU -->
-                                        <input type="hidden" name="" id="pickComponent2" value=""> <!-- VGA -->
-                                        <input type="hidden" name="" id="pickComponent3" value=""> <!-- CASE -->
-                                        <input type="hidden" name="" id="pickComponent4" value=""> <!-- RAM -->
-                                        <input type="hidden" name="" id="pickComponent5" value=""> <!-- SSD -->
-                                        <input type="hidden" name="" id="pickComponent6" value=""> <!-- POWER -->
                                         <div class="parts" th:each="CTselect : ${ctlist}">
                                             <div>
                                                 <a type="button" th:onclick="searchCTList([[${CTselect.componentcategoryNo}]]);" th:text="${CTselect.componentcategoryName}"></a>
                                                 <div th:id="pickDiv+${CTselect.componentcategoryNo}" style="display: none;">
+                                                    <input type="hidden" name="pickComponent" th:id="pickComponent+${CTselect.componentcategoryNo}" value="">
                                                     <span th:id="pickTitle+${CTselect.componentcategoryNo}"></span>
                                                     <span th:id="pickPrice + ${CTselect.componentcategoryNo}"></span>
                                                     <button type="button" th:onclick="CTDelete([[${CTselect.componentcategoryNo}]])">삭제</button>
@@ -117,7 +112,7 @@
                                     </div>
                                     <div>
                                         <button onclick="CPRegistration();" style="width: 100%;">등록</button>
-                                        <button onclick="trDelete();" style="width: 100%;">test</button>
+                                        <!--<button onclick="trDelete();" style="width: 100%;">test</button>-->
                                     </div>
                                 </div>
                             </div>
