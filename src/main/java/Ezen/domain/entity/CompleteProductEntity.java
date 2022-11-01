@@ -14,40 +14,28 @@ import javax.persistence.*;
 @ToString
 public class CompleteProductEntity {
 
-    // 완제품 Entity
-
+    // 완제품에 사용된 부품 Entity
+    /*
+    * pk
+    * 부품 번호
+    * 부붐 카테고리 번호
+    * 완제품 정보 번호 FK
+    *
+    * */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cpNo") // 완제품 번호
+    @Column(name = "cpNo")    // 키값
     private int cpNo;
 
-    @Column(name = "cpImg") // 완제품 이미지
-    private String cpImg;
+    @Column(name = "cpCompNo")  // 사용된 부품 번호
+    private String cpCompNo;
 
-    @Column(name = "cpuNo")
-    private String cpuNo;
-
-    @Column(name = "vgaNo")
+    @Column(name = "cpCompCatNo") // 사용된 부품 카테고리 번호 [ Cpu, VGA ... ]
     private String vgaNo;
 
-    @Column(name ="caseNo")
-    private String caseNo;
-
-    @Column(name = "ramNo")
-    private String ramNo;
-
-    @Column(name = "ssdNo")
-    private String ssdNo;
-
-    @Column(name = "powerNo")
-    private String powerNo;
-
-    @Column(name = "cpPrice")
-    private String cpPrice;
-
     @ManyToOne // 완제품 카테고리 [ 게이밍.. 사무용 .. ]
-    @JoinColumn(name = "CPCategoryNo")
-    private CPCategoryEntity cpCategoryEntity;
+    @JoinColumn(name = "cpInfoNo")
+    private CompleteProductInfoEntity completeProductInfoEntity;
 
 
 }

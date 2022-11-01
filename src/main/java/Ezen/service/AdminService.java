@@ -3,6 +3,7 @@ package Ezen.service;
 
 
 import Ezen.domain.entity.CPCategoryEntity;
+import Ezen.domain.entity.CompleteProductEntity;
 import Ezen.domain.entity.ComponentCategoryEntity;
 
 import Ezen.domain.entity.ComponentEntity;
@@ -178,4 +179,30 @@ public class AdminService {
             return false;
         }
     }
+
+    public boolean completeProductHandle(String pickList[]) {
+        /*
+        * 1. 인수는 카테고리 번호와 부품번호를 받는다.
+        * 2. 부품카테고리 리스트 조회
+        * 3. 부품번호로 정보 조회
+        * 4. 조회한 부품의 카테고리를 카테고리 리스트와 매칭
+        * 5.
+        *
+        * */
+        CompleteProductEntity comple = new CompleteProductEntity();
+        for(int i = 0; i < pickList.length; i++) {
+            if(!pickList[i].equals("") && pickList[i] != null) {
+                ComponentEntity componentEntity = componentRepository.findById(Integer.parseInt(pickList[i])).get();
+
+/*                if(componentEntity.getComponentCategoryEntity().equals("1")) {
+                    comple.setCpuNo(String.valueOf(componentEntity.getComponentNo()));
+                } else if(componentEntity.getComponentCategoryEntity().equals("1")) {
+                    comple.setCpuNo(String.valueOf(componentEntity.getComponentNo()));
+                }*/
+
+            }
+        }
+        return true;
+    }
+
 }

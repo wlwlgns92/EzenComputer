@@ -31,6 +31,6 @@ public class CPCategoryEntity {
 
     @OneToMany(mappedBy = "cpCategoryEntity", cascade = CascadeType.ALL)
     @ToString.Exclude
-    private List<CompleteProductEntity> CPEntities = new ArrayList<>();
+    private List<CompleteProductInfoEntity> entities = new ArrayList<>();
 
 }

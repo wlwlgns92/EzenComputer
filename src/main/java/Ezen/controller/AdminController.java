@@ -157,9 +157,6 @@ public class AdminController {
     @PostMapping("/completeProductHandle")
     public boolean completeProductHandle(@RequestBody String pickList[]) {
 
-        for(int i=0; i < pickList.length; i++){
-            System.out.println("#######" + pickList[i]);
-        }
         /* 완제품 등록
         *  1. ajax로 부품 데이터 넘겨받기
         *  2. 넘겨 받은 부품의 수량 체크 하나라도 0이라면 return false;

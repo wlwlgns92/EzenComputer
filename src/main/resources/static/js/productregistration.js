@@ -17,20 +17,17 @@ function trDelete(){
 }
 
 function CTpick (componentNo, componentCategoryNo, componentTitle, componentPrice) {
-    /*
-        1. 담기 클릭시 부품번호, 부품카테고리번호, 부품명, 부품가격 인수로 받음
-        2. 인수를 hidden 값에 담는다.
-        3.
-    */
+    // console.log("부품번호 : " + componentNo + " 카테고리번호 : " + componentCategoryNo + " 부품명 : " + componentTitle + " 부품 가격 : " + componentPrice);
     var compoTotalPrice = 0;
     var pickPrice;
+    var compoPrice = componentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
     $("#pickDiv"+componentCategoryNo).show();
     $("#pickTitle"+componentCategoryNo).text(componentTitle);
-    $("#pickPrice"+componentCategoryNo).text(componentPrice);
+    $("#pickPrice"+componentCategoryNo).text(compoPrice);
 
-    $("#pickTitle"+componentCategoryNo).text();
-    $("#pickPrice"+componentCategoryNo).text();
     $("#pickComponent"+componentCategoryNo).val(componentNo);
+    $("#pickCategoryNo"+componentCategoryNo).val(componentCategoryNo);
 
     for(var i = 1; i < 6; i++) {
         pickPrice = $("#pickPrice"+i).text();
@@ -39,6 +36,7 @@ function CTpick (componentNo, componentCategoryNo, componentTitle, componentPric
         }
         compoTotalPrice += parseInt(pickPrice);
     }
+
     $("#compoTotalPrice").text(compoTotalPrice);
 }
 
@@ -51,6 +49,11 @@ function CTDelete(componentCategoryNo) {
 }
 
 function CPRegistration() {
+    // 카테고리 번호 배열 선언
+    let pickCategoryNo = $("input[name=pickCategoryNo]").length;
+    let pickCategoryList = new Array(pickCategoryNo);
+
+    // 부품번호 배열 선언
     let pickComponent = $("input[name=pickComponent]").length;
     let pickList = new Array(pickComponent);
 
@@ -81,12 +84,13 @@ function CPRegistration() {
         alert("MainBoard는 필수로 선택하셔야합니다.");
         return false;
     }
-
+    console.log(pickList);
     $.ajax({
         url : "/admin/completeProductHandle",
         type : "POST",
         dataType : "json",
-        data : pickList,
+        contentType : "application/json",
+        data : JSON.stringify(pickList),
         success : function(data) {
         }
     });

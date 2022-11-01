@@ -43,124 +43,148 @@
     <div class="container">
         <div class="row">
             <div class="d-flex align-items-start">
-                <div class="col-3">
+                <div class="col-3" style="padding-left: 5px;">
                     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <button class="nav-link active" id="v-pills-cpProduct-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cpProduct" type="button" role="tab" aria-controls="v-pills-cpProduct" aria-selected="true">완제품 등록</button>
                         <button class="nav-link" id="v-pills-component-tab" data-bs-toggle="pill" data-bs-target="#v-pills-component" type="button" role="tab" aria-controls="v-pills-component" aria-selected="false">부품 등록</button>
                     </div>
                 </div>
-            <div class="col-9">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-cpProduct" role="tabpanel"
-                        aria-labelledby="v-pills-cpProduct-tab">
-                        <!-- 완제품 -->
-                        <div class="row">
-                            <div class="col-8" style="border: solid 1px black;">
-                                <div id="componentlist" style="height: 30rem;">
-                                    <table id="componenttable">
-                                        <tbody>
-                                            <tr class="componentdata" th:each="ctinfo : ${CTinfo}">
-                                                <td th:if="${ctinfo == null}">  <!-- 왜 안되는지 ? -->
-                                                    <span> 조회된 제품이 없습니다. </span>
-                                                </td>
-                                                <td id="imgtd">
-                                                    <div id="imgtddiv">
-                                                        <img th:src="@{'/componentimg/' + ${ctinfo.componentImg}}" alt="">
-                                                    </div>
-                                                </td> <!-- 상품 이미지 -->
-                                                <td id="ctinfotd">
-                                                    <div id="ctinfodiv">
-                                                        <span>제품명 : </span><span th:text="${ctinfo.componentTitle}"> </span><br>
-                                                        <span>제조사 : </span><span th:text="${ctinfo.componentMaker}"></span><br>
-                                                        <span>수량 : </span><span th:text="${ctinfo.componentStock}"></span>
-                                                    </div>
-                                                </td> <!-- 상품 정보 -->
-                                                <td>
-                                                    <div id="buttondiv">
-                                                        <button type="button" th:onclick="CTpick([[${ctinfo.componentNo}]], [[${ctinfo.componentCategoryEntity.componentcategoryNo}]],[[${ctinfo.componentTitle}]],[[${ctinfo.componentPrice}]]);">담기</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-3" style="border: solid 1px black;">
-                                <div>
-                                    <div id="titlebox">
-                                        <h3>컴퓨터 부품</h3>
+                <div class="col-9">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-cpProduct" role="tabpanel"
+                            aria-labelledby="v-pills-cpProduct-tab">
+                            <!-- 완제품 -->
+                            <div class="row">
+                                <div class="col-8">
+                                    <div id="componentlist" style="height: 30rem;">
+                                        <table id="componenttable">
+                                            <tbody>
+                                                <tr class="componentdata" th:each="ctinfo : ${CTinfo}">
+                                                    <td th:if="${ctinfo == null}">  <!-- 왜 안되는지 ? -->
+                                                        <span> 조회된 제품이 없습니다. </span>
+                                                    </td>
+                                                    <td id="imgtd">
+                                                        <div id="imgtddiv">
+                                                            <img th:src="@{'/componentimg/' + ${ctinfo.componentImg}}" alt="">
+                                                        </div>
+                                                    </td> <!-- 상품 이미지 -->
+                                                    <td id="ctinfotd">
+                                                        <div id="ctinfodiv">
+                                                            <span>제품명 : </span><span th:text="${ctinfo.componentTitle}"> </span><br>
+                                                            <span>제조사 : </span><span th:text="${ctinfo.componentMaker}"></span><br>
+                                                            <span>수량 : </span><span th:text="${ctinfo.componentStock}"></span>
+                                                        </div>
+                                                    </td> <!-- 상품 정보 -->
+                                                    <td>
+                                                        <div id="buttondiv">
+                                                            <button type="button" th:onclick="CTpick([[${ctinfo.componentNo}]], [[${ctinfo.componentCategoryEntity.componentcategoryNo}]],[[${ctinfo.componentTitle}]],[[${ctinfo.componentPrice}]]);">담기</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div id="componentselect">
-                                        <div class="parts" th:each="CTselect : ${ctlist}">
-                                            <div>
-                                                <a type="button" th:onclick="searchCTList([[${CTselect.componentcategoryNo}]]);" th:text="${CTselect.componentcategoryName}"></a>
-                                                <div th:id="pickDiv+${CTselect.componentcategoryNo}" style="display: none;">
-                                                    <input type="hidden" name="pickComponent" th:id="pickComponent+${CTselect.componentcategoryNo}" value="">
-                                                    <span th:id="pickTitle+${CTselect.componentcategoryNo}"></span>
-                                                    <span th:id="pickPrice + ${CTselect.componentcategoryNo}"></span>
-                                                    <button type="button" th:onclick="CTDelete([[${CTselect.componentcategoryNo}]])">삭제</button>
+                                </div>
+                                <div class="col-4">
+                                    <div style="padding-right: 5px;">
+                                        <div id="titlebox">
+                                            <h3>컴퓨터 부품</h3>
+                                        </div>
+                                        <div id="componentselect">
+                                            <select name="cpCategory" id="cpCategory" style="width: 100%; margin-bottom: 15px;">
+                                                <option value="">샘</option>
+                                                <option value="">플</option>
+                                            </select>
+                                            <div class="parts" th:each="CTselect : ${ctlist}">
+                                                <div>
+                                                    <a type="button" th:onclick="searchCTList([[${CTselect.componentcategoryNo}]]);" th:text="${CTselect.componentcategoryName}"></a>
+                                                    <div th:id="pickDiv+${CTselect.componentcategoryNo}" style="display: none;">
+                                                        <input type="hidden" name="pickComponent" th:id="pickComponent+${CTselect.componentcategoryNo}" value="">
+                                                        <span th:id="pickTitle+${CTselect.componentcategoryNo}"></span>
+                                                        <span th:id="pickPrice + ${CTselect.componentcategoryNo}"></span>
+                                                        <button type="button" th:onclick="CTDelete([[${CTselect.componentcategoryNo}]])">삭제</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <span>부품 총 가격 : </span><span id="compoTotalPrice"></span>
-                                    </div>
-                                    <div>
-                                        <span>가격 : </span>
-                                        <input type="text" id="cpPrice" style="margin-bottom: 10px; width: 170px;" placeholder="가격을 입력해 주세요" onchange="priceVail();">
-                                    </div>
-                                    <div>
-                                        <button onclick="CPRegistration();" style="width: 100%;">등록</button>
-                                        <!--<button onclick="trDelete();" style="width: 100%;">test</button>-->
+                                        <div style="margin-bottom: 10px;">
+                                            <span>부품 총 가격 : </span><span id="compoTotalPrice"></span>
+                                        </div>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td>제품명 : </td>
+                                                    <td>
+                                                        <input type="text" id="cpName" style="margin-bottom: 10px; width: 100%;" placeholder="제품명을 입력해 주세요" onchange="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>수량 : </td>
+                                                    <td>
+                                                        <input type="text" id="cpStock" style="margin-bottom: 10px; width: 100%;" placeholder="수량을 입력해 주세요" onchange="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>가격 : </td>
+                                                    <td>
+                                                        <input type="text" id="cpPrice" style="margin-bottom: 10px; width: 100%;" placeholder="가격을 입력해 주세요" onchange="priceVail();">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--<span style="width: 10%;">가격 : </span>
+                                            <input type="text" id="cpPrice" style="margin-bottom: 10px; width: 80%;" placeholder="가격을 입력해 주세요" onchange="priceVail();">-->
+                                        </div>
+                                        <div>
+                                            <button onclick="CPRegistration();" style="width: 100%;">등록</button>
+                                            <!--<button onclick="trDelete();" style="width: 100%;">test</button>-->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="tab-pane fade" id="v-pills-component" role="tabpanel" aria-labelledby="v-pills-component-tab">
-                        <div class="row" id="componentinputbox">
-                            <form action="/admin/CTwrite" method="post" enctype="multipart/form-data">
-                                <div class="mb-3">
-                                    <select class="form-select" required aria-label="select example"
-                                        name="componentcategoryNo" id="componentcategoryNo">
-                                        <option value="">카테고리를 선택해주세요</option>
-                                        <option th:each="CTlist : ${ctlist}" th:value="${CTlist.componentcategoryNo}"
-                                            th:text="${CTlist.componentcategoryName}"></option>
-                                    </select>
-                                    <div class="invalid-feedback">Example invalid select feedback</div>
-                                </div>
+                        <div class="tab-pane fade" id="v-pills-component" role="tabpanel" aria-labelledby="v-pills-component-tab">
+                            <div class="row" id="componentinputbox">
+                                <form action="/admin/CTwrite" method="post" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <select class="form-select" required aria-label="select example"
+                                            name="componentcategoryNo" id="componentcategoryNo">
+                                            <option value="">카테고리를 선택해주세요</option>
+                                            <option th:each="CTlist : ${ctlist}" th:value="${CTlist.componentcategoryNo}"
+                                                th:text="${CTlist.componentcategoryName}"></option>
+                                        </select>
+                                        <div class="invalid-feedback">Example invalid select feedback</div>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-4" id="componentTitle"
-                                        placeholder="제품명" name="componentTitle">
-                                    <label for="componentTitle" style="margin-left: 10px;">제품명</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-4" id="componentMaker"
-                                        placeholder="제조사" name="componentMaker">
-                                    <label for="componentMaker" style="margin-left: 10px;">제조사</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-4" id="componentPrice"
-                                        placeholder="제품명" name="componentPrice">
-                                    <label for="componentPrice" style="margin-left: 10px;">가격</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-4" id="componentStock"
-                                        placeholder="제품명" name="componentStock">
-                                    <label for="componentStock" style="margin-left: 10px;">재고</label>
-                                </div>
-                                <div>
-                                    <input type="file" id="file" name="componentImg">
-                                    <input type="submit" value="등록하기">
-                                </div>
-                            </form>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control rounded-4" id="componentTitle"
+                                            placeholder="제품명" name="componentTitle">
+                                        <label for="componentTitle" style="margin-left: 10px;">제품명</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control rounded-4" id="componentMaker"
+                                            placeholder="제조사" name="componentMaker">
+                                        <label for="componentMaker" style="margin-left: 10px;">제조사</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control rounded-4" id="componentPrice"
+                                            placeholder="제품명" name="componentPrice">
+                                        <label for="componentPrice" style="margin-left: 10px;">가격</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control rounded-4" id="componentStock"
+                                            placeholder="제품명" name="componentStock">
+                                        <label for="componentStock" style="margin-left: 10px;">재고</label>
+                                    </div>
+                                    <div>
+                                        <input type="file" id="file" name="componentImg">
+                                        <input type="submit" value="등록하기">
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
