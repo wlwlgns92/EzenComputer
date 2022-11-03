@@ -155,13 +155,21 @@ public class AdminController {
     }
     @ResponseBody
     @PostMapping("/completeProductHandle")
-    public boolean completeProductHandle(@RequestBody String pickList[]) {
+    public boolean completeProductHandle(@RequestBody Map<String, Object> cpData) {
 
         /* 완제품 등록
         *  1. ajax로 부품 데이터 넘겨받기
         *  2. 넘겨 받은 부품의 수량 체크 하나라도 0이라면 return false;
         *  3. 수량체크 후
         * */
-        return true;
+        List<String> pickList = (List<String>) cpData.get("pickList");
+        Map<String, Object> cpInfo = (Map<String, Object>) cpData.get("cpInfo");
+
+        boolean result = adminService.completeProductHandle(pickList, cpInfo);
+        if(result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

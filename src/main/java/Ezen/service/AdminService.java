@@ -2,14 +2,9 @@ package Ezen.service;
 
 
 
-import Ezen.domain.entity.CPCategoryEntity;
-import Ezen.domain.entity.CompleteProductEntity;
-import Ezen.domain.entity.ComponentCategoryEntity;
+import Ezen.domain.entity.*;
 
-import Ezen.domain.entity.ComponentEntity;
-import Ezen.domain.repository.CPCategoryRepository;
-import Ezen.domain.repository.ComponentCategoryRepository;
-import Ezen.domain.repository.ComponentRepository;
+import Ezen.domain.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +27,11 @@ public class AdminService {
     @Autowired
     ComponentRepository componentRepository;
 
+    @Autowired
+    CompleteProductInfoRepository completeProductInfoRepository;
+
+    @Autowired
+    CompleteProductRepository completeProductRepository;
 
     // 카테고리 등록
     public boolean categorywrite(int categoryNo, String categoryName) {
@@ -180,26 +180,48 @@ public class AdminService {
         }
     }
 
-    public boolean completeProductHandle(String pickList[]) {
+    @Transactional
+    public boolean completeProductHandle(List<String> pickList, Map<String, Object> cpInfo) {
         /*
         * 1. 인수는 카테고리 번호와 부품번호를 받는다.
         * 2. 부품카테고리 리스트 조회
         * 3. 부품번호로 정보 조회
         * 4. 조회한 부품의 카테고리를 카테고리 리스트와 매칭
         * 5.
-        *
-        * */
-        CompleteProductEntity comple = new CompleteProductEntity();
-        for(int i = 0; i < pickList.length; i++) {
-            if(!pickList[i].equals("") && pickList[i] != null) {
-                ComponentEntity componentEntity = componentRepository.findById(Integer.parseInt(pickList[i])).get();
+        */
+        CPCategoryEntity cpCategoryEntity = cpCategoryRepository.findById(Integer.parseInt((String) cpInfo.get("cpCategory"))).get();
 
-/*                if(componentEntity.getComponentCategoryEntity().equals("1")) {
-                    comple.setCpuNo(String.valueOf(componentEntity.getComponentNo()));
-                } else if(componentEntity.getComponentCategoryEntity().equals("1")) {
-                    comple.setCpuNo(String.valueOf(componentEntity.getComponentNo()));
-                }*/
+        CompleteProductInfoEntity infoEntity = new CompleteProductInfoEntity().builder()
+                .cpName((String) cpInfo.get("cpName"))
+                .cpPrice((String) cpInfo.get("cpPrice"))
+                .cpStock((String) cpInfo.get("cpStock"))
+                .cpCategoryEntity(cpCategoryEntity)
+                .build();
+        try {
+            // 완제품 정보 저장
+            infoEntity = completeProductInfoRepository.save(infoEntity);
+        } catch (Exception e) {
+            return false;
+        }
 
+        for(int i = 0; i < pickList.size(); i++) {
+            if(!pickList.get(i).equals("") && pickList.get(i) != null) {
+                ComponentEntity componentEntity = componentRepository.findById(Integer.parseInt(pickList.get(i))).get();
+                CompleteProductEntity comple = new CompleteProductEntity().builder()
+                        .componentEntity(componentEntity)
+                        .completeProductInfoEntity(infoEntity)
+                        .build();
+                try {
+                    completeProductRepository.save(comple);
+                    int updateStock = componentEntity.getComponentStock();
+                    if(updateStock > 0) {
+                        componentEntity.setComponentStock(updateStock - Integer.parseInt((String) cpInfo.get("cpStock")));
+                    }
+                    // 수량 감소 업데이트도 해야함
+                } catch (Exception e) {
+                    System.out.println("#######" + e);
+                    return false;
+                }
             }
         }
         return true;

@@ -21,8 +21,8 @@ public class CompleteProductInfoEntity {
     @Column(name = "cpInfoNo")
     private int cpInfoNo; // 키값
 
-    @Column(name = "cpImg")
-    private String cpImg;   // 이미지
+    @Column(name = "cpName")
+    private String cpName;  // 제품명
 
     @Column(name = "cpPrice")
     private String cpPrice; // 가격
@@ -30,11 +30,8 @@ public class CompleteProductInfoEntity {
     @Column(name = "cpStock")
     private String cpStock; // 수량
 
-    @Column(name = "cpName")
-    private String cpName;  // 제품명
-
-    @Column(name = "cpCategory")
-    private String cpCategory; // 카테고리
+    @Column(name = "cpImg")
+    private String cpImg;   // 이미지
 
     @ManyToOne
     @JoinColumn(name = "cpcategoryNo")

@@ -66,60 +66,57 @@ function CPRegistration() {
 
     for(let i = 0; i < listStock.length; i++) {
         listStock[i] = $("input[name=pickStock]").eq(i).val();
-        console.log(i+"번째 수량 : " + parseInt(listStock[i]) + " ### 입력한 부품 수량 : "+ parseInt(cpStock));
- /*       if(listStock[i] < cpStock) {
+        if(listStock[i] < cpStock && listStock[i] != "") {
             alert("선택하신 부품 중 수량이 부족한 부품이 있습니다.");
-            console.log(listStock[i]);
             return false;
-//            console.log(listStock[i] < parseInt(cpStock) + "참트루" );
-//            console.log(listStock[i], parseInt(cpStock));
-        }*/
+        }
     }
 
     for(let i = 0; i<pickComponent; i++) {
         pickList[i] = $("input[name=pickComponent]").eq(i).val();
     }
-//    if($("#cpCategory").val() == "") {
-//        alert("카테고리를 선택해 주세요");
-//        return false;
-//    }
-//    if( pickList[0] == ""){
-//        alert("CPU는 필수로 선택하셔야합니다.");
-//        return false;
-//    }
-//    if( pickList[2] == ""){
-//        alert("CASE는 필수로 선택하셔야합니다.");
-//        return false;
-//    }
-//    if( pickList[3] == ""){
-//        alert("RAM은 필수로 선택하셔야합니다.");
-//        return false;
-//    }
-//    if( pickList[4] == ""){
-//        alert("저장장치(SSD / HDD)는 필수로 선택하셔야합니다.");
-//        return false;
-//    }
-//    if( pickList[5] == ""){
-//        alert("Power는 필수로 선택하셔야합니다.");
-//        return false;
-//    }
-//    if( pickList[6] == ""){
-//        alert("MainBoard는 필수로 선택하셔야합니다.");
-//        return false;
-//    }
-//
-//    if($("#cpName").val() == "") {
-//        alert("제품명을 입력해 주세요");
-//        return false;
-//    }
-//    if($("#cpStock").val() == "") {
-//        alert("수량을 입력해 주세요");
-//        return false;
-//    }
-//    if($("#cpPrice").val() == "") {
-//        alert("가격을 입력해 주세요");
-//        return false;
-//    }
+    if($("#cpCategory").val() == "") {
+        alert("카테고리를 선택해 주세요");
+        return false;
+    }
+    if( pickList[0] == ""){
+        alert("CPU는 필수로 선택하셔야합니다.");
+        return false;
+    }
+    if( pickList[2] == ""){
+        alert("CASE는 필수로 선택하셔야합니다.");
+        return false;
+    }
+    if( pickList[3] == ""){
+        alert("RAM은 필수로 선택하셔야합니다.");
+        return false;
+    }
+    if( pickList[4] == ""){
+        alert("저장장치(SSD / HDD)는 필수로 선택하셔야합니다.");
+        return false;
+    }
+    if( pickList[5] == ""){
+        alert("Power는 필수로 선택하셔야합니다.");
+        return false;
+    }
+    if( pickList[6] == ""){
+        alert("MainBoard는 필수로 선택하셔야합니다.");
+        return false;
+    }
+
+    if($("#cpName").val() == "") {
+        alert("제품명을 입력해 주세요");
+        return false;
+    }
+    if($("#cpStock").val() == "") {
+        alert("수량을 입력해 주세요");
+        return false;
+    }
+    if($("#cpPrice").val() == "") {
+        alert("가격을 입력해 주세요");
+        return false;
+    }
+
     let cpInfo = {
         "cpName" : $("#cpName").val(),
         "cpStock" : $("#cpStock").val(),
@@ -134,8 +131,16 @@ function CPRegistration() {
         type : "POST",
         dataType : "json",
         contentType : "application/json",
-        data : JSON.stringify(pickList, cpInfo),
+        data : JSON.stringify({
+            "cpInfo" : cpInfo,
+            "pickList" : pickList
+
+        }),
         success : function(data) {
+            if(data) {
+                alert("저장이 완료되었습니다.");
+                location.reload();
+            }
         }
     });
 }

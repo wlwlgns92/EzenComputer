@@ -30,8 +30,9 @@ public class CompleteProductEntity {
     @Column(name = "cpCompNo")  // 사용된 부품 번호
     private String cpCompNo;
 
-    @Column(name = "cpCompCatNo") // 사용된 부품 카테고리 번호 [ Cpu, VGA ... ]
-    private String vgaNo;
+    @ManyToOne
+    @JoinColumn(name = "componentNo")
+    private ComponentEntity componentEntity;
 
     @ManyToOne // 완제품 카테고리 [ 게이밍.. 사무용 .. ]
     @JoinColumn(name = "cpInfoNo")
