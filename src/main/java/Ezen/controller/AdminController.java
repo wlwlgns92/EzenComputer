@@ -95,12 +95,15 @@ public class AdminController {
         @RequestParam("componentImg") MultipartFile file
     ) {
         try{
-            System.out.println("#######" + file.toString());
             String uuidfile = null;
             if(!file.getOriginalFilename().equals("")) {
+                String path = System.getProperty("user.dir");
+                System.out.println(path);
+
                 UUID uuid = UUID.randomUUID();
                 uuidfile = uuid.toString() + "_" + file.getOriginalFilename().replaceAll("_", "-");
-                String dir = "C:\\EzenComputer\\build\\resources\\main\\static\\componentimg"; // 경로
+                String dir = path+"\\build\\resources\\main\\static\\componentimg"; // 경로
+//                String dir = "C:\\EzenComputer\\build\\resources\\main\\static\\componentimg"; // 경로
                 String filepath = dir + "/" + uuidfile;
                 System.out.println("#######" + filepath);
                 file.transferTo(new File(filepath));
